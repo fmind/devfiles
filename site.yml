@@ -131,7 +131,7 @@
     tags: ['usr', 'python', 'main', 'file', 'conf']
 
   - name: create ipython dir
-    command: ipython profile create default
+    shell: ipython profile create default
     args:
         executable: /bin/bash
     tags: ['usr', 'python', 'main', 'file', 'dir']
