@@ -1,0 +1,14 @@
+- src: fmind.clang
+- src: fmind.clojure
+- src: fmind.elixir
+- src: fmind.golang
+- src: fmind.graphviz
+- src: fmind.groovy
+- src: fmind.haskell
+- src: fmind.java
+- src: fmind.julia
+- src: fmind.nodejs
+- src: fmind.plantuml
+- src: fmind.python
+- src: fmind.racket
+- src: fmind.rlang

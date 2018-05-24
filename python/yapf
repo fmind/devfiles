@@ -1,0 +1,3 @@
+[style]
+column_limit = 100
+based_on_style = pep8
