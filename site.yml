@@ -82,7 +82,7 @@
 # NODEJS {{{
 
   - name: deploy npm config
-    file: src='{{playbook_dir}}/npm/npmrc' dest='~/.npmrc' state=link force=yes
+    file: src='{{playbook_dir}}/nodejs/npmrc' dest='~/.npmrc' state=link force=yes
     tags: ['usr', 'nodejs', 'web', 'file', 'conf']
 
 # }}}
