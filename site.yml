@@ -4,23 +4,21 @@
 
 #ROLES{{{
   roles:
-      -{ role: fmind.clang, become: true, tags: ['sys', 'clang', 'sys', 'role', 'lang'] }
-      -{ role: fmind.clojure, become: true, tags: ['sys', 'clojure', 'fun', 'role', 'lang'] }
-      -{ role: fmind.elixir, become: true, tags: ['sys', 'elixir', 'fun', 'role', 'lang'] }
-      -{ role: fmind.golang, become: true, tags: ['sys', 'golang', 'sys', 'role', 'lang'] }
-      -{ role: fmind.graphviz, become: true, tags: ['sys', 'graphviz', 'img', 'role', 'lang'] }
-      -{ role: fmind.groovy, become: true, tags: ['sys', 'groovy', 'main', 'role', 'lang'] }
-      -{ role: fmind.haskell, become: true, tags: ['sys', 'haskell', 'fun', 'role', 'lang'] }
-      -{ role: fmind.java, become: true, tags: ['sys', 'java', 'main', 'role', 'lang'] }
-      -{ role: fmind.julia, become: true, tags: ['sys', 'julia', 'stat', 'role', 'lang'] }
-      -{ role: fmind.nodejs, become: true, tags: ['sys', 'nodejs', 'web', 'role', 'lang'] }
-      -{ role: fmind.plantuml, become: true, tags: ['sys', 'plantuml', 'img', 'role', 'lang'] }
-      -{ role: fmind.python, become: true, tags: ['sys', 'python', 'main', 'role', 'lang'] }
-      -{ role: fmind.rlang, become: true, tags: ['sys', 'rlang', 'stat', 'role', 'lang'] }
+      - { role: fmind.clang, become: true, tags: ['sys', 'clang', 'sys', 'role', 'lang'] }
+      - { role: fmind.clojure, become: true, tags: ['sys', 'clojure', 'fun', 'role', 'lang'] }
+      - { role: fmind.elixir, become: true, tags: ['sys', 'elixir', 'fun', 'role', 'lang'] }
+      - { role: fmind.golang, become: true, tags: ['sys', 'golang', 'sys', 'role', 'lang'] }
+      - { role: fmind.graphviz, become: true, tags: ['sys', 'graphviz', 'img', 'role', 'lang'] }
+      - { role: fmind.groovy, become: true, tags: ['sys', 'groovy', 'main', 'role', 'lang'] }
+      - { role: fmind.haskell, become: true, tags: ['sys', 'haskell', 'fun', 'role', 'lang'] }
+      - { role: fmind.java, become: true, tags: ['sys', 'java', 'main', 'role', 'lang'] }
+      - { role: fmind.julia, become: true, tags: ['sys', 'julia', 'stat', 'role', 'lang'] }
+      - { role: fmind.nodejs, become: true, tags: ['sys', 'nodejs', 'web', 'role', 'lang'] }
+      - { role: fmind.plantuml, become: true, tags: ['sys', 'plantuml', 'img', 'role', 'lang'] }
+      - { role: fmind.python, become: true, tags: ['sys', 'python', 'main', 'role', 'lang'] }
+      - { role: fmind.rlang, become: true, tags: ['sys', 'rlang', 'stat', 'role', 'lang'] }
 #}}}
-
   tasks:
-
 #CLOJURE{{{
   - name: create lein dir
     file: path='~/.lein/' state='directory'
@@ -113,7 +111,7 @@
     tags: ['usr', 'python', 'main', 'file', 'conf']
 
   - name: create ipython dir
-    shell: ipython profile create default
+    shell: ~/.local/bin/ipython profile create default
     args:
         executable: /bin/bash
     tags: ['usr', 'python', 'main', 'file', 'dir']
