@@ -2,29 +2,26 @@
 
 - hosts: localhost
 
-# ROLES {{{
-
+#ROLES{{{
   roles:
-      - { role: fmind.clang, become: true, tags: ['sys', 'clang', 'sys', 'role', 'lang'] }
-      - { role: fmind.clojure, become: true, tags: ['sys', 'clojure', 'fun', 'role', 'lang'] }
-      - { role: fmind.elixir, become: true, tags: ['sys', 'elixir', 'fun', 'role', 'lang'] }
-      - { role: fmind.golang, become: true, tags: ['sys', 'golang', 'sys', 'role', 'lang'] }
-      - { role: fmind.graphviz, become: true, tags: ['sys', 'graphviz', 'img', 'role', 'lang'] }
-      - { role: fmind.groovy, become: true, tags: ['sys', 'groovy', 'main', 'role', 'lang'] }
-      - { role: fmind.haskell, become: true, tags: ['sys', 'haskell', 'fun', 'role', 'lang'] }
-      - { role: fmind.java, become: true, tags: ['sys', 'java', 'main', 'role', 'lang'] }
-      - { role: fmind.julia, become: true, tags: ['sys', 'julia', 'stat', 'role', 'lang'] }
-      - { role: fmind.nodejs, become: true, tags: ['sys', 'nodejs', 'web', 'role', 'lang'] }
-      - { role: fmind.plantuml, become: true, tags: ['sys', 'plantuml', 'img', 'role', 'lang'] }
-      - { role: fmind.python, become: true, tags: ['sys', 'python', 'main', 'role', 'lang'] }
-      - { role: fmind.rlang, become: true, tags: ['sys', 'rlang', 'stat', 'role', 'lang'] }
-
-# }}}
+      -{ role: fmind.clang, become: true, tags: ['sys', 'clang', 'sys', 'role', 'lang'] }
+      -{ role: fmind.clojure, become: true, tags: ['sys', 'clojure', 'fun', 'role', 'lang'] }
+      -{ role: fmind.elixir, become: true, tags: ['sys', 'elixir', 'fun', 'role', 'lang'] }
+      -{ role: fmind.golang, become: true, tags: ['sys', 'golang', 'sys', 'role', 'lang'] }
+      -{ role: fmind.graphviz, become: true, tags: ['sys', 'graphviz', 'img', 'role', 'lang'] }
+      -{ role: fmind.groovy, become: true, tags: ['sys', 'groovy', 'main', 'role', 'lang'] }
+      -{ role: fmind.haskell, become: true, tags: ['sys', 'haskell', 'fun', 'role', 'lang'] }
+      -{ role: fmind.java, become: true, tags: ['sys', 'java', 'main', 'role', 'lang'] }
+      -{ role: fmind.julia, become: true, tags: ['sys', 'julia', 'stat', 'role', 'lang'] }
+      -{ role: fmind.nodejs, become: true, tags: ['sys', 'nodejs', 'web', 'role', 'lang'] }
+      -{ role: fmind.plantuml, become: true, tags: ['sys', 'plantuml', 'img', 'role', 'lang'] }
+      -{ role: fmind.python, become: true, tags: ['sys', 'python', 'main', 'role', 'lang'] }
+      -{ role: fmind.rlang, become: true, tags: ['sys', 'rlang', 'stat', 'role', 'lang'] }
+#}}}
 
   tasks:
 
-# CLOJURE {{{
-
+#CLOJURE{{{
   - name: create lein dir
     file: path='~/.lein/' state='directory'
     tags: ['usr', 'clojure', 'fun', 'file', 'dir']
@@ -44,19 +41,13 @@
   - name: deploy boot prop
     file: src='{{playbook_dir}}/clojure/boot.properties' dest='~/.boot/boot.properties' state=link force=yes
     tags: ['usr', 'clojure', 'fun', 'file', 'prop']
-
-# }}}
-
-# ELIXIR {{{
-
+#}}}
+#ELIXIR{{{
   - name: deploy elixir conf
     file: src='{{playbook_dir}}/elixir/iex.exs' dest='~/.iex.exs' state=link force=yes
     tags: ['usr', 'elixir', 'fun', 'file', 'conf']
-
-# }}}
-
-# HASKELL {{{
-#
+#}}}
+#HASKELL{{{
   - name: create stack dir
     file: path='~/.stack/' state='directory'
     tags: ['usr', 'haskell', 'fun', 'file', 'dir']
@@ -68,27 +59,18 @@
   - name: deploy haskeline conf
     file: src='{{playbook_dir}}/haskell/haskeline' dest='~/.haskeline' state=link force=yes
     tags: ['usr', 'haskell', 'fun', 'file', 'conf']
-
-# }}}
-
-# JULIA {{{
-
+#}}}
+#JULIA{{{
   - name: deploy julia conf
     file: src='{{playbook_dir}}/julia/juliarc.jl' dest='~/.juliarc.jl' state=link force=yes
     tags: ['usr', 'julia', 'stat', 'file', 'conf']
-
-# }}}
-
-# NODEJS {{{
-
+#}}}
+#NODEJS{{{
   - name: deploy npm config
     file: src='{{playbook_dir}}/nodejs/npmrc' dest='~/.npmrc' state=link force=yes
     tags: ['usr', 'nodejs', 'web', 'file', 'conf']
-
-# }}}
-
-# PYTHON {{{
-
+#}}}
+#PYTHON{{{
   - name: install python tool
     pip: name='{{item}}' executable='pip3' extra_args='--user'
     with_items:
@@ -148,20 +130,14 @@
     file: src='{{playbook_dir}}/python/ptpython.py' dest='~/.ptpython/config.py' state=link force=yes
     tags: ['usr', 'python', 'main', 'file', 'conf']
 
-# }}}
-
-# RACKET {{{
-
+#}}}
+#RACKET{{{
   - name: deploy racket conf
     file: src='{{playbook_dir}}/racket/racketrc' dest='~/.racketrc' state=link force=yes
     tags: ['usr', 'racket', 'fun', 'file', 'conf']
-
-# }}}
-
-# RLANG {{{
-
+#}}}
+#RLANG{{{
   - name: deploy rlang conf
     file: src='{{playbook_dir}}/rlang/Rprofile' dest='~/.Rprofile' state=link force=yes
     tags: ['usr', 'rlang', 'stat', 'file', 'conf']
-
-# }}}
+#}}}
