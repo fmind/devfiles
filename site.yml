@@ -77,6 +77,7 @@
       - isort
       - pipenv
       - flake8
+      - neovim
       - autoflake
       - pipenv-pipes
     tags: ['usr', 'python']
