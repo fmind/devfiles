@@ -2,24 +2,24 @@
 
 - hosts: localhost
 
-#ROLES{{{
-  roles:
-      - { role: fmind.clang, become: true, tags: ['sys', 'clang'] }
-      - { role: fmind.clojure, become: true, tags: ['sys', 'clojure'] }
-      - { role: fmind.elixir, become: true, tags: ['sys', 'elixir'] }
-      - { role: fmind.golang, become: true, tags: ['sys', 'golang'] }
-      - { role: fmind.graphviz, become: true, tags: ['sys', 'graphviz'] }
-      - { role: fmind.groovy, become: true, tags: ['sys', 'groovy'] }
-      - { role: fmind.haskell, become: true, tags: ['sys', 'haskell'] }
-      - { role: fmind.java, become: true, tags: ['sys', 'java'] }
-      - { role: fmind.julia, become: true, tags: ['sys', 'julia'] }
-      - { role: fmind.nodejs, become: true, tags: ['sys', 'nodejs'] }
-      - { role: fmind.plantuml, become: true, tags: ['sys', 'plantuml'] }
-      - { role: fmind.python, become: true, tags: ['sys', 'python'] }
-      - { role: fmind.rlang, become: true, tags: ['sys', 'rlang'] }
-#}}}
   tasks:
-#CLOJURE{{{
+# CLANG{{{
+  - name: install build-essential
+    package: name='build-essential'
+    tags: ['sys', 'clang']
+    become: true
+# }}}
+# CLOJURE{{{
+  - name: install clojure (lein)
+    get_url: url="https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein" dest="/usr/local/bin/lein" mode=0755 owner=root group=root
+    tags: ['sys', 'clojure']
+    become: true
+
+  - name: install clojure (boot)
+    get_url: url="https://github.com/boot-clj/boot-bin/releases/download/latest/boot.sh" dest="/usr/local/bin/boot" mode=0755 owner=root group=root
+    tags: ['sys', 'clojure']
+    become: true
+
   - name: create lein dir
     file: path='~/.lein/' state='directory'
     tags: ['usr', 'clojure']
@@ -39,13 +39,41 @@
   - name: deploy boot prop
     file: src='{{playbook_dir}}/clojure/boot.properties' dest='~/.boot/boot.properties' state=link force=yes
     tags: ['usr', 'clojure']
-#}}}
-#ELIXIR{{{
+# }}}
+# ELIXIR{{{
+  - name: install elixir
+    package: name='elixir'
+    tags: ['sys', 'elixir']
+    become: true
+
   - name: deploy elixir conf
     file: src='{{playbook_dir}}/elixir/iex.exs' dest='~/.iex.exs' state=link force=yes
     tags: ['usr', 'elixir']
-#}}}
-#HASKELL{{{
+# }}}
+# GOLANG{{{
+  - name: install golang
+    package: name='golang'
+    tags: ['sys', 'golang']
+    become: true
+# }}}
+# GRAPHVIZ{{{
+  - name: install graphviz
+    package: name='graphviz'
+    tags: ['sys', 'graphviz']
+    become: true
+# }}}
+# GROOVY{{{
+  - name: install groovy
+    package: name='groovy'
+    tags: ['sys', 'groovy']
+    become: true
+# }}}
+# HASKELL{{{
+  - name: install haskell
+    package: name='haskell-stack'
+    tags: ['sys', 'haskell']
+    become: true
+
   - name: create stack dir
     file: path='~/.stack/' state='directory'
     tags: ['usr', 'haskell']
@@ -57,18 +85,53 @@
   - name: deploy haskeline conf
     file: src='{{playbook_dir}}/haskell/haskeline' dest='~/.haskeline' state=link force=yes
     tags: ['usr', 'haskell']
-#}}}
-#JULIA{{{
+# }}}
+# JAVA{{{
+  - name: install java
+    package: name='default-jdk'
+    tags: ['sys', 'java']
+    become: true
+# }}}
+# JULIA{{{
+  - name: install julia
+    package: name='julia'
+    tags: ['sys', 'julia']
+    become: true
+
   - name: deploy julia conf
     file: src='{{playbook_dir}}/julia/juliarc.jl' dest='~/.juliarc.jl' state=link force=yes
     tags: ['usr', 'julia']
-#}}}
-#NODEJS{{{
+# }}}
+# NODEJS{{{
+  - name: install nodejs
+    package: name='{{item}}'
+    with_items:
+      - nodejs
+      - yarn
+      - npm
+    tags: ['sys', 'nodejs']
+    become: true
+
   - name: deploy npm config
     file: src='{{playbook_dir}}/nodejs/npmrc' dest='~/.npmrc' state=link force=yes
     tags: ['usr', 'nodejs']
-#}}}
-#PYTHON{{{
+# }}}
+# PLANTUML{{{
+  - name: install plantuml
+    package: name='racket'
+    tags: ['sys', 'plantuml']
+    become: true
+# }}}
+# PYTHON{{{
+  - name: install python
+    package: name='{{item}}'
+    with_items:
+      - python3
+      - python3-pip
+      - libpython3-dev
+    tags: ['sys', 'python']
+    become: true
+
   - name: install python tool
     pip: name='{{item}}' executable='pip3' extra_args='--user'
     with_items:
@@ -128,14 +191,24 @@
     file: src='{{playbook_dir}}/python/ptpython.py' dest='~/.ptpython/config.py' state=link force=yes
     tags: ['usr', 'python']
 
-#}}}
-#RACKET{{{
+# }}}
+# RACKET{{{
+  - name: install racket
+    package: name='racket'
+    tags: ['sys', 'racket']
+    become: true
+
   - name: deploy racket conf
     file: src='{{playbook_dir}}/racket/racketrc' dest='~/.racketrc' state=link force=yes
     tags: ['usr', 'racket']
-#}}}
-#RLANG{{{
+# }}}
+# RLANG{{{
+  - name: install rlang
+    package: name='r-base-core'
+    tags: ['sys', 'rlang']
+    become: true
+
   - name: deploy rlang conf
     file: src='{{playbook_dir}}/rlang/Rprofile' dest='~/.Rprofile' state=link force=yes
     tags: ['usr', 'rlang']
-#}}}
+# }}}
