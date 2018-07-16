@@ -10,6 +10,5 @@ Dotfiles of my favorite programming languages.
 # Installation
 
 ```bash
-ansible-galaxy install -fr role.yml
 ansible-playbook --ask-become site.yml
 ```
