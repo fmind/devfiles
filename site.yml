@@ -132,20 +132,17 @@
     tags: ['sys', 'python']
     become: true
 
-  - name: install python tool
+  - name: install python tools
     pip: name='{{item}}' executable='pip3' extra_args='--user'
     with_items:
       - jedi
       - yapf
       - isort
-      - pipenv
       - flake8
-      - neovim
-      - autoflake
-      - pipenv-pipes
+      - pipenv
     tags: ['usr', 'python']
 
-  - name: install python shell
+  - name: install python shells
     pip: name='{{item}}' executable='pip3' extra_args='--user'
     with_items:
       - hy
