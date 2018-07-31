@@ -123,7 +123,7 @@
     become: true
 # }}}
 # PYTHON{{{
-  - name: install python
+  - name: install python lang
     package: name='{{item}}'
     with_items:
       - python3
@@ -137,48 +137,15 @@
   - name: install python tools
     pip: name='{{item}}' executable='pip3' extra_args='--user'
     with_items:
+      - pip
       - jedi
-      - yapf
       - mypy
-      - isort
+      - black
       - twine
       - wheel
-      - flake8
       - pytest
-      - setuptools
-    tags: ['usr', 'python']
-
-  - name: install python shells
-    pip: name='{{item}}' executable='pip3' extra_args='--user'
-    with_items:
-      - hy
       - ipython
-      - ptpython
-      - trypackage
-    tags: ['usr', 'python']
-
-  - name: deploy pip conf
-    file: src='{{playbook_dir}}/python/pypirc' dest='~/.pypirc' state=link force=yes
-    tags: ['usr', 'python']
-
-  - name: create try dir
-    file: path='~/.config/try' state=directory
-    tags: ['usr', 'python']
-
-  - name: deploy try conf
-    file: src='{{playbook_dir}}/python/try.ini' dest='~/.config/try/config.ini' state=link force=yes
-    tags: ['usr', 'python']
-
-  - name: create yapf dir
-    file: path='~/.config/yapf' state=directory
-    tags: ['usr', 'python']
-
-  - name: deploy yapf conf
-    file: src='{{playbook_dir}}/python/yapf' dest='~/.config/yapf/style' state=link force=yes
-    tags: ['usr', 'python']
-
-  - name: deploy flake8 conf
-    file: src='{{playbook_dir}}/python/flake8' dest='~/.config/flake8' state=link force=yes
+      - setuptools
     tags: ['usr', 'python']
 
   - name: create ipython dir
@@ -188,17 +155,8 @@
     tags: ['usr', 'python']
 
   - name: deploy ipython conf
-    file: src='{{playbook_dir}}/python/ipython_config.py' dest='~/.ipython/profile_default/ipython_config.py' state=link force=yes
+    file: src='{{playbook_dir}}/python/ipython.py' dest='~/.ipython/profile_default/ipython_config.py' state=link force=yes
     tags: ['usr', 'python']
-
-  - name: create ptpython dir
-    file: path='~/.ptpython' state=directory
-    tags: ['usr', 'python']
-
-  - name: deploy ptpython conf
-    file: src='{{playbook_dir}}/python/ptpython.py' dest='~/.ptpython/config.py' state=link force=yes
-    tags: ['usr', 'python']
-
 # }}}
 # RACKET{{{
   - name: install racket
