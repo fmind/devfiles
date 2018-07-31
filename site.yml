@@ -138,6 +138,7 @@
     pip: name='{{item}}' executable='pip3' extra_args='--user'
     with_items:
       - pip
+      - ipdb
       - jedi
       - mypy
       - black
