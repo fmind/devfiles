@@ -137,13 +137,11 @@
   - name: install python tools
     pip: name='{{item}}' executable='pip3' extra_args='--user'
     with_items:
-      # repl
-      - ipdb
-      - jedi
-      - ipython
-      # test
-      - mypy
       - yapf
+      - mypy
+      - jedi
+      - ipdb
+      - ipython
       - pyflakes
     tags: ['usr', 'python']
 
