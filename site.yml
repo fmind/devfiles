@@ -5,7 +5,10 @@
   tasks:
 # CLANG{{{
   - name: install build-essential
-    package: name='build-essential'
+    package: name='{{item}}'
+    with_items:
+      - cmake
+      - build-essential
     tags: ['sys', 'clang']
     become: true
 # }}}
