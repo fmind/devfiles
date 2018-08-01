@@ -143,8 +143,7 @@
       - ipython
       # test
       - mypy
-      - black
-      - pytest
+      - yapf
       - pyflakes
     tags: ['usr', 'python']
 
