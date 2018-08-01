@@ -137,16 +137,15 @@
   - name: install python tools
     pip: name='{{item}}' executable='pip3' extra_args='--user'
     with_items:
-      - pip
+      # repl
       - ipdb
       - jedi
+      - ipython
+      # test
       - mypy
       - black
-      - twine
-      - wheel
       - pytest
-      - ipython
-      - setuptools
+      - pyflakes
     tags: ['usr', 'python']
 
   - name: create ipython dir
