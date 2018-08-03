@@ -133,6 +133,7 @@
       - python3-zmq
       - python3-pip
       - python3-venv
+      - libpython-dev
       - libpython3-dev
     tags: ['sys', 'python']
     become: true
