@@ -146,6 +146,7 @@
       - ipdb
       - ipython
       - pyflakes
+      - pytest-watch
     tags: ['usr', 'python']
 
   - name: create ipython dir
