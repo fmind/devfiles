@@ -147,6 +147,7 @@
       - ipdb
       - ipython
       - pyflakes
+      - coconut[all]
       - pytest-watch
     tags: ['usr', 'python']
 
@@ -161,6 +162,11 @@
     tags: ['usr', 'python']
 # }}}
 # RACKET{{{
+  - name: enable racket
+    apt_repository: repo='ppa:plt/racket'
+    tags: ['sys', 'racket']
+    become: true
+
   - name: install racket
     package: name='racket'
     tags: ['sys', 'racket']
