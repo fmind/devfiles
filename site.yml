@@ -140,10 +140,11 @@
   - name: install python tools
     pip: name='{{item}}' executable='pip3' extra_args='--user'
     with_items:
-      - yapf
-      - mypy
       - jedi
+      - mypy
+      - yapf
       - ipdb
+      - xonsh
       - ipython
       - pyflakes
       - pytest-watch
