@@ -97,7 +97,7 @@
 # }}}
 # JULIA{{{
   - name: install julia
-    package: name='julia'
+    command: snap install julia-stable
     tags: ['sys', 'julia']
     become: true
 
@@ -178,4 +178,13 @@
   - name: deploy rlang conf
     file: src='{{playbook_dir}}/rlang/Rprofile' dest='~/.Rprofile' state=link force=yes
     tags: ['usr', 'rlang']
+# }}}
+# SNAP{{{
+  - name: install snap
+    package: name='{{item}}'
+    with_items:
+      - snapcraft
+      - build-essential
+    tags: ['sys', 'snap']
+    become: true
 # }}}
