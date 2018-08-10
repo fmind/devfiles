@@ -96,13 +96,12 @@
     become: true
 # }}}
 # JULIA{{{
-  - name: install julia
-    command: snap install julia-stable
-    tags: ['sys', 'julia']
-    become: true
+  - name: create julia dir
+    file: path='~/.julia/config' state='directory'
+    tags: ['usr', 'julia']
 
   - name: deploy julia conf
-    file: src='{{playbook_dir}}/julia/juliarc.jl' dest='~/.juliarc.jl' state=link force=yes
+    file: src='{{playbook_dir}}/julia/startup.jl' dest='~/.julia/config/startup.jl' state=link force=yes
     tags: ['usr', 'julia']
 # }}}
 # NODEJS{{{
