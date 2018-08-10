@@ -133,6 +133,7 @@
       - python3-zmq
       - python3-pip
       - python3-venv
+      - libpython-dev
       - libpython3-dev
     tags: ['sys', 'python']
     become: true
@@ -160,6 +161,11 @@
     tags: ['usr', 'python']
 # }}}
 # RACKET{{{
+  - name: enable racket
+    apt_repository: repo='ppa:plt/racket'
+    tags: ['sys', 'racket']
+    become: true
+
   - name: install racket
     package: name='racket'
     tags: ['sys', 'racket']
