@@ -8,4 +8,4 @@ c.InteractiveShellApp.extensions = []
 
 c.InteractiveShellApp.exec_files = []
 
-c.InteractiveShellApp.exec_lines = ["import re", "from importlib import reload"]
+c.InteractiveShellApp.exec_lines = []
