@@ -153,6 +153,10 @@
       - pytest-watch
     tags: ['usr', 'python']
 
+  - name: deploy pypi conf
+    file: src='{{playbook_dir}}/python/pypirc' dest='~/.pypirc' state=link force=yes
+    tags: ['usr', 'python']
+
   - name: create ipython dir
     shell: ~/.local/bin/ipython profile create default
     ignore_errors: yes

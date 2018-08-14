@@ -1,0 +1,11 @@
+[distutils]
+index-servers =
+    testpypi
+    pypi
+
+[pypi]
+username = fmind
+
+[testpypi]
+username = fmind
+repository = https://test.pypi.org/legacy/
