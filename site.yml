@@ -144,13 +144,11 @@
       - jedi
       - mypy
       - ipdb
+      - ptpdb
       - black
-      # - funpy
       - ipython
       - ptpython
       - pyflakes
-      - simplejson
-      - pytest-watch
     tags: ['usr', 'python']
 
   - name: deploy pypi conf
