@@ -146,6 +146,7 @@
       - ipdb
       - ptpdb
       - black
+      - isort
       - ipython
       - ptpython
       - pyflakes
@@ -153,6 +154,10 @@
 
   - name: deploy pypi conf
     file: src='{{playbook_dir}}/python/pypirc' dest='~/.pypirc' state=link force=yes
+    tags: ['usr', 'python']
+
+  - name: deploy isort conf
+    file: src='{{playbook_dir}}/python/isort.cfg' dest='~/.isort.cfg' state=link force=yes
     tags: ['usr', 'python']
 
   - name: create ipython dir
