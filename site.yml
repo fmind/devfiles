@@ -147,6 +147,7 @@
       - ptpdb
       - black
       - isort
+      - bowler
       - ipython
       - ptpython
       - pyflakes
