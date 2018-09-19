@@ -161,17 +161,6 @@
     file: src='{{playbook_dir}}/python/isort.cfg' dest='~/.isort.cfg' state=link force=yes
     tags: ['usr', 'python']
 
-  - name: create ipython dir
-    shell: ~/.local/bin/ipython profile create default
-    ignore_errors: yes
-    args:
-        executable: /bin/bash
-    tags: ['usr', 'python']
-
-  - name: deploy ipython conf
-    file: src='{{playbook_dir}}/python/ipython.py' dest='~/.ipython/profile_default/ipython_config.py' state=link force=yes
-    tags: ['usr', 'python']
-
   - name: create ptpython dir
     file: path='~/.ptpython' state='directory'
     tags: ['usr', 'python']
