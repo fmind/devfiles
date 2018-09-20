@@ -138,6 +138,10 @@
     tags: ['sys', 'python']
     become: true
 
+  - name: install python pyenv
+    git: repo='https://github.com/pyenv/pyenv.git' dest='~/.pyenv' depth=1
+    tags: ['usr', 'python']
+
   - name: install python tools
     pip: name='{{item}}' executable='pip3' extra_args='--user'
     with_items:
