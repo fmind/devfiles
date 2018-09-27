@@ -152,6 +152,7 @@
       - black
       - isort
       - bowler
+      - Cython
       - ipython
       - ptpython
       - pyflakes
