@@ -100,6 +100,13 @@
     file: path='~/.julia/config' state='directory'
     tags: ['usr', 'julia']
 
+  - name: install julia deps
+    command: julia -e 'using Pkg; Pkg.add("{{item}}")'
+    with_items:
+      - IJulia
+    ignore_errors: true
+    tags: ['usr', 'julia']
+
   - name: deploy julia conf
     file: src='{{playbook_dir}}/julia/startup.jl' dest='~/.julia/config/startup.jl' state=link force=yes
     tags: ['usr', 'julia']
