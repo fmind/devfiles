@@ -158,6 +158,7 @@
       - ptpdb
       - black
       - isort
+      - wheel
       - bowler
       - Cython
       - ipython
