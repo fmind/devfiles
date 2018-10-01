@@ -135,13 +135,25 @@
   - name: install python lang
     package: name='{{item}}'
     with_items:
-      - python
-      - python3
-      - python3-zmq
-      - python3-pip
-      - python3-venv
+      - libbz2-dev
+      - libffi-dev
+      - liblzma-dev
+      - libncurses5-dev
+      - libncursesw5-dev
       - libpython-dev
       - libpython3-dev
+      - libreadline-dev
+      - libsqlite3-dev
+      - libssl-dev
+      - llvm
+      - make
+      - python
+      - python3
+      - python3-pip
+      - python3-venv
+      - python3-zmq
+      - xz-utils
+      - zlib1g-dev
     tags: ['sys', 'python']
     become: true
 
