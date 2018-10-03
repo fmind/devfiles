@@ -176,7 +176,7 @@
       - mypy
       - black
       - wheel
-      - bowler,
+      - bowler
       - Cython
       - ipython
       - pyflakes
