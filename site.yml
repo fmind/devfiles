@@ -144,7 +144,7 @@
     tags: ['sys', 'python', 'main']
     become: true
 
-  - name: install pyenv deps
+  - name: install python deps
     package: name='{{item}}'
     with_items:
       - llvm
@@ -176,10 +176,13 @@
       - mypy
       - black
       - wheel
+      - twine
       - bowler
+      - pytest
       - Cython
       - ipython
       - pyflakes
+      - setuptools
     tags: ['usr', 'python', 'main']
 
   - name: deploy pypi conf
