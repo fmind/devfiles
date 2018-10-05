@@ -173,16 +173,9 @@
     with_items:
       - ipdb
       - jedi
-      - mypy
-      - black
       - wheel
       - twine
-      - bowler
-      - pytest
-      - Cython
       - ipython
-      - pyflakes
-      - setuptools
     tags: ['usr', 'python', 'main']
 
   - name: deploy pypi conf
