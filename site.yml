@@ -3,7 +3,7 @@
 - hosts: localhost
 
   tasks:
-# CLANG{{{
+# CLANG {{{
   - name: install clang
     package: name='{{item}}'
     with_items:
@@ -14,7 +14,7 @@
     tags: ['sys', 'clang', 'main']
     become: true
 # }}}
-# CLOJURE{{{
+# CLOJURE {{{
   - name: install clojure (lein)
     get_url: url="https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein" dest="/usr/local/bin/lein" mode=0755 owner=root group=root
     tags: ['sys', 'clojure']
@@ -45,7 +45,7 @@
     file: src='{{playbook_dir}}/clojure/boot.properties' dest='~/.boot/boot.properties' state=link force=yes
     tags: ['usr', 'clojure']
 # }}}
-# ELIXIR{{{
+# ELIXIR {{{
   - name: install elixir
     package: name='elixir'
     tags: ['sys', 'elixir']
@@ -61,19 +61,19 @@
     tags: ['sys', 'graphviz']
     become: true
 # }}}
-# GOLANG{{{
+# GOLANG {{{
   - name: install golang
     package: name='golang'
     tags: ['sys', 'golang']
     become: true
 # }}}
-# GROOVY{{{
+# GROOVY {{{
   - name: install groovy
     package: name='groovy'
     tags: ['sys', 'groovy']
     become: true
 # }}}
-# HASKELL{{{
+# HASKELL {{{
   - name: install haskell
     package: name='haskell-stack'
     tags: ['sys', 'haskell']
@@ -91,13 +91,13 @@
     file: src='{{playbook_dir}}/haskell/haskeline' dest='~/.haskeline' state=link force=yes
     tags: ['usr', 'haskell']
 # }}}
-# JAVA{{{
+# JAVA {{{
   - name: install java
     package: name='default-jdk'
     tags: ['sys', 'java']
     become: true
 # }}}
-# JULIA{{{
+# JULIA {{{
   - name: create julia dir
     file: path='~/.julia/config' state='directory'
     tags: ['usr', 'julia']
@@ -113,7 +113,22 @@
     file: src='{{playbook_dir}}/julia/startup.jl' dest='~/.julia/config/startup.jl' state=link force=yes
     tags: ['usr', 'julia']
 # }}}
-# NODEJS{{{
+# LATEX {{{
+  - name: install latex
+    package: name='{{item}}'
+    with_items:
+      - latexmk
+      - texlive
+      - texlive-science
+      - texlive-pictures
+    tags: ['sys', 'latex']
+    become: true
+
+  - name: deploy latexmk
+    file: src='{{playbook_dir}}/latex/latexmkrc' dest='~/.latexmkrc' state='link' force=true
+    tags: ['usr', 'latex']
+# }}}
+# NODEJS {{{
   - name: install nodejs
     package: name='{{item}}'
     with_items:
@@ -127,13 +142,13 @@
     file: src='{{playbook_dir}}/nodejs/npmrc' dest='~/.npmrc' state=link force=yes
     tags: ['usr', 'nodejs', 'main']
 # }}}
-# PLANTUML{{{
+# PLANTUML {{{
   - name: install plantuml
     package: name='racket'
     tags: ['sys', 'plantuml']
     become: true
 # }}}
-# PYTHON{{{
+# PYTHON {{{
   - name: install python
     package: name='{{item}}'
     with_items:
@@ -190,7 +205,7 @@
     file: src='{{playbook_dir}}/python/ipython.py' dest='~/.ipython/profile_default/ipython_config.py' state=link force=yes
     tags: ['usr', 'python', 'main']
 # }}}
-# RACKET{{{
+# RACKET {{{
   - name: enable racket
     apt_repository: repo='ppa:plt/racket'
     tags: ['sys', 'racket']
@@ -205,7 +220,7 @@
     file: src='{{playbook_dir}}/racket/racketrc' dest='~/.racketrc' state=link force=yes
     tags: ['usr', 'racket']
 # }}}
-# RLANG{{{
+# RLANG {{{
   - name: install rlang
     package: name='r-base-core'
     tags: ['sys', 'rlang']
