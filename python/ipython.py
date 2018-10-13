@@ -12,4 +12,9 @@ c.TerminalInteractiveShell.extra_open_editor_shortcuts = True
 
 c.InteractiveShellApp.extensions = ["autoreload", "storemagic"]
 
-c.InteractiveShellApp.exec_lines = ["import re", "%autoreload 2"]
+c.InteractiveShellApp.exec_lines = [
+    "import re",
+    "import csv",
+    "import json",
+    "%autoreload 2",
+]
