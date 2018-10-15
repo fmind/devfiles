@@ -58,7 +58,7 @@
 # GRAPHVIZ {{{
   - name: install graphviz
     package: name='graphviz'
-    tags: ['sys', 'graphviz']
+    tags: ['sys', 'graphviz', 'main']
     become: true
 # }}}
 # GOLANG {{{
@@ -145,7 +145,7 @@
 # PLANTUML {{{
   - name: install plantuml
     package: name='racket'
-    tags: ['sys', 'plantuml']
+    tags: ['sys', 'plantuml', 'main']
     become: true
 # }}}
 # PYTHON {{{
