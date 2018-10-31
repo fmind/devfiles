@@ -15,35 +15,35 @@
     become: true
 # }}}
 # CLOJURE {{{
-  - name: install clojure (lein)
+  - name: install clojure lein
     get_url: url="https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein" dest="/usr/local/bin/lein" mode=0755 owner=root group=root
-    tags: ['sys', 'clojure']
+    tags: ['sys', 'clojure', 'main']
     become: true
 
-  - name: install clojure (boot)
+  - name: install clojure boot
     get_url: url="https://github.com/boot-clj/boot-bin/releases/download/latest/boot.sh" dest="/usr/local/bin/boot" mode=0755 owner=root group=root
-    tags: ['sys', 'clojure']
+    tags: ['sys', 'clojure', 'main']
     become: true
 
-  - name: create lein dir
+  - name: create lein directory
     file: path='~/.lein/' state='directory'
-    tags: ['usr', 'clojure']
+    tags: ['usr', 'clojure', 'main']
 
-  - name: create boot dir
+  - name: create boot directory
     file: path='~/.boot/' state='directory'
-    tags: ['usr', 'clojure']
+    tags: ['usr', 'clojure', 'main']
 
-  - name: deploy lein conf
+  - name: deploy lein configuration
     file: src='{{playbook_dir}}/clojure/profiles.clj' dest='~/.lein/profiles.clj' state=link force=yes
-    tags: ['usr', 'clojure']
+    tags: ['usr', 'clojure', 'main']
 
-  - name: deploy boot conf
+  - name: deploy boot configuration
     file: src='{{playbook_dir}}/clojure/profile.boot' dest='~/.boot/profile.boot' state=link force=yes
-    tags: ['usr', 'clojure']
+    tags: ['usr', 'clojure', 'main']
 
-  - name: deploy boot prop
+  - name: deploy boot properties
     file: src='{{playbook_dir}}/clojure/boot.properties' dest='~/.boot/boot.properties' state=link force=yes
-    tags: ['usr', 'clojure']
+    tags: ['usr', 'clojure', 'main']
 # }}}
 # ELIXIR {{{
   - name: install elixir
@@ -94,7 +94,7 @@
 # JAVA {{{
   - name: install java
     package: name='default-jdk'
-    tags: ['sys', 'java']
+    tags: ['sys', 'java', 'main']
     become: true
 # }}}
 # JULIA {{{
