@@ -16,7 +16,7 @@
 # }}}
 # CLOJURE {{{
   - name: install clojure lein
-    get_url: url="https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein" dest="/usr/local/bin/lein" mode=0755 owner=root group=root
+    package: name='leiningen'
     tags: ['sys', 'clojure', 'main']
     become: true
 
