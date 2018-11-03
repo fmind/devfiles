@@ -91,7 +91,6 @@
   - name: deploy hylang kernel
     shell: python3 -m calysto_hy install --user
     tags: ['usr', 'hylang', 'main']
-
 # }}}
 # JAVA {{{
   - name: install java
@@ -210,17 +209,21 @@
 # RACKET {{{
   - name: enable racket
     apt_repository: repo='ppa:plt/racket'
-    tags: ['sys', 'racket']
+    tags: ['sys', 'racket', 'main']
     become: true
 
   - name: install racket
     package: name='racket'
-    tags: ['sys', 'racket']
+    tags: ['sys', 'racket', 'main']
     become: true
 
-  - name: deploy racket conf
-    file: src='{{playbook_dir}}/racket/racketrc' dest='~/.racketrc' state=link force=yes
-    tags: ['usr', 'racket']
+  - name: install racket kernel
+    shell: raco pkg install --batch iracket
+    tags: ['usr', 'racket', 'main']
+
+  - name: deploy racket kernel
+    shell: racket -l iracket/install
+    tags: ['usr', 'racket', 'main']
 # }}}
 # RLANG {{{
   - name: install rlang
