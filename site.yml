@@ -74,6 +74,25 @@
     file: src='{{playbook_dir}}/haskell/haskeline' dest='~/.haskeline' state=link force=yes
     tags: ['usr', 'haskell']
 # }}}
+# HYLANG {{{
+  - name: install hylang dependencies
+    package: name='python3-pip'
+    tags: ['sys', 'hylang', 'main']
+    become: true
+
+  - name: install hylang language
+    pip: name='hy' executable='pip3' extra_args='--user'
+    tags: ['usr', 'hylang', 'main']
+
+  - name: install hylang kernel
+    pip: name='calysto-hy' executable='pip3' extra_args='--user'
+    tags: ['usr', 'hylang', 'main']
+
+  - name: deploy hylang kernel
+    shell: python3 -m calysto_hy install --user
+    tags: ['usr', 'hylang', 'main']
+
+# }}}
 # JAVA {{{
   - name: install java
     package: name='default-jdk'
