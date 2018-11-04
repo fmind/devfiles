@@ -5,8 +5,8 @@ c.Completer.use_jedi = True
 c.TerminalIPythonApp.force_interact = True
 
 c.TerminalInteractiveShell.colors = "Linux"
-c.TerminalInteractiveShell.editing_mode = "vi"
 c.TerminalInteractiveShell.confirm_exit = False
+c.TerminalInteractiveShell.editing_mode = "emacs"
 
 c.InteractiveShellApp.extensions = ["autoreload"]
 

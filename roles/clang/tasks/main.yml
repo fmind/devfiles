@@ -1,0 +1,13 @@
+---
+
+- name: install package
+  package: name='build-essential'
+  become: true
+
+- name: install cmake
+  package: name='cmake'
+  become: true
+
+- name: install make
+  package: name='make'
+  become: true

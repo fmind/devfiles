@@ -1,0 +1,13 @@
+---
+
+- name: create directory
+  file: path='~/.lein/' state='directory'
+  tags: ['usr']
+
+- name: install manager
+  package: name='leiningen'
+  become: true
+
+- name: deploy config
+  file: src='files/profiles.clj' dest='~/.lein/profiles.clj' state=link force=yes
+  tags: ['usr']

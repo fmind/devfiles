@@ -1,0 +1,9 @@
+---
+
+- name: install package
+  package: name='r-base-core'
+  become: true
+
+- name: deploy config
+  file: src='files/Rprofile' dest='~/.Rprofile' state=link force=yes
+  tags: ['usr']

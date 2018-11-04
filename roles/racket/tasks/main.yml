@@ -1,0 +1,17 @@
+---
+
+- name: add repository
+  apt_repository: repo='ppa:plt/racket'
+  become: true
+
+- name: install package
+  package: name='racket'
+  become: true
+
+- name: install kernel
+  shell: raco pkg install --batch iracket
+  tags: ['usr']
+
+- name: deploy kernel
+  shell: racket -l iracket/install
+  tags: ['usr']

@@ -2,7 +2,7 @@ from ptpython.layout import CompletionVisualisation
 
 
 def configure(repl):
-    repl.vi_mode = True
+    repl.vi_mode = False
 
     repl.wrap_lines = True
     repl.paste_mode = False

@@ -1,0 +1,20 @@
+---
+
+- name: install package
+  package: name='texlive'
+  become: true
+
+- name: install librairies
+  package: name='{{item}}'
+  with_items:
+    - texlive-science
+    - texlive-pictures
+  become: true
+
+- name: install latexmk
+  package: name='latexmk'
+  become: true
+
+- name: deploy config
+  file: src='files/latexmkrc' dest='~/.latexmkrc' state='link' force=true
+  tags: ['usr']

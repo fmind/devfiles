@@ -1,0 +1,13 @@
+---
+
+- name: install package
+  package: name='nodejs'
+  become: true
+
+- name: install manager
+  package: name='npm'
+  become: true
+
+- name: deploy config
+  file: src='files/npmrc' dest='~/.npmrc' state=link force=yes
+  tags: ['usr']

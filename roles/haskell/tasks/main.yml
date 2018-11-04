@@ -1,0 +1,17 @@
+---
+
+- name: install package
+  package: name='haskell-stack'
+  become: true
+
+- name: create directory
+  file: path='~/.stack/' state='directory'
+  tags: ['usr']
+
+- name: deploy config
+  file: src='files/config.yaml' dest='~/.stack/config.yaml' state=link force=yes
+  tags: ['usr']
+
+- name: deploy input
+  file: src='files/haskeline' dest='~/.haskeline' state=link force=yes
+  tags: ['usr']

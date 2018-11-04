@@ -1,0 +1,14 @@
+---
+
+- name: create directory
+  file: path='~/.julia/config' state='directory'
+  tags: ['usr']
+
+- name: deploy config
+  file: src='files/startup.jl' dest='~/.julia/config/startup.jl' state=link force=yes
+  tags: ['usr']
+
+- name: install kernel
+  command: julia -e 'using Pkg; Pkg.add("IJulia")'
+  ignore_errors: true
+  tags: ['usr']

@@ -2,236 +2,26 @@
 
 - hosts: localhost
 
-  tasks:
-# CLANG {{{
-  - name: install clang
-    package: name='{{item}}'
-    with_items:
-      - llvm
-      - make
-      - cmake
-      - build-essential
-    tags: ['sys', 'clang', 'main']
-    become: true
-# }}}
-# CLOJURE {{{
-  - name: install clojure lein
-    package: name='leiningen'
-    tags: ['sys', 'clojure', 'main']
-    become: true
+  pre_tasks:
 
-  - name: create clojure directory
-    file: path='~/.lein/' state='directory'
-    tags: ['usr', 'clojure', 'main']
+  - name: create ~/bin directory
+    file: name='~/bin' state='directory'
+    tags: ['pre', 'directory']
 
-  - name: deploy clojure configuration
-    file: src='{{playbook_dir}}/clojure/profiles.clj' dest='~/.lein/profiles.clj' state=link force=yes
-    tags: ['usr', 'clojure', 'main']
-# }}}
-# ELIXIR {{{
-  - name: install elixir
-    package: name='elixir'
-    tags: ['sys', 'elixir']
-    become: true
-
-  - name: deploy elixir conf
-    file: src='{{playbook_dir}}/elixir/iex.exs' dest='~/.iex.exs' state=link force=yes
-    tags: ['usr', 'elixir']
-# }}}
-# GRAPHVIZ {{{
-  - name: install graphviz
-    package: name='graphviz'
-    tags: ['sys', 'graphviz', 'main']
-    become: true
-# }}}
-# GOLANG {{{
-  - name: install golang
-    package: name='golang'
-    tags: ['sys', 'golang']
-    become: true
-# }}}
-# GROOVY {{{
-  - name: install groovy
-    package: name='groovy'
-    tags: ['sys', 'groovy']
-    become: true
-# }}}
-# HASKELL {{{
-  - name: install haskell
-    package: name='haskell-stack'
-    tags: ['sys', 'haskell']
-    become: true
-
-  - name: create stack dir
-    file: path='~/.stack/' state='directory'
-    tags: ['usr', 'haskell']
-
-  - name: deploy stack conf
-    file: src='{{playbook_dir}}/haskell/config.yaml' dest='~/.stack/config.yaml' state=link force=yes
-    tags: ['usr', 'haskell']
-
-  - name: deploy haskeline conf
-    file: src='{{playbook_dir}}/haskell/haskeline' dest='~/.haskeline' state=link force=yes
-    tags: ['usr', 'haskell']
-# }}}
-# HYLANG {{{
-  - name: install hylang dependencies
-    package: name='python3-pip'
-    tags: ['sys', 'hylang', 'main']
-    become: true
-
-  - name: install hylang language
-    pip: name='hy' executable='pip3' extra_args='--user'
-    tags: ['usr', 'hylang', 'main']
-
-  - name: install hylang kernel
-    pip: name='calysto-hy' executable='pip3' extra_args='--user'
-    tags: ['usr', 'hylang', 'main']
-
-  - name: deploy hylang kernel
-    shell: python3 -m calysto_hy install --user
-    tags: ['usr', 'hylang', 'main']
-# }}}
-# JAVA {{{
-  - name: install java
-    package: name='default-jdk'
-    tags: ['sys', 'java', 'main']
-    become: true
-# }}}
-# JULIA {{{
-  - name: create julia dir
-    file: path='~/.julia/config' state='directory'
-    tags: ['usr', 'julia']
-
-  - name: install julia deps
-    command: julia -e 'using Pkg; Pkg.add("{{item}}")'
-    with_items:
-      - IJulia
-    ignore_errors: true
-    tags: ['usr', 'julia']
-
-  - name: deploy julia conf
-    file: src='{{playbook_dir}}/julia/startup.jl' dest='~/.julia/config/startup.jl' state=link force=yes
-    tags: ['usr', 'julia']
-# }}}
-# LATEX {{{
-  - name: install latex
-    package: name='{{item}}'
-    with_items:
-      - latexmk
-      - texlive
-      - texlive-science
-      - texlive-pictures
-    tags: ['sys', 'latex']
-    become: true
-
-  - name: deploy latexmk
-    file: src='{{playbook_dir}}/latex/latexmkrc' dest='~/.latexmkrc' state='link' force=true
-    tags: ['usr', 'latex']
-# }}}
-# NODEJS {{{
-  - name: install nodejs
-    package: name='{{item}}'
-    with_items:
-      - npm
-      - yarn
-      - nodejs
-    tags: ['sys', 'nodejs', 'main']
-    become: true
-
-  - name: deploy npm config
-    file: src='{{playbook_dir}}/nodejs/npmrc' dest='~/.npmrc' state=link force=yes
-    tags: ['usr', 'nodejs', 'main']
-# }}}
-# PLANTUML {{{
-  - name: install plantuml
-    package: name='racket'
-    tags: ['sys', 'plantuml', 'main']
-    become: true
-# }}}
-# PYTHON {{{
-  - name: install python
-    package: name='{{item}}'
-    with_items:
-      - python3
-      - python3-pip
-      - python3-zmq
-      - python3-venv
-    tags: ['sys', 'python', 'main']
-    become: true
-
-  - name: install python deps
-    package: name='{{item}}'
-    with_items:
-      - llvm
-      - make
-      - xz-utils
-      - zlib1g-dev
-      - libbz2-dev
-      - libffi-dev
-      - liblzma-dev
-      - libncurses5-dev
-      - libncursesw5-dev
-      - libpython-dev
-      - libpython3-dev
-      - libreadline-dev
-      - libsqlite3-dev
-      - libssl-dev
-    tags: ['sys', 'python', 'main']
-    become: true
-
-  - name: install pyenv
-    git: repo='https://github.com/pyenv/pyenv.git' dest='~/.pyenv' depth=1
-    tags: ['usr', 'python', 'main']
-
-  - name: install python tools
-    pip: name='{{item}}' executable='pip3' extra_args='--user'
-    with_items:
-      - ipdb
-      - jedi
-      - wheel
-      - twine
-      - ipython
-    tags: ['usr', 'python', 'main']
-
-  - name: deploy pypi conf
-    file: src='{{playbook_dir}}/python/pypirc' dest='~/.pypirc' state=link force=yes
-    tags: ['usr', 'python', 'main']
-
-  - name: create ipython dir
-    file: path='~/.ipython/profile_default/' state='directory'
-    tags: ['usr', 'python', 'main']
-
-  - name: deploy ipython conf
-    file: src='{{playbook_dir}}/python/ipython.py' dest='~/.ipython/profile_default/ipython_config.py' state=link force=yes
-    tags: ['usr', 'python', 'main']
-# }}}
-# RACKET {{{
-  - name: enable racket
-    apt_repository: repo='ppa:plt/racket'
-    tags: ['sys', 'racket', 'main']
-    become: true
-
-  - name: install racket
-    package: name='racket'
-    tags: ['sys', 'racket', 'main']
-    become: true
-
-  - name: install racket kernel
-    shell: raco pkg install --batch iracket
-    tags: ['usr', 'racket', 'main']
-
-  - name: deploy racket kernel
-    shell: racket -l iracket/install
-    tags: ['usr', 'racket', 'main']
-# }}}
-# RLANG {{{
-  - name: install rlang
-    package: name='r-base-core'
-    tags: ['sys', 'rlang']
-    become: true
-
-  - name: deploy rlang conf
-    file: src='{{playbook_dir}}/rlang/Rprofile' dest='~/.Rprofile' state=link force=yes
-    tags: ['usr', 'rlang']
-# }}}
+  roles:
+    - {role: clang, tags: ['clang', 'system', 'main']}
+    - {role: clojure, tags: ['clojure', 'function', 'main']}
+    - {role: elixir, tags: ['elixir', 'function']}
+    - {role: golang, tags: ['golang', 'system']}
+    - {role: graphviz, tags: ['graphviz', 'markup']}
+    - {role: groovy, tags: ['groovy', 'website']}
+    - {role: haskell, tags: ['haskell', 'function']}
+    - {role: hylang, tags: ['hylang', 'function', 'main']}
+    - {role: java, tags: ['java', 'system', 'main']}
+    - {role: julia, tags: ['julia', 'science']}
+    - {role: latex, tags: ['latex', 'markup']}
+    - {role: nodejs, tags: ['nodejs', 'website']}
+    - {role: plantuml, tags: ['plantuml', 'markup']}
+    - {role: python, tags: ['python', 'science', 'main']}
+    - {role: racket, tags: ['racket', 'function']}
+    - {role: rlang, tags: ['rlang', 'science']}

@@ -1,0 +1,9 @@
+---
+
+- name: install package
+  package: name='elixir'
+  become: true
+
+- name: deploy config
+  file: src='files/iex.exs' dest='~/.iex.exs' state=link force=yes
+  tags: ['usr']

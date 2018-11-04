@@ -1,0 +1,17 @@
+---
+
+- name: install manager
+  package: name='python3-pip'
+  become: true
+
+- name: install package
+  pip: name='hy' executable='pip3' extra_args='--user'
+  tags: ['usr']
+
+- name: install kernel
+  pip: name='calysto-hy' executable='pip3' extra_args='--user'
+  tags: ['usr']
+
+- name: deploy kernel
+  shell: python3 -m calysto_hy install --user
+  tags: ['usr']
