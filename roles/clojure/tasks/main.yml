@@ -9,5 +9,5 @@
   become: true
 
 - name: deploy config
-  file: src='files/profiles.clj' dest='~/.lein/profiles.clj' state=link force=yes
+  file: src='{{role_path}}/files/profiles.clj' dest='~/.lein/profiles.clj' state=link force=yes
   tags: ['usr']

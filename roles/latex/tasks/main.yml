@@ -16,5 +16,5 @@
   become: true
 
 - name: deploy config
-  file: src='files/latexmkrc' dest='~/.latexmkrc' state='link' force=true
+  file: src='{{role_path}}/files/latexmkrc' dest='~/.latexmkrc' state='link' force=true
   tags: ['usr']

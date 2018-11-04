@@ -48,7 +48,7 @@
   tags: ['usr']
 
 - name: deploy hosting
-  file: src='files/pypirc' dest='~/.pypirc' state=link force=yes
+  file: src='{{role_path}}/files/pypirc' dest='~/.pypirc' state=link force=yes
   tags: ['usr']
 
 - name: create directory
@@ -56,5 +56,5 @@
   tags: ['usr']
 
 - name: deploy config
-  file: src='files/ipython.py' dest='~/.ipython/profile_default/ipython_config.py' state=link force=yes
+  file: src='{{role_path}}/files/ipython.py' dest='~/.ipython/profile_default/ipython_config.py' state=link force=yes
   tags: ['usr']

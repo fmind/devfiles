@@ -5,7 +5,7 @@
   tags: ['usr']
 
 - name: deploy config
-  file: src='files/startup.jl' dest='~/.julia/config/startup.jl' state=link force=yes
+  file: src='{{role_path}}/files/startup.jl' dest='~/.julia/config/startup.jl' state=link force=yes
   tags: ['usr']
 
 - name: install kernel
