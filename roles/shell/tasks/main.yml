@@ -1,0 +1,6 @@
+---
+
+- name: install shellcheck
+  package: name='shellcheck'
+  ignore_errors: yes
+  become: true

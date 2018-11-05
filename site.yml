@@ -25,3 +25,4 @@
     - {role: python, tags: ['python', 'science', 'main']}
     - {role: racket, tags: ['racket', 'function']}
     - {role: rlang, tags: ['rlang', 'science']}
+    - {role: shell, tags: ['shell', 'system', 'main']}
