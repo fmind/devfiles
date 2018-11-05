@@ -20,7 +20,7 @@
     - {role: java, tags: ['java', 'system', 'main']}
     - {role: julia, tags: ['julia', 'science']}
     - {role: latex, tags: ['latex', 'markup']}
-    - {role: nodejs, tags: ['nodejs', 'website']}
+    - {role: nodejs, tags: ['nodejs', 'website', 'main']}
     - {role: plantuml, tags: ['plantuml', 'markup']}
     - {role: python, tags: ['python', 'science', 'main']}
     - {role: racket, tags: ['racket', 'function']}
