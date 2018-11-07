@@ -23,6 +23,6 @@
     - {role: nodejs, tags: ['nodejs', 'website', 'main']}
     - {role: plantuml, tags: ['plantuml', 'markup']}
     - {role: python, tags: ['python', 'science', 'main']}
-    - {role: racket, tags: ['racket', 'function']}
+    - {role: racket, tags: ['racket', 'function', 'main']}
     - {role: rlang, tags: ['rlang', 'science']}
     - {role: shell, tags: ['shell', 'system', 'main']}
