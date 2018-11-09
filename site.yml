@@ -9,20 +9,8 @@
     tags: ['pre', 'directory']
 
   roles:
-    - {role: clang, tags: ['clang', 'system', 'main']}
-    - {role: clojure, tags: ['clojure', 'function']}
-    - {role: elixir, tags: ['elixir', 'function']}
-    - {role: golang, tags: ['golang', 'system']}
-    - {role: graphviz, tags: ['graphviz', 'markup', 'main']}
-    - {role: groovy, tags: ['groovy', 'website']}
-    - {role: haskell, tags: ['haskell', 'function']}
-    - {role: hylang, tags: ['hylang', 'function']}
-    - {role: java, tags: ['java', 'system']}
-    - {role: julia, tags: ['julia', 'science']}
-    - {role: latex, tags: ['latex', 'markup', 'main']}
-    - {role: nodejs, tags: ['nodejs', 'website']}
-    - {role: plantuml, tags: ['plantuml', 'markup', 'main']}
-    - {role: python, tags: ['python', 'general', 'main']}
-    - {role: racket, tags: ['racket', 'function']}
-    - {role: rlang, tags: ['rlang', 'science']}
-    - {role: shell, tags: ['shell', 'system']}
+    - {role: clang, tags: ['clang', 'system']}
+    - {role: graphviz, tags: ['graphviz', 'markup']}
+    - {role: latex, tags: ['latex', 'markup']}
+    - {role: plantuml, tags: ['plantuml', 'markup']}
+    - {role: python, tags: ['python', 'script']}

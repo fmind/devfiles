@@ -39,7 +39,6 @@
 - name: install library
   pip: name='{{item}}' executable='pip3' extra_args='--user'
   with_items:
-    - jedi
     - ipdb
     - ipython
   tags: user
