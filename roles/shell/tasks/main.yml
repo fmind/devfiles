@@ -4,3 +4,4 @@
   package: name='shellcheck'
   ignore_errors: yes
   become: true
+  tags: admin

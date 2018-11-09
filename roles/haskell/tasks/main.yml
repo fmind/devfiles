@@ -3,15 +3,16 @@
 - name: install package
   package: name='haskell-stack'
   become: true
+  tags: admin
 
 - name: create directory
   file: path='~/.stack/' state='directory'
-  tags: ['usr']
+  tags: user
 
 - name: deploy config
   file: src='{{role_path}}/files/config.yaml' dest='~/.stack/config.yaml' state=link force=yes
-  tags: ['usr']
+  tags: user
 
 - name: deploy input
   file: src='{{role_path}}/files/haskeline' dest='~/.haskeline' state=link force=yes
-  tags: ['usr']
+  tags: user

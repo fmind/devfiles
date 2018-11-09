@@ -3,10 +3,6 @@
 - name: install dependencies
   package: name='{{item}}'
   with_items:
-    - llvm
-    - make
-    - xz-utils
-    - zlib1g-dev
     - libbz2-dev
     - libffi-dev
     - liblzma-dev
@@ -17,44 +13,49 @@
     - libreadline-dev
     - libsqlite3-dev
     - libssl-dev
+    - llvm
+    - make
     - python3-zmq
+    - xz-utils
+    - zlib1g-dev
   become: true
+  tags: admin
 
 - name: install package
   package: name='python3'
   become: true
+  tags: admin
 
 - name: install manager
-  package: name='{{item}}'
-  with_items:
-    - python3-pip
-    - python3-venv
+  package: name='python3-pip'
   become: true
+  tags: admin
 
-- name: install librairies
+- name: install sandbox
+  package: name='python3-venv'
+  become: true
+  tags: admin
+
+- name: install library
   pip: name='{{item}}' executable='pip3' extra_args='--user'
   with_items:
-    - ipdb
     - jedi
-    - wheel
-    - twine
+    - ipdb
     - ipython
-    - notebook
-    - jupyterlab
-  tags: ['usr']
+  tags: user
 
 - name: install version
   git: repo='https://github.com/pyenv/pyenv.git' dest='~/.pyenv' depth=1
-  tags: ['usr']
-
-- name: deploy hosting
-  file: src='{{role_path}}/files/pypirc' dest='~/.pypirc' state=link force=yes
-  tags: ['usr']
+  tags: user
 
 - name: create directory
   file: path='~/.ipython/profile_default/' state='directory'
-  tags: ['usr']
+  tags: user
+
+- name: deploy hosting
+  file: src='{{role_path}}/files/pypirc' dest='~/.pypirc' state=link force=yes
+  tags: user
 
 - name: deploy config
   file: src='{{role_path}}/files/ipython.py' dest='~/.ipython/profile_default/ipython_config.py' state=link force=yes
-  tags: ['usr']
+  tags: user

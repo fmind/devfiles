@@ -3,3 +3,4 @@
 - name: install package
   package: name='golang'
   become: true
+  tags: admin

@@ -3,3 +3,4 @@
 - name: install package
   package: name='graphviz'
   become: true
+  tags: admin

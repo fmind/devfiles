@@ -3,6 +3,7 @@
 - name: install package
   package: name='texlive'
   become: true
+  tags: admin
 
 - name: install librairies
   package: name='{{item}}'
@@ -10,11 +11,13 @@
     - texlive-science
     - texlive-pictures
   become: true
+  tags: admin
 
 - name: install latexmk
   package: name='latexmk'
   become: true
+  tags: admin
 
 - name: deploy config
   file: src='{{role_path}}/files/latexmkrc' dest='~/.latexmkrc' state='link' force=true
-  tags: ['usr']
+  tags: user

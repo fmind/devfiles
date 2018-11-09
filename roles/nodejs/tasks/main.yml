@@ -3,15 +3,13 @@
 - name: install package
   package: name='nodejs'
   become: true
+  tags: admin
 
 - name: install manager
   package: name='npm'
   become: true
+  tags: admin
 
 - name: deploy config
   file: src='{{role_path}}/files/npmrc' dest='~/.npmrc' state=link force=yes
-  tags: ['usr']
-
-- name: install clojurescript
-  npm: name='lumo-cljs' global='yes'
-  tags: ['usr']
+  tags: user

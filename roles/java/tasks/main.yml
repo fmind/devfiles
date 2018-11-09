@@ -3,3 +3,4 @@
 - name: install package
   package: name='default-jdk'
   become: true
+  tags: admin

@@ -10,19 +10,19 @@
 
   roles:
     - {role: clang, tags: ['clang', 'system', 'main']}
-    - {role: clojure, tags: ['clojure', 'function', 'main']}
+    - {role: clojure, tags: ['clojure', 'function']}
     - {role: elixir, tags: ['elixir', 'function']}
     - {role: golang, tags: ['golang', 'system']}
-    - {role: graphviz, tags: ['graphviz', 'markup']}
+    - {role: graphviz, tags: ['graphviz', 'markup', 'main']}
     - {role: groovy, tags: ['groovy', 'website']}
     - {role: haskell, tags: ['haskell', 'function']}
-    - {role: hylang, tags: ['hylang', 'function', 'main']}
-    - {role: java, tags: ['java', 'system', 'main']}
+    - {role: hylang, tags: ['hylang', 'function']}
+    - {role: java, tags: ['java', 'system']}
     - {role: julia, tags: ['julia', 'science']}
-    - {role: latex, tags: ['latex', 'markup']}
-    - {role: nodejs, tags: ['nodejs', 'website', 'main']}
-    - {role: plantuml, tags: ['plantuml', 'markup']}
-    - {role: python, tags: ['python', 'science', 'main']}
-    - {role: racket, tags: ['racket', 'function', 'main']}
+    - {role: latex, tags: ['latex', 'markup', 'main']}
+    - {role: nodejs, tags: ['nodejs', 'website']}
+    - {role: plantuml, tags: ['plantuml', 'markup', 'main']}
+    - {role: python, tags: ['python', 'general', 'main']}
+    - {role: racket, tags: ['racket', 'function']}
     - {role: rlang, tags: ['rlang', 'science']}
-    - {role: shell, tags: ['shell', 'system', 'main']}
+    - {role: shell, tags: ['shell', 'system']}

@@ -3,11 +3,9 @@
 - name: install package
   package: name='build-essential'
   become: true
+  tags: admin
 
 - name: install cmake
   package: name='cmake'
   become: true
-
-- name: install make
-  package: name='make'
-  become: true
+  tags: admin

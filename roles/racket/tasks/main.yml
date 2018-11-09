@@ -3,7 +3,9 @@
 - name: add repository
   apt_repository: repo='ppa:plt/racket'
   become: true
+  tags: admin
 
 - name: install package
   package: name='racket'
   become: true
+  tags: admin
