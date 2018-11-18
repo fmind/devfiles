@@ -8,8 +8,3 @@
 - name: deploy config
   file: src='{{role_path}}/files/startup.jl' dest='~/.julia/config/startup.jl' state=link force=yes
   tags: user
-
-- name: install kernel
-  command: julia -e 'using Pkg; Pkg.add("IJulia")'
-  ignore_errors: true
-  tags: user

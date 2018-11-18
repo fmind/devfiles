@@ -5,7 +5,7 @@
   become: true
   tags: admin
 
-- name: install librairies
+- name: install librairy
   package: name='{{item}}'
   with_items:
     - texlive-science

@@ -9,8 +9,12 @@
     tags: ['pre', 'directory']
 
   roles:
-    - {role: clang, tags: ['clang', 'system']}
-    - {role: graphviz, tags: ['graphviz', 'markup']}
-    - {role: latex, tags: ['latex', 'markup']}
-    - {role: plantuml, tags: ['plantuml', 'markup']}
-    - {role: python, tags: ['python', 'script']}
+    - {role: clang, tags: ['clang']}
+    - {role: clojure, tags: ['clojure']}
+    - {role: graphviz, tags: ['graphviz']}
+    - {role: hylang, tags: ['hylang']}
+    - {role: java, tags: ['java']}
+    - {role: latex, tags: ['latex']}
+    - {role: plantuml, tags: ['plantuml']}
+    - {role: python, tags: ['python']}
+    - {role: shell, tags: ['shell']}

@@ -8,11 +8,3 @@
 - name: install package
   pip: name='hy' executable='pip3' extra_args='--user'
   tags: user
-
-- name: install kernel
-  pip: name='calysto-hy' executable='pip3' extra_args='--user'
-  tags: user
-
-- name: deploy kernel
-  shell: python3 -m calysto_hy install --user
-  tags: user
