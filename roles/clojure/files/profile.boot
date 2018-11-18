@@ -1,5 +1,3 @@
 (task-options!
-  repl {
-    :eval '(set! *print-length* 1000)
-  }
+  repl {:eval '(set! *print-length* 1000)}
 )

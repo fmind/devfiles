@@ -17,4 +17,5 @@
     - {role: latex, tags: ['latex']}
     - {role: plantuml, tags: ['plantuml']}
     - {role: python, tags: ['python']}
+    - {role: racket, tags: ['racket']}
     - {role: shell, tags: ['shell']}
