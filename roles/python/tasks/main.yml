@@ -58,3 +58,7 @@
 - name: deploy config
   file: src='{{role_path}}/files/ipython.py' dest='~/.ipython/profile_default/ipython_config.py' state=link force=yes
   tags: user
+
+- name: deploy typing
+  file: src='{{role_path}}/files/mypy.ini' dest='~/.mypy.ini' state=link force=yes
+  tags: user
