@@ -19,3 +19,4 @@
     - {role: python, tags: ['python']}
     - {role: racket, tags: ['racket']}
     - {role: shell, tags: ['shell']}
+    - {role: text, tags: ['text']}

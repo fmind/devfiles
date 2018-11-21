@@ -13,6 +13,14 @@
   become: true
   tags: admin
 
+- name: install checkers
+  package: name='{{item}}'
+  with_items:
+    - chktex
+    - lacheck
+  become: true
+  tags: admin
+
 - name: install latexmk
   package: name='latexmk'
   become: true
