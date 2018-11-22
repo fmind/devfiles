@@ -26,6 +26,11 @@
   become: true
   tags: admin
 
+- name: install biber
+  package: name='biber'
+  become: true
+  tags: admin
+
 - name: deploy config
   file: src='{{role_path}}/files/latexmkrc' dest='~/.latexmkrc' state='link' force=true
   tags: user
