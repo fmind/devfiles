@@ -5,8 +5,8 @@ c.InteractiveShellApp.extensions = [
 ]
 
 c.InteractiveShellApp.exec_lines = [
-    "%autoreload 2",
     "from importlib import reload",
+    "%autoreload 2",
 ]
 
 c.TerminalInteractiveShell.confirm_exit = False
