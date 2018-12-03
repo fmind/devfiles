@@ -39,7 +39,7 @@
 - name: install library
   pip: name='{{item}}' executable='pip3' extra_args='--user'
   with_items:
-    - ipydb
+    - ipdb
     - ipython
     - jupyter
     - jupyterlab
