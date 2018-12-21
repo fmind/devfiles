@@ -5,5 +5,5 @@ templates:
   params:
     github-username: fmind
     author-name: Médéric Hurier
-    author-email: dev@fmind.me
+    author-email: fmind@fmind.me
     copyright: 'Copyright (c) 2018 Médéric Hurier'
