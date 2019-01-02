@@ -23,14 +23,6 @@
   become: true
   tags: admin
 
-- name: install checkers
-  package: name='{{item}}'
-  with_items:
-    - chktex
-    - lacheck
-  become: true
-  tags: admin
-
 - name: deploy config
   file: src='{{role_path}}/files/latexmkrc' dest='~/.latexmkrc' state='link' force=true
   tags: user
