@@ -5,7 +5,7 @@
   become: true
   tags: admin
 
-- name: install librairy
+- name: install library
   package: name='{{item}}'
   with_items:
     - texlive-science
@@ -13,11 +13,8 @@
   become: true
   tags: admin
 
-- name: install checkers
-  package: name='{{item}}'
-  with_items:
-    - chktex
-    - lacheck
+- name: install biber
+  package: name='biber'
   become: true
   tags: admin
 
@@ -26,8 +23,11 @@
   become: true
   tags: admin
 
-- name: install biber
-  package: name='biber'
+- name: install checkers
+  package: name='{{item}}'
+  with_items:
+    - chktex
+    - lacheck
   become: true
   tags: admin
 

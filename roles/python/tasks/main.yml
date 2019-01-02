@@ -49,12 +49,12 @@
   git: repo='https://github.com/pyenv/pyenv.git' dest='~/.pyenv' depth=1
   tags: user
 
-- name: create directory
-  file: path='~/.ipython/profile_default/' state='directory'
-  tags: user
-
 - name: deploy hosting
   file: src='{{role_path}}/files/pypirc' dest='~/.pypirc' state=link force=yes
+  tags: user
+
+- name: create directory
+  file: path='~/.ipython/profile_default/' state='directory'
   tags: user
 
 - name: deploy config

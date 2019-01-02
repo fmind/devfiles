@@ -6,7 +6,8 @@ c.InteractiveShellApp.extensions = [
 
 c.InteractiveShellApp.exec_lines = [
     "%autoreload 2",
-    "from IPython.lib import deepreload as rl",
+    "from IPython.lib import reload as R",
+    "from IPython.lib import deepreload as DR",
 ]
 
 c.TerminalIPythonApp.force_interact = True
