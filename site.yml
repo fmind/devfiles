@@ -11,6 +11,7 @@
   roles:
     - {role: clang, tags: ['clang']}
     - {role: graphviz, tags: ['graphviz']}
+    - {role: latex, tags: ['latex']}
     - {role: plantuml, tags: ['plantuml']}
     - {role: python, tags: ['python']}
     - {role: shell, tags: ['shell']}
