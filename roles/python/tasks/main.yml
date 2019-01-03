@@ -36,6 +36,10 @@
   become: true
   tags: admin
 
+- name: create directory
+  file: path='~/.ipython/profile_default/' state='directory'
+  tags: user
+
 - name: install library
   pip: name='{{item}}' executable='pip3' extra_args='--user'
   with_items:
@@ -51,10 +55,6 @@
 
 - name: deploy hosting
   file: src='{{role_path}}/files/pypirc' dest='~/.pypirc' state=link force=yes
-  tags: user
-
-- name: create directory
-  file: path='~/.ipython/profile_default/' state='directory'
   tags: user
 
 - name: deploy config

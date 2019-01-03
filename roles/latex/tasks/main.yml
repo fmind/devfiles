@@ -13,18 +13,13 @@
   become: true
   tags: admin
 
-- name: install biber
-  package: name='biber'
+- name: install latexmk
+  package: name='latexmk'
   become: true
   tags: admin
 
 - name: install chktex
   package: name='chktex'
-  become: true
-  tags: admin
-
-- name: install latexmk
-  package: name='latexmk'
   become: true
   tags: admin
 
