@@ -12,5 +12,6 @@
     - {role: cuda, tags: ['cuda']}
     - {role: clang, tags: ['clang']}
     - {role: latex, tags: ['latex']}
+    - {role: nim, tags: ['nim']}
     - {role: prose, tags: ['prose']}
     - {role: python, tags: ['python']}
