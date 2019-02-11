@@ -9,3 +9,7 @@
   package: name='racket'
   become: true
   tags: admin
+
+- name: deploy config
+  file: src='{{role_path}}/files/racketrc' dest='~/.racketrc' state=link force=yes
+  tags: user
