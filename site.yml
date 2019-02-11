@@ -12,4 +12,3 @@
     - {role: clang, tags: ['clang']}
     - {role: latex, tags: ['latex']}
     - {role: python, tags: ['python']}
-    - {role: racket, tags: ['racket']}
