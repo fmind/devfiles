@@ -11,4 +11,5 @@
   roles:
     - {role: clang, tags: ['clang']}
     - {role: latex, tags: ['latex']}
+    - {role: nodejs, tags: ['nodejs']}
     - {role: python, tags: ['python']}
