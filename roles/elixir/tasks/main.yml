@@ -1,10 +1,10 @@
 ---
 
-- name: install package
+- name: language
   package: name='elixir'
   become: true
   tags: admin
 
-- name: deploy config
+- name: config
   file: src='{{role_path}}/files/iex.exs' dest='~/.iex.exs' state=link force=yes
   tags: user

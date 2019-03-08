@@ -1,11 +1,11 @@
 ---
 
-- name: install package
+- name: language
   package: name='texlive'
   become: true
   tags: admin
 
-- name: install library
+- name: libraries
   package: name='{{item}}'
   with_items:
     - texlive-science
@@ -13,16 +13,16 @@
   become: true
   tags: admin
 
-- name: install latexmk
+- name: maker
   package: name='latexmk'
   become: true
   tags: admin
 
-- name: install chktex
+- name: linter
   package: name='chktex'
   become: true
   tags: admin
 
-- name: deploy config
+- name: config
   file: src='{{role_path}}/files/latexmkrc' dest='~/.latexmkrc' state='link' force=true
   tags: user

@@ -1,11 +1,6 @@
 ---
 
-- name: install package
+- name: language
   package: name='nim'
-  become: true
-  tags: admin
-
-- name: install documentation
-  package: name='nim-doc'
   become: true
   tags: admin

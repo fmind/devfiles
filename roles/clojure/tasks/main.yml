@@ -1,14 +1,14 @@
 ---
 
-- name: install manager
+- name: maker
   package: name='leiningen'
   become: true
   tags: admin
 
-- name: create directory
+- name: directory
   file: path='~/.lein/' state='directory'
   tags: user
 
-- name: deploy config
+- name: config
   file: src='{{role_path}}/files/profiles.clj' dest='~/.lein/profiles.clj' state=link force=yes
   tags: user

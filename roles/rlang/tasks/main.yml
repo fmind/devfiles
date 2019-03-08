@@ -1,10 +1,10 @@
 ---
 
-- name: install package
+- name: language
   package: name='r-base-core'
   become: true
   tags: admin
 
-- name: deploy config
+- name: config
   file: src='{{role_path}}/files/Rprofile' dest='~/.Rprofile' state=link force=yes
   tags: user

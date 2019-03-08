@@ -1,15 +1,15 @@
 ---
 
-- name: add repository
+- name: repository
   apt_repository: repo='ppa:plt/racket'
   become: true
   tags: admin
 
-- name: install package
+- name: language
   package: name='racket'
   become: true
   tags: admin
 
-- name: deploy config
+- name: config
   file: src='{{role_path}}/files/racketrc' dest='~/.racketrc' state=link force=yes
   tags: user

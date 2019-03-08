@@ -1,6 +1,6 @@
 ---
 
-- name: install package
+- name: language
   package: name='golang'
   become: true
   tags: admin

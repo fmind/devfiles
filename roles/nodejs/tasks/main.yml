@@ -1,15 +1,15 @@
 ---
 
-- name: install package
+- name: language
   package: name='nodejs'
   become: true
   tags: admin
 
-- name: install manager
+- name: manager
   package: name='npm'
   become: true
   tags: admin
 
-- name: deploy config
+- name: config
   file: src='{{role_path}}/files/npmrc' dest='~/.npmrc' state=link force=yes
   tags: user

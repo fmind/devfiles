@@ -1,16 +1,16 @@
 ---
 
-- name: install keyring
+- name: keyring
   apt_key: url='https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub'
   become: true
   tags: admin
 
-- name: add repository
+- name: repository
   apt_repository: repo='deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64 /' filename='cuda'
   become: true
   tags: admin
 
-- name: install language
+- name: language
   package: name='cuda'
   become: true
   tags: admin

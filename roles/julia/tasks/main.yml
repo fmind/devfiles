@@ -1,10 +1,10 @@
 ---
 
-- name: create directory
+- name: directory
   file: path='~/.julia/config' state='directory'
   tags: user
   tags: admin
 
-- name: deploy config
+- name: config
   file: src='{{role_path}}/files/startup.jl' dest='~/.julia/config/startup.jl' state=link force=yes
   tags: user

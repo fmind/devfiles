@@ -1,36 +1,36 @@
 ---
 
-- name: install keyring
+- name: keyring
   apt_key: id='0xEBCF975E5BA24D5E' keyserver='keyserver.ubuntu.com'
   become: true
   tags: admin
 
-- name: add repository
+- name: repository
   apt_repository: repo='deb https://sourceforge.net/projects/d-apt/files/ d-apt main'
   become: true
   tags: admin
 
-- name: install language
+- name: language
   package: name='dmd-compiler'
   become: true
   tags: admin
 
-- name: install formatter
+- name: formatter
   package: name='dfmt'
   become: true
   tags: admin
 
-- name: install manager
+- name: manager
   package: name='dub'
   become: true
   tags: admin
 
-- name: install scanner
+- name: scanner
   package: name='dscanner'
   become: true
   tags: admin
 
-- name: install fixer
+- name: fixer
   package: name='dfix'
   become: true
   tags: admin

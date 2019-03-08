@@ -1,46 +1,25 @@
 ---
 
-- name: install dependencies
-  package: name='{{item}}'
-  with_items:
-    - libbz2-dev
-    - libffi-dev
-    - liblzma-dev
-    - libncurses5-dev
-    - libncursesw5-dev
-    - libpython-dev
-    - libpython3-dev
-    - libreadline-dev
-    - libsqlite3-dev
-    - libssl-dev
-    - llvm
-    - make
-    - python3-zmq
-    - xz-utils
-    - zlib1g-dev
-  become: true
-  tags: admin
-
-- name: install package
+- name: language
   package: name='python3'
   become: true
   tags: admin
 
-- name: install manager
+- name: manager
   package: name='python3-pip'
   become: true
   tags: admin
 
-- name: install sandbox
+- name: sandbox
   package: name='python3-venv'
   become: true
   tags: admin
 
-- name: create directory
+- name: directory
   file: path='~/.ipython/profile_default/' state='directory'
   tags: user
 
-- name: install library
+- name: tools
   pip: name='{{item}}' executable='pip3' extra_args='--user'
   with_items:
     - ipdb
@@ -50,14 +29,10 @@
     - rope
   tags: user
 
-- name: install version
-  git: repo='https://github.com/pyenv/pyenv.git' dest='~/.pyenv' depth=1
-  tags: user
-
-- name: deploy hosting
+- name: hosting
   file: src='{{role_path}}/files/pypirc' dest='~/.pypirc' state=link force=yes
   tags: user
 
-- name: deploy config
+- name: config
   file: src='{{role_path}}/files/ipython.py' dest='~/.ipython/profile_default/ipython_config.py' state=link force=yes
   tags: user

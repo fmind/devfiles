@@ -1,6 +1,6 @@
 ---
 
-- name: install linter
+- name: linter
   package: name='shellcheck'
   become: true
   tags: admin
