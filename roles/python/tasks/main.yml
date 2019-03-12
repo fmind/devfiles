@@ -18,13 +18,8 @@
 - name: tools
   pip: name='{{item}}' executable='pip3' extra_args='--user'
   with_items:
-    - black
-    - jedi
-    - jupyterlab
-    - mypy
     - ptpython
-    - pylint
-    - rope
+    - jupyterlab
   tags: user
 
 - name: hosting
