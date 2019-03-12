@@ -1,6 +1,6 @@
 ---
 
-- name: maker
+- name: language
   package: name='leiningen'
   become: true
   tags: admin

@@ -15,17 +15,15 @@
   become: true
   tags: admin
 
-- name: directory
-  file: path='~/.ipython/profile_default/' state='directory'
-  tags: user
-
 - name: tools
   pip: name='{{item}}' executable='pip3' extra_args='--user'
   with_items:
-    - ipdb
-    - ipython
-    - jupyter
+    - black
+    - jedi
     - jupyterlab
+    - mypy
+    - ptpython
+    - pylint
     - rope
   tags: user
 
@@ -33,6 +31,10 @@
   file: src='{{role_path}}/files/pypirc' dest='~/.pypirc' state=link force=yes
   tags: user
 
+- name: directory
+  file: path='~/.ptpython/' state='directory'
+  tags: user
+
 - name: config
-  file: src='{{role_path}}/files/ipython.py' dest='~/.ipython/profile_default/ipython_config.py' state=link force=yes
+  file: src='{{role_path}}/files/ptpython.py' dest='~/.ptpython/config.py' state=link force=yes
   tags: user

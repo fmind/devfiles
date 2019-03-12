@@ -25,7 +25,7 @@
   become: true
   tags: admin
 
-- name: scanner
+- name: linter
   package: name='dscanner'
   become: true
   tags: admin
