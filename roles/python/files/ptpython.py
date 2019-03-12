@@ -29,5 +29,5 @@ def configure(repl):
 
     repl.use_code_colorscheme("monokai")
 
-    repl.vi_mode = False
+    repl.vi_mode = True
     repl.wrap_lines = True
