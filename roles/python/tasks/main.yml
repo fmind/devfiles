@@ -15,23 +15,38 @@
   become: true
   tags: admin
 
-- name: tools
-  pip: name='{{item}}' executable='pip3' extra_args='--user'
-  with_items:
-    - invoke
-    - ptpython
-    - jupyterlab
-    - trypackage
+- name: maker
+  pip: name='invoke' executable='pip3' extra_args='--user'
   tags: user
 
-- name: hosting
-  file: src='{{role_path}}/files/pypirc' dest='~/.pypirc' state=link force=yes
+- name: linter
+  pip: name='pylint' executable='pip3' extra_args='--user'
+  tags: user
+
+- name: checker
+  pip: name='mypy' executable='pip3' extra_args='--user'
+  tags: user
+
+- name: formatter
+  pip: name='black' executable='pip3' extra_args='--user'
   tags: user
 
 - name: directory
   file: path='~/.ptpython/' state='directory'
   tags: user
 
+- name: hosting
+  file: src='{{role_path}}/files/pypirc' dest='~/.pypirc' state=link force=yes
+  tags: user
+
 - name: config
   file: src='{{role_path}}/files/ptpython.py' dest='~/.ptpython/config.py' state=link force=yes
+  tags: user
+
+- name: input
+  pip: name='ptpython' executable='pip3' extra_args='--user'
+  tags: user
+
+- name: editor
+  pip: name='jupyterlab' executable='pip3' extra_args='--user'
   tags: user
