@@ -19,6 +19,10 @@
   pip: name='invoke' executable='pip3' extra_args='--user'
   tags: user
 
+- name: sorter
+  pip: name='isort' executable='pip3' extra_args='--user'
+  tags: user
+
 - name: linter
   pip: name='pylint' executable='pip3' extra_args='--user'
   tags: user
