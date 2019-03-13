@@ -1,7 +1,7 @@
 ---
 
 - name: language
-  package: name='python3'
+  package: name='python3-dev'
   become: true
   tags: admin
 
