@@ -35,10 +35,6 @@
   pip: name='black' executable='pip3' extra_args='--user'
   tags: user
 
-- name: completion
-  pip: name='jedi' executable='pip3' extra_args='--user'
-  tags: user
-
 - name: directory
   file: path='~/.ptpython/' state='directory'
   tags: user
