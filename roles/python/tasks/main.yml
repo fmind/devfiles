@@ -52,9 +52,5 @@
   tags: user
 
 - name: editors
-  pip: name='{{item}}' executable='pip3' extra_args='--user'
-  with_items:
-      - notebook
-      - jupytext
-      - jupyterlab
+  pip: name='jupyterlab' executable='pip3' extra_args='--user'
   tags: user
