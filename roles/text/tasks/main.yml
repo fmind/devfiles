@@ -1,10 +1,5 @@
 ---
 
-- name: thesaurus
-  get_url: url='https://raw.githubusercontent.com/words/moby/master/words.txt' dest='/usr/share/dict/theses' owner='root' group='root' mode='0644' 
-  become: true
-  tags: admin
-
 - name: languages
   package: name='{{item}}'
   with_items:
