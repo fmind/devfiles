@@ -1,0 +1,39 @@
+{
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.lineNumbers": "relative",
+    "editor.minimap.enabled": false,
+    "files.autoSave": "afterDelay",
+    "latex-workshop.chktex.enabled": true,
+    "python.linting.banditEnabled": true,
+    "python.linting.mypyEnabled": true,
+    "python.linting.pydocstyleEnabled": true,
+    "python.unitTest.pyTestEnabled": true,
+    "vim.camelCaseMotion.enable": true,
+    "vim.easymotion": true,
+    "vim.foldfix": true,
+    "vim.highlightedyank.enable": true,
+    "vim.leader": "<enter>",
+    "vim.sneak": true,
+    "vim.useSystemClipboard": true,
+    "workbench.colorTheme": "Default Light+",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<space>"
+            ],
+            "after": [
+                ":"
+            ]
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<space>"
+            ],
+            "after": [
+                ":"
+            ]
+        }
+    ]
+}

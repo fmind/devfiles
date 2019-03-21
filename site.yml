@@ -11,6 +11,7 @@
   roles:
     - {role: clang, tags: ['clang']}
     - {role: code, tags: ['code']}
-    - {role: gcp, tags: ['gcp']}
+    - {role: google, tags: ['google']}
+    - {role: jupyterlab, tags: ['jupyterlab']}
     - {role: python, tags: ['python']}
     - {role: typescript, tags: ['typescript']}
