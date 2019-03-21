@@ -10,6 +10,7 @@
 
   roles:
     - {role: clang, tags: ['clang']}
+    - {role: golang, tags: ['golang']}
     - {role: nodejs, tags: ['nodejs']}
     - {role: python, tags: ['python']}
     - {role: text, tags: ['text']}

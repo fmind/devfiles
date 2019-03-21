@@ -5,10 +5,7 @@
   become: true
   tags: admin
 
-- name: makers
-  package: name='{{item}}'
-  with_items:
-      - make
-      - cmake
+- name: maker
+  package: name='cmake'
   become: true
   tags: admin

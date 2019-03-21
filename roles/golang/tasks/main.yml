@@ -4,3 +4,7 @@
   package: name='golang'
   become: true
   tags: admin
+
+- name: create ~/go directory
+  file: name='~/go' state='directory'
+  tags: user
