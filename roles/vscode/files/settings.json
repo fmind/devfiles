@@ -1,9 +1,13 @@
 {
     "editor.acceptSuggestionOnEnter": "off",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
     "editor.lineNumbers": "relative",
     "editor.minimap.enabled": false,
     "files.autoSave": "afterDelay",
     "latex-workshop.chktex.enabled": true,
+    "python.dataScience.changeDirOnImportExport": false,
+    "python.dataScience.sendSelectionToInteractiveWindow": true,
     "python.linting.banditEnabled": true,
     "python.linting.mypyEnabled": true,
     "python.linting.pydocstyleEnabled": true,
