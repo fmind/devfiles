@@ -1,0 +1,32 @@
+---
+
+- name: keyring
+  apt_key: url='https://packages.microsoft.com/keys/microsoft.asc'
+  become: true
+  tags: admin
+
+- name: repository
+  apt_repository: repo='deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main' filename='vscode'
+  become: true
+  tags: admin
+
+- name: package
+  package: name='code'
+  become: true
+  tags: admin
+
+- name: directory
+  file: name='~/.config/Code/User' state='directory'
+  tags: user
+
+- name: snippets
+  file: src='{{role_path}}/files/snippets' dest='~/.config/Code/User/snippets' state=link force=yes
+  tags: user
+
+- name: settings
+  file: src='{{role_path}}/files/settings.json' dest='~/.config/Code/User/settings.json' state=link force=yes
+  tags: user
+
+- name: keybindings
+  file: src='{{role_path}}/files/keybindings.json' dest='~/.config/Code/User/keybindings.json' state=link force=yes
+  tags: user
