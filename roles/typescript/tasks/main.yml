@@ -1,12 +1,17 @@
 ---
 
-- name: language
+- name: sandbox
   package: name='nodejs'
   become: true
   tags: admin
 
 - name: manager
   package: name='npm'
+  become: true
+  tags: admin
+
+- name: language
+  npm: name='typescript' global=yes
   become: true
   tags: admin
 

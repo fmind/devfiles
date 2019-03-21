@@ -10,6 +10,5 @@
 
   roles:
     - {role: clang, tags: ['clang']}
-    - {role: nodejs, tags: ['nodejs']}
     - {role: python, tags: ['python']}
-    - {role: text, tags: ['text']}
+    - {role: typescript, tags: ['typescript']}
