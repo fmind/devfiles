@@ -9,6 +9,7 @@
     tags: ['pre', 'directory']
 
   roles:
+    - {role: gcp, tags: ['gcp']}
     - {role: clang, tags: ['clang']}
     - {role: python, tags: ['python']}
     - {role: typescript, tags: ['typescript']}
