@@ -11,7 +11,7 @@
   tags: admin
 
 - name: language
-  npm: name='typescript' global=yes
+  package: name='node-typescript'
   become: true
   tags: admin
 
