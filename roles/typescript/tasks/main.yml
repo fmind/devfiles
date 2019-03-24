@@ -1,5 +1,10 @@
 ---
 
+- name: language
+  package: name='node-typescript'
+  become: true
+  tags: admin
+
 - name: sandbox
   package: name='nodejs'
   become: true
@@ -10,11 +15,7 @@
   become: true
   tags: admin
 
-- name: language
-  package: name='node-typescript'
+- name: input
+  npm: name='ts-node' global=yes
   become: true
   tags: admin
-
-- name: config
-  file: src='{{role_path}}/files/npmrc' dest='~/.npmrc' state=link force=yes
-  tags: user
