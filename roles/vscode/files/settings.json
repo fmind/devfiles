@@ -41,5 +41,8 @@
         }
     ],
     "vim.useCtrlKeys": false,
-    "explorer.confirmDelete": false
+    "explorer.confirmDelete": false,
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.intellisense.package.enabled": true,
+    "latex-workshop.intellisense.unimathsymbols.enabled": true
 }
