@@ -5,6 +5,6 @@
   become: true
   tags: admin
 
-- name: create ~/go directory
+- name: directory
   file: name='~/go' state='directory'
   tags: user

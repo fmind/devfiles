@@ -4,14 +4,29 @@
 
   pre_tasks:
 
-  - name: create ~/bin directory
+  - name: prepare npm
+    package: name='npm'
+    become: true
+
+  - name: prepare pip
+    package: name='python3-pip'
+    become: true
+
+  - name: prepare bin
     file: name='~/bin' state='directory'
-    tags: ['pre', 'directory']
 
   roles:
-    - {role: clang, tags: ['clang']}
-    - {role: google, tags: ['google']}
-    - {role: jupyterlab, tags: ['jupyterlab']}
-    - {role: python, tags: ['python']}
-    - {role: typescript, tags: ['typescript']}
-    - {role: vscode, tags: ['vscode']}
+    # cloud
+    - {role: google, tags: ['google', 'cloud']}
+    # editor
+    - {role: jupyter, tags: ['jupyter', 'editor']}
+    - {role: vscode, tags: ['vscode', 'editor']}
+    # markup
+    - {role: graphviz, tags: ['graphviz', 'markup']}
+    - {role: plantuml, tags: ['plantuml', 'markup']}
+    - {role: texlive, tags: ['texlive', 'markup']}
+    - {role: text, tags: ['text', 'markup']}
+    # language
+    - {role: clang, tags: ['clang', 'language']}
+    - {role: python, tags: ['python', 'language']}
+    - {role: typescript, tags: ['typescript', 'language']}

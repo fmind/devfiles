@@ -1,11 +1,6 @@
 ---
 
 - name: language
-  package: name='node-typescript'
-  become: true
-  tags: admin
-
-- name: sandbox
   package: name='nodejs'
   become: true
   tags: admin
@@ -15,7 +10,7 @@
   become: true
   tags: admin
 
-- name: input
-  npm: name='ts-node' global=yes
+- name: maker
+  package: name='gulp'
   become: true
   tags: admin
