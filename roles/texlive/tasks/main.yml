@@ -10,6 +10,7 @@
   with_items:
     - texlive-science
     - texlive-pictures
+    - texlive-extra-utils
   become: true
   tags: admin
 
