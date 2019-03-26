@@ -27,6 +27,9 @@
     - {role: texlive, tags: ['texlive', 'markup']}
     - {role: text, tags: ['text', 'markup']}
     # language
+    - {role: java, tags: ['java', 'language']}
     - {role: clang, tags: ['clang', 'language']}
+    - {role: groovy, tags: ['groovy', 'language']}
     - {role: python, tags: ['python', 'language']}
+    - {role: javascript, tags: ['javascript', 'language']}
     - {role: typescript, tags: ['typescript', 'language']}

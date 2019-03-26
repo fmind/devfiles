@@ -1,0 +1,16 @@
+---
+
+- name: language
+  package: name='nodejs'
+  become: true
+  tags: admin
+
+- name: manager
+  package: name='npm'
+  become: true
+  tags: admin
+
+- name: maker
+  package: name='gulp'
+  become: true
+  tags: admin
