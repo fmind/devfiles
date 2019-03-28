@@ -1,7 +1,7 @@
 ;; -*- mode: emacs-lisp -*-
 
 (defun dotspacemacs/layers ()
-  "Configuration Layers declaration."
+  "Configuration layers declaration."
   (setq-default
    ;; Base distribution to use. This is a layer contained in the directory
    ;; `+distribution'. For now available distributions are `spacemacs-base'
@@ -32,8 +32,8 @@
                       auto-completion-enable-help-tooltip t
                       auto-completion-enable-sort-by-usage t
                       ;; keys
-                      auto-completion-tab-key-behavior 'complete
                       auto-completion-return-key-behavior nil
+                      auto-completion-tab-key-behavior 'complete
                       ;; snippets
                       auto-completion-enable-snippets-in-popup t
                       auto-completion-private-snippets-directory "~/.spacemacs.d/snippets")
@@ -131,9 +131,9 @@
    ;; section of the documentation for details on available variables.
    ;; (default 'vim)
    dotspacemacs-editing-style '(hybrid :variables
-                                hybrid-mode-enable-evilified-state t
-                                hybrid-mode-enable-hjkl-bindings t
-                                hybrid-mode-default-state 'normal)
+                                       hybrid-mode-default-state 'normal
+                                       hybrid-mode-enable-hjkl-bindings t
+                                       hybrid-mode-enable-evilified-state t)
    ;; If non nil output loading progress in `*Messages*' buffer. (default nil)
    dotspacemacs-verbose-loading nil
    ;; Specify the startup banner. Default value is `official', it displays
@@ -342,9 +342,9 @@
   ;; emacs
   (setq scroll-margin 10)
   (fset 'yes-or-no-p 'y-or-n-p)
+  (spacemacs/set-leader-keys "\"" 'ielm)
   (remove-hook 'emacs-lisp-mode-hook 'auto-compile-mode)
   (add-hook 'focus-out-hook (lambda () (save-some-buffers t)))
-  (spacemacs/set-leader-keys "\"" 'ielm)
   ;; evil
   (define-key evil-normal-state-map "s" 'evil-snipe-s)
   (define-key evil-normal-state-map "S" 'evil-snipe-S)
@@ -395,6 +395,7 @@
   ;; yasnippet
   (spacemacs/set-leader-keys "ir" 'yas-reload-all)
   (spacemacs/set-leader-keys "is" 'yas/visit-snippet-file))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -403,6 +404,7 @@
  '(package-selected-packages
    (quote
     (atomic-chrome websocket ranger helm-gtags gmail-message-mode ham-mode html-to-markdown ggtags flymd evil-nerd-commenter edit-server yapfify yaml-mode xterm-color ws-butler writegood-mode winum which-key web-mode volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package unfill toc-org tagedit systemd stickyfunc-enhance srefactor sql-indent spaceline smeargle slime-company slim-mode shell-pop scss-mode sass-mode restclient-helm restart-emacs rainbow-delimiters racket-mode pyvenv pytest pyenv-mode py-isort pug-mode popwin plantuml-mode pip-requirements persp-mode pcre2el paradox ox-reveal ox-gfm orgit org-ref org-projectile org-present org-pomodoro org-mime org-download org-bullets open-junk-file ob-restclient ob-http nginx-mode neotree mwim multi-term move-text monokai-theme mmm-mode markdown-toc magit-gitflow lorem-ipsum live-py-mode linum-relative link-hint less-css-mode jinja2-mode indent-guide hy-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag graphviz-dot-mode google-translate golden-ratio gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gh-md fuzzy flyspell-correct-helm flycheck-pos-tip flx-ido fill-column-indicator fasd fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-snipe evil-search-highlight-persist evil-numbers evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-commentary evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help engine-mode emmet-mode elisp-slime-nav ein dumb-jump diminish diff-hl deft define-word dactyl-mode cython-mode csv-mode company-web company-statistics company-restclient company-quickhelp company-auctex company-ansible company-anaconda common-lisp-snippets command-log-mode column-enforce-mode clean-aindent-mode auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile auctex-latexmk ansible-doc ansible aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell))))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
