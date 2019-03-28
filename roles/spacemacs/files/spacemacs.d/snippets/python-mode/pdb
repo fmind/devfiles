@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# contributor: fmind
+# name: pdb
+# key: \pdb
+# --
+import pdb
+pdb.set_trace()

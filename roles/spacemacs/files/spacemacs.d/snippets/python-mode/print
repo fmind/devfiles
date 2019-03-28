@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# contributor: fmind
+# name: print
+# key: \pt
+# --
+print($1)
