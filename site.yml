@@ -19,17 +19,13 @@
     # cloud
     - {role: google, tags: ['google', 'cloud']}
     # editor
-    - {role: jupyter, tags: ['jupyter', 'editor']}
-    - {role: vscode, tags: ['vscode', 'editor']}
+    - {role: jupyterlab, tags: ['jupyterlab', 'editor']}
+    - {role: spacemacs, tags: ['spacemacs', 'editor']}
     # markup
     - {role: graphviz, tags: ['graphviz', 'markup']}
     - {role: plantuml, tags: ['plantuml', 'markup']}
     - {role: texlive, tags: ['texlive', 'markup']}
     - {role: text, tags: ['text', 'markup']}
     # language
-    - {role: java, tags: ['java', 'language']}
-    - {role: clang, tags: ['clang', 'language']}
-    - {role: groovy, tags: ['groovy', 'language']}
+    - {role: hylang, tags: ['hylang', 'language']}
     - {role: python, tags: ['python', 'language']}
-    - {role: javascript, tags: ['javascript', 'language']}
-    - {role: typescript, tags: ['typescript', 'language']}

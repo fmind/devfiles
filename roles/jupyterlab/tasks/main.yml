@@ -3,7 +3,3 @@
 - name: editor
   pip: name='jupyterlab' executable='pip3' extra_args='--user'
   tags: user
-
-- name: exporter
-  pip: name='jupytext' executable='pip3' extra_args='--user'
-  tags: user

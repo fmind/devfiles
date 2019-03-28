@@ -4,7 +4,7 @@
     "editor.formatOnSave": true,
     "editor.lineNumbers": "relative",
     "editor.minimap.enabled": false,
-    "files.autoSave": "afterDelay",
+    "files.autoSave": "off",
     "latex-workshop.chktex.enabled": true,
     "python.dataScience.changeDirOnImportExport": false,
     "python.dataScience.sendSelectionToInteractiveWindow": true,
@@ -28,6 +28,14 @@
             "after": [
                 ":"
             ]
+        },
+        {
+            "before": ["j"],
+            "after": ["g", "j"]
+        },
+        {
+            "before": ["k"],
+            "after": ["g", "k"]
         }
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
@@ -38,6 +46,14 @@
             "after": [
                 ":"
             ]
+        },
+        {
+            "before": ["j"],
+            "after": ["g", "j"]
+        },
+        {
+            "before": ["k"],
+            "after": ["g", "k"]
         }
     ],
     "vim.useCtrlKeys": false,
