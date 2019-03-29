@@ -26,3 +26,5 @@
     - {role: clang, tags: ['clang', 'language']}
     - {role: hylang, tags: ['hylang', 'language']}
     - {role: python, tags: ['python', 'language']}
+    - {role: racket, tags: ['racket', 'language']}
+    - {role: clojure, tags: ['clojure', 'language']}
