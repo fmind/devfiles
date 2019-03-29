@@ -359,18 +359,14 @@
   (spacemacs/set-leader-keys "sd" 'engine/search-thesaurus)
   (spacemacs/set-leader-keys "sn" 'engine/search-stack-overflow)
   ;; latex
-  (setq-default TeX-master nil)
-  (setq TeX-auto-save t
-        TeX-parse-self t
+  (setq TeX-master t
         TeX-save-query nil
-        TeX-force-default-mode t
+        reftex-plug-into-AUCTeX t
         TeX-default-mode 'LaTeX-mode
-        TeX-command-force TeX-command-default
         TeX-error-overview-open-after-TeX-run t
         TeX-view-program-selection '((output-pdf "PDF Tools")))
-  (flycheck-add-mode 'proselint 'LaTeX-mode)
-  (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
-  (add-hook 'LaTeX-mode-hook (lambda () (writegood-mode 1)))
+  (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+  (add-hook 'LaTeX-mode-hook (lambda () (writegood-mode t)))
   ;; org
   (setq plantuml-jar-path "/usr/share/java/plantuml.jar"
         org-plantuml-jar-path "/usr/share/java/plantuml.jar")
@@ -378,6 +374,7 @@
   ;; pdf
   (setq pdf-view-incompatible-modes '())
   (add-to-list 'spacemacs-useless-buffers-regexp ".+\\.synctex\\.gz")
+  (add-hook 'pdf-view-mode-hook (lambda() (linum-mode -1)))
   ;; python
   (setq python-shell-interpreter "ptipython")
   (defun my-set-project-virtualenv ()
@@ -389,6 +386,7 @@
   ;; magit
   (setq magit-repository-directories '("~/code"))
   ;; spacemacs
+  (global-visual-line-mode t)
   (setq spacemacs-useful-buffers-regexp '())
   ;; writegood
   (spacemacs/set-leader-keys "to" 'writegood-mode)

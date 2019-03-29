@@ -26,5 +26,6 @@
     - {role: texlive, tags: ['texlive', 'markup']}
     - {role: text, tags: ['text', 'markup']}
     # language
+    - {role: clang, tags: ['clang', 'language']}
     - {role: hylang, tags: ['hylang', 'language']}
     - {role: python, tags: ['python', 'language']}

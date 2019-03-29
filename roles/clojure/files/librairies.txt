@@ -1,3 +1,0 @@
-(task-options!
- repl      {:eval '(set! *print-length* 1000)}
- bare-repl {:eval '(set! *print-length* 1000)})
