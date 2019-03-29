@@ -23,7 +23,3 @@
 - name: directory
   file: src='{{role_path}}/files/spacemacs.d' dest='~/.spacemacs.d' state=link force=yes
   tags: user
-
-- name: service
-  file: src='{{role_path}}/files/emacs.service' dest='~/.config/systemd/user/emacs.service' state='link' force='yes'
-  tags: user

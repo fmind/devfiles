@@ -11,9 +11,6 @@
   - name: prepare bin
     file: name='~/bin/' state='directory'
 
-  - name: prepare systemd
-    file: name='~/.config/systemd/user/' state='directory'
-
   roles:
     # cloud
     - {role: google, tags: ['google', 'cloud']}
