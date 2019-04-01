@@ -12,11 +12,9 @@
     file: name='~/bin/' state='directory'
 
   roles:
-    # cloud
-    - {role: google, tags: ['google', 'cloud']}
     # editor
-    - {role: jupyterlab, tags: ['jupyterlab', 'editor']}
-    - {role: spacemacs, tags: ['spacemacs', 'editor']}
+    - {role: emacs, tags: ['emacs', 'editor']}
+    - {role: jupyter, tags: ['jupyter', 'editor']}
     # markup
     - {role: graphviz, tags: ['graphviz', 'markup']}
     - {role: plantuml, tags: ['plantuml', 'markup']}
