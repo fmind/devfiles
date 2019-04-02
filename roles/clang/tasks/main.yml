@@ -5,7 +5,16 @@
   become: true
   tags: admin
 
-- name: maker
-  package: name='cmake'
+- name: tagger
+  package: name='exuberant-ctags'
   become: true
   tags: admin
+
+- name: maker
+  package: name='make'
+  become: true
+  tags: admin
+
+- name: config
+  file: src='{{role_path}}/files/ctags' dest='~/.ctags' state=link force=yes
+  tags: user
