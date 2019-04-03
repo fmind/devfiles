@@ -347,7 +347,8 @@
     (global-company-mode t)
     (global-visual-line-mode t)
     (fset 'yes-or-no-p 'y-or-n-p)
-    (spacemacs/set-leader-keys "\"" 'ielm)
+    (spacemacs/set-leader-keys "`" 'ielm)
+    (spacemacs/set-leader-keys "\"" 'eshell)
     (remove-hook 'emacs-lisp-mode-hook 'auto-compile-mode)
     (add-hook 'focus-out-hook (lambda () (save-some-buffers t))))
   (progn ;; engine
