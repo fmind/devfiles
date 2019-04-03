@@ -18,7 +18,7 @@
     # markup
     - {role: graphviz, tags: ['graphviz', 'markup']}
     - {role: plantuml, tags: ['plantuml', 'markup']}
-    - {role: texlive, tags: ['texlive', 'markup']}
+    - {role: latex, tags: ['latex', 'markup']}
     - {role: text, tags: ['text', 'markup']}
     # language
     - {role: clang, tags: ['clang', 'language']}
