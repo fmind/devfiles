@@ -15,11 +15,6 @@
   become: true
   tags: admin
 
-- name: colors
-  package: name='python3-pygments'
-  become: true
-  tags: admin
-
 - name: maker
   pip: name='tox' executable='pip3' extra_args='--user'
   tags: user

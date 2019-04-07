@@ -3,3 +3,7 @@
 - name: editor
   pip: name='jupyterlab' executable='pip3' extra_args='--user'
   tags: user
+
+- name: manager
+  pip: name='conda' executable='pip3' extra_args='--user'
+  tags: user

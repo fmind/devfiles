@@ -14,7 +14,7 @@
   roles:
     # editor
     - {role: emacs, tags: ['emacs', 'editor']}
-    - {role: jupyter, tags: ['jupyter', 'editor']}
+    - {role: science, tags: ['science', 'editor']}
     # markup
     - {role: graphviz, tags: ['graphviz', 'markup']}
     - {role: plantuml, tags: ['plantuml', 'markup']}

@@ -52,7 +52,11 @@
      pdf-tools
      plantuml
      (python :variables
-             python-test-runner 'pytest)
+             python-test-runner 'pytest
+             python-sort-imports-on-save t
+             python-enable-yapf-format-on-save t
+             python-auto-set-local-pyenv-version nil
+             python-auto-set-local-pyvenv-virtualenv nil)
      (org :variables
           org-enable-github-support t
           org-enable-reveal-js-support t
@@ -326,6 +330,7 @@
 (defun dotspacemacs/user-init ()
   "Initialization function for user code."
   (setq vc-follow-symlinks t)
+  (setq-default explicit-shell-file-name "/bin/bash")
   (setq exec-path-from-shell-check-startup-files nil))
 
 (defun dotspacemacs/user-config ()
@@ -415,7 +420,10 @@
       (interactive)
       (when-let ((project-path (locate-dominating-file default-directory ".venv")))
         (pyvenv-activate (concat project-path ".venv"))))
-    (add-hook 'projectile-after-switch-project-hook 'my-set-project-virtualenv))
+    (add-hook 'python-mode-hook 'my-set-project-virtualenv))
+  (progn ;;racket
+    (spacemacs/set-leader-keys-for-major-mode 'racket-mode
+      ";" 'racket-run))
   (progn ;; spacemacs
     (setq spacemacs-useless-buffers-regexp '(".+\\.synctex\\.gz"))
     (setq spacemacs-useful-buffers-regexp '("\\*eshell\\(-[0-9]+\\)?\\*")))
