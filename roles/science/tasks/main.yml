@@ -2,12 +2,8 @@
 
 - name: editor
   pip: name='jupyterlab' executable='pip3' extra_args='--user'
-  tags: user
+  ags: user
 
-- name: installer
-  get_url: url='https://repo.anaconda.com/archive/Anaconda3-2019.03-Linux-x86_64.sh' dest='~/bin/get-anaconda' mode='0700'
-  tags: user
-
-- name: config
-  file: src='{{role_path}}/files/condarc' dest='~/.condarc' state=link force=yes
-  tags: user
+- name: maker
+  pip: name='apache-airflow' executable='pip3' extra_args='--user'
+  ags: user
