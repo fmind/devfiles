@@ -403,7 +403,10 @@
           TeX-error-overview-open-after-TeX-run t
           TeX-view-program-selection '((output-pdf "PDF Tools")))
     (flycheck-add-mode 'proselint 'LaTeX-mode)
-    (add-hook 'LaTeX-mode-hook 'turn-on-reftex))
+    (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+    (spacemacs/set-leader-keys-for-major-mode 'latex-mode
+      ";" 'latex/build
+      "'" 'TeX-command-master))
   (progn ;; magit
     (setq magit-repository-directories '("~/code/")))
   (progn ;; org
