@@ -6,4 +6,6 @@
 
 - name: maker
   pip: name='apache-airflow' executable='pip3' extra_args='--user'
+  environment:
+    AIRFLOW_GPL_UNIDECODE: 1
   ags: user
