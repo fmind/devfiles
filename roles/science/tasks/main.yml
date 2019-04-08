@@ -5,7 +5,5 @@
   ags: user
 
 - name: maker
-  pip: name='apache-airflow' executable='pip3' extra_args='--user'
-  environment:
-    AIRFLOW_GPL_UNIDECODE: 1
+  pip: name='make' executable='pip3' extra_args='--user'
   ags: user
