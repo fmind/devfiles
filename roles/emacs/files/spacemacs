@@ -420,10 +420,13 @@
       (when-let ((project-path (locate-dominating-file default-directory ".venv")))
         (pyvenv-activate (concat project-path ".venv"))))
     (add-hook 'python-mode-hook 'my-set-project-virtualenv))
-  (progn ;;racket
+  (progn ;; racket
     (evil-set-initial-state 'racket-repl-mode 'insert)
     (spacemacs/set-leader-keys-for-major-mode 'racket-mode
       ";" 'racket-run))
+  (progn ;; spacemacs
+    (spacemacs/set-leader-keys "V" 'split-window-right-and-focus)
+    (spacemacs/set-leader-keys "H" 'split-window-below-and-focus))
   (progn ;; yasnippet
     (spacemacs/set-leader-keys "ir" 'yas-reload-all)
     (spacemacs/set-leader-keys "is" 'yas/visit-snippet-file)))
