@@ -1,5 +1,15 @@
 ---
 
+- name: manager
+  package: name='npm'
+  become: true
+  tags: admin
+
+- name: sandbox
+  package: name='nodejs'
+  become: true
+  tags: admin
+
 - name: language
   package: name='node-typescript'
   become: true

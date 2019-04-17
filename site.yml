@@ -12,17 +12,8 @@
     file: name='~/bin/' state='directory'
 
   roles:
-    # editor
-    - {role: emacs, tags: ['emacs', 'editor']}
-    - {role: science, tags: ['science', 'editor']}
-    # markup
-    - {role: graphviz, tags: ['graphviz', 'markup']}
-    - {role: plantuml, tags: ['plantuml', 'markup']}
+    - {role: gcp, tags: ['gcp', 'cloud']}
+    - {role: idea, tags: ['idea', 'editor']}
     - {role: latex, tags: ['latex', 'markup']}
-    - {role: text, tags: ['text', 'markup']}
-    # language
-    - {role: clang, tags: ['clang', 'language']}
-    - {role: hylang, tags: ['hylang', 'language']}
     - {role: python, tags: ['python', 'language']}
-    - {role: racket, tags: ['racket', 'language']}
-    - {role: clojure, tags: ['clojure', 'language']}
+    - {role: typescript, tags: ['typescript', 'language']}
