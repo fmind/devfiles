@@ -1,130 +1,77 @@
-" PLUGINS "{{{
+" PLUGINS
+set multiple-cursors
 set surround
-"}}}
-" SETTINGS {{{
-" show
-set nonumber
-set noshowmode
-set relativenumber
-" alert
-set novisualbell
-" search
-set gdefault
-set wrapscan
+" SETTINGS
+set clipboard=unnamedplus
+set hlsearch
 set incsearch
-set smartcase
-set ignorecase
-set nohlsearch
-" scroll
-set scroll=0
-set scrolloff=5
-set scrolljump=1
-set sidescroll=0
-set sidescrolloff=5
-" lookup
-set history=100
-set undolevels=1000
-set matchpairs+=<:>
-set selection=inclusive
-set clipboard=unnamedplus,unnamed
-set viminfo=<1000,'100,/50,:100,s100,h
-"}}}
-" BINDINGS {{{
-"" lead
-nnoremap ; :
-vnoremap ; :
+set number
+set relativenumber
+set scrolloff=10
+" KEYMAPS
 let mapleader = " "
-"" remap
-nnoremap j gj
-nnoremap k gk
-vnoremap j gj
-nnoremap E g$
-nnoremap Y y$
-nnoremap U <C-r>
-nnoremap J <C-d>
-nnoremap K <C-u>
-noremap gs :sort<CR>
-noremap gj :join<CR>
-nnoremap U :action $Redo<CR>
-"" indent
-vnoremap <  <gv
-vnoremap >  >gv
-"" format
-vnoremap Q gq
-nnoremap Q gqap
-nnoremap zj o<Esc>k
-nnoremap zk O<Esc>j
-"" navigate
-nnoremap H :action Back<CR>
-nnoremap L :action Forward<CR>
-nnoremap K :action NextTab<CR>
-nnoremap J :action PreviousTab<CR>
-nnoremap <A-f> <C-f>
-nnoremap <A-b> <C-b>
-nnoremap <A-e> <C-e>
-nnoremap <A-y> <C-y>
-nnoremap [[ :action MethodUp<CR>
-nnoremap ]] :action MethodDown<CR>
-nnoremap <A-k> :action VimWindowUp<CR>
-nnoremap <A-j> :action VimWindowDown<CR>
-nnoremap <A-h> :action VimWindowLeft<CR>
-nnoremap <A-l> :action VimWindowRight<CR>
-" leader (lower)
-nnoremap <leader>a :action GotoAction<CR>
-nnoremap <leader>b :action Debug<CR>
-nnoremap <leader>c :action GotoClass<CR>
-nnoremap <leader>d :action EditorDuplicate<CR>
-nnoremap <leader>e :action RecentFiles<CR>
-nnoremap <leader>f :action GotoFile<CR>
-nnoremap <leader>g :action GotoDeclaration<CR>
-nnoremap <leader>h :action QuickJavaDoc<CR>
-nnoremap <leader>i :action GotoImplementation<CR>
-nnoremap <leader>j :action Find<CR>
-nnoremap <leader>k :action EditorDeleteLine<CR>
-" nnoremap <leader>l 
-nnoremap <leader>m :action GotoNextError<cr>
-nnoremap <leader>n :action GotoPreviousError<cr>
-nnoremap <leader>o :action OverrideMethods<CR>
-nnoremap <leader>p :action ParameterInfo<CR>
-nnoremap <leader>q :q<CR>
-nnoremap <leader>r :action Run<CR>
-nnoremap <leader>s :action GotoSymbol<CR>
-nnoremap <leader>t :action GotoTest<CR>
-nnoremap <leader>u :action GotoSuperMethod<CR>
-nnoremap <leader>v ggVG
-nnoremap <leader>w :w<CR>
-nnoremap <leader>x :x<CR>
-nnoremap <leader>y :action GotoTypeDeclaration<CR>
-nnoremap <leader>z :action RenameFile<CR> 
-" leader (upper)
-nnoremap <leader>A :action Switcher<cr>
-nnoremap <leader>B :action ToggleLineBreakpoint<cr>
-" nnoremap <leader>C 
-" nnoremap <leader>D
-nnoremap <leader>E :action RenameElement<CR>
-" nnoremap <leader>F 
-nnoremap <leader>G :action Generate<CR>
-nnoremap <leader>H :action SplitHorizontally<CR>
-nnoremap <leader>I :action ImplementMethods<CR>
-nnoremap <leader>J :action Rerun<CR>
-nnoremap <leader>K :action RerunTests<CR>
-nnoremap <leader>L :action RerunFailedTests<CR>
-nnoremap <leader>M :action ChangeSignature<CR>
-" nnoremap <leader>N
-nnoremap <leader>O :action VimWindowOnly<CR>
-" nnoremap <leader>P
-" nnoremap <leader>Q
-nnoremap <leader>R :source ~/.ideavimrc<CR>
-nnoremap <leader>S :action EditorToggleUseSoftWraps<CR>
-nnoremap <leader>T :action GenerateTestMethod<CR>
-nnoremap <leader>U :action ShowUsages<CR>
-nnoremap <leader>V :action SplitVertically<CR>
-nnoremap <leader>W :action SaveAll<CR>
-nnoremap <leader>X :action VimWindowClose<CR>
-nnoremap <leader>Y :action ChangeTypeSignature<CR>
-" nnoremap <leader>Z
-" leader (other)
-nnoremap <leader>] :action EditorCodeBlockEnd<CR>
-nnoremap <leader>[ :action EditorCodeBlockStart<CR>
-nnoremap <leader>/ :action CommentByLineComment<CR>
-"}}}
+noremap <CR> :
+noremap <A-K> :action VimWindowUp<CR>
+noremap <A-J> :action VimWindowDown<CR>
+noremap <A-H> :action VimWindowLeft<CR>
+noremap <A-L> :action VimWindowRight<CR>
+"noremap [[ :action MethodUp<CR>
+"noremap ]] :action MethodDown<CR>
+
+noremap <leader>a :action GotoAction<CR>
+noremap <leader>b :action ToggleLineBreakpoint<CR>
+noremap <leader>c :action GotoClass<CR>
+noremap <leader>d :action GotoDeclaration<CR>
+noremap <leader>e :action RenameElement<CR>
+noremap <leader>f :action GotoFile<CR>
+noremap <leader>g :action GotoLine<CR>
+noremap <leader>h :action VimWindowSplitHorizontal<CR>
+noremap <leader>i :action GotoImplementation<CR>
+noremap <leader>j :action GotoSymbol<CR>
+noremap <leader>k :action Run<CR>
+noremap <leader>l :nohl<CR>
+noremap <leader>m :action NewElement<cr>
+noremap <leader>n :action NextTab<CR>
+noremap <leader>o :action OverrideMethods<CR>
+noremap <leader>p :action PreviousTab<CR>
+noremap <leader>q :action VimWindowClose<CR>
+noremap <leader>r :action RecentFiles<CR>
+noremap <leader>s :action ChangeSignature<CR>
+noremap <leader>t :action GotoTest<CR>
+noremap <leader>u :action Unwrap<CR>
+noremap <leader>v :action VimWindowSplitVertical<CR>
+noremap <leader>w :RerunTests<CR>
+noremap <leader>x :action ToggleLineBreakpoint<CR>
+noremap <leader>y :action GotoTypeDeclaration<CR>
+noremap <leader>z :action CodeCleanup<CR>
+"" leader (upper)
+noremap <leader>A :action About<CR>
+noremap <leader>B :action BackgroundTasks<CR>
+"" noremap <leader>C 
+noremap <leader>D :action Debug<CR>
+"noremap <leader>E
+"" noremap <leader>F 
+noremap <leader>G :action Generate<CR>
+"noremap <leader>H
+"noremap <leader>I :action ImplementMethods<CR>
+"noremap <leader>J :action Rerun<CR>
+"noremap <leader>K :action RerunTests<CR>
+"noremap <leader>L :action RerunFailedTests<CR>
+noremap <leader>M :action BuildMenu<CR>
+"" noremap <leader>N
+"noremap <leader>O
+noremap <leader>P :action TogglePresentationMode<CR>
+noremap <leader>Q :action CloseProject<CR>
+"noremap <leader>R
+"noremap <leader>S
+noremap <leader>T :action ActivateTODOToolWindow<CR>
+noremap <leader>U :action ShowUsages<CR>
+"noremap <leader>V
+noremap <leader>W :action RerunFailedTests
+noremap <leader>X :action ViewBreakpoints<CR>
+noremap <leader>Y :action TypeHierarchy<CR>
+noremap <leader>Z :source ~/.ideavimrc<CR>
+"" leader (other)
+"noremap <leader>] :action EditorCodeBlockEnd<CR>
+"noremap <leader>[ :action EditorCodeBlockStart<CR>
+"noremap <leader>/ :action CommentByLineComment<CR>

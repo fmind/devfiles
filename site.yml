@@ -15,5 +15,6 @@
     - {role: gcp, tags: ['gcp', 'cloud']}
     - {role: idea, tags: ['idea', 'editor']}
     - {role: latex, tags: ['latex', 'markup']}
+    - {role: groovy, tags: ['groovy', 'language']}
     - {role: python, tags: ['python', 'language']}
     - {role: typescript, tags: ['typescript', 'language']}
