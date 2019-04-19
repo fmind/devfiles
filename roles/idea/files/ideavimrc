@@ -1,6 +1,6 @@
 " PLUGINS
-set multiple-cursors
 set surround
+set multiple-cursors
 " SETTINGS
 set clipboard=unnamedplus
 set hlsearch
@@ -9,15 +9,14 @@ set number
 set relativenumber
 set scrolloff=10
 " KEYMAPS
-let mapleader = " "
 noremap <CR> :
-noremap <A-K> :action VimWindowUp<CR>
-noremap <A-J> :action VimWindowDown<CR>
-noremap <A-H> :action VimWindowLeft<CR>
-noremap <A-L> :action VimWindowRight<CR>
-"noremap [[ :action MethodUp<CR>
-"noremap ]] :action MethodDown<CR>
-
+let mapleader = " "
+noremap [[ :action MethodUp<CR>
+noremap ]] :action MethodDown<CR>
+noremap <A-S-k> :action VimWindowUp<CR>
+noremap <A-S-j> :action VimWindowDown<CR>
+noremap <A-S-h> :action VimWindowLeft<CR>
+noremap <A-S-l> :action VimWindowRight<CR>
 noremap <leader>a :action GotoAction<CR>
 noremap <leader>b :action ToggleLineBreakpoint<CR>
 noremap <leader>c :action GotoClass<CR>
@@ -40,38 +39,35 @@ noremap <leader>s :action ChangeSignature<CR>
 noremap <leader>t :action GotoTest<CR>
 noremap <leader>u :action Unwrap<CR>
 noremap <leader>v :action VimWindowSplitVertical<CR>
-noremap <leader>w :RerunTests<CR>
+"noremap <leader>w :RerunTests<CR>
 noremap <leader>x :action ToggleLineBreakpoint<CR>
 noremap <leader>y :action GotoTypeDeclaration<CR>
-noremap <leader>z :action CodeCleanup<CR>
-"" leader (upper)
+noremap <leader>z :edit ~/.ideavimrc<CR>
 noremap <leader>A :action About<CR>
 noremap <leader>B :action BackgroundTasks<CR>
-"" noremap <leader>C 
+noremap <leader>C :action ChangeColorScheme<CR>
 noremap <leader>D :action Debug<CR>
-"noremap <leader>E
-"" noremap <leader>F 
+noremap <leader>E :action ActivateEventLogToolWindow<CR>
+noremap <leader>F :action Find<CR>
 noremap <leader>G :action Generate<CR>
-"noremap <leader>H
-"noremap <leader>I :action ImplementMethods<CR>
-"noremap <leader>J :action Rerun<CR>
-"noremap <leader>K :action RerunTests<CR>
-"noremap <leader>L :action RerunFailedTests<CR>
+noremap <leader>H :action HelpMenu<CR>
+noremap <leader>I :action ImplementMethods<CR>
+noremap <leader>J :action Rerun<CR>
+noremap <leader>K :action RerunTests<CR>
+noremap <leader>L :action RerunFailedTests<CR>
 noremap <leader>M :action BuildMenu<CR>
-"" noremap <leader>N
-"noremap <leader>O
+noremap <leader>N :action NewFile<CR>
+noremap <leader>O :action ActivateProjectToolWindow<CR>
 noremap <leader>P :action TogglePresentationMode<CR>
 noremap <leader>Q :action CloseProject<CR>
-"noremap <leader>R
-"noremap <leader>S
+noremap <leader>R :action ReformatCode<CR>
+noremap <leader>S :action ChangeTypeSignature<CR>
 noremap <leader>T :action ActivateTODOToolWindow<CR>
 noremap <leader>U :action ShowUsages<CR>
-"noremap <leader>V
-noremap <leader>W :action RerunFailedTests
+noremap <leader>V :action ViewSource<CR>
+"noremap <leader>W :action RerunFailedTests
 noremap <leader>X :action ViewBreakpoints<CR>
 noremap <leader>Y :action TypeHierarchy<CR>
 noremap <leader>Z :source ~/.ideavimrc<CR>
-"" leader (other)
-"noremap <leader>] :action EditorCodeBlockEnd<CR>
-"noremap <leader>[ :action EditorCodeBlockStart<CR>
-"noremap <leader>/ :action CommentByLineComment<CR>
+noremap <leader>[ :action GotoPreviousError<CR>
+noremap <leader>] :action GotoNextError<CR>

@@ -13,8 +13,7 @@
 
   roles:
     - {role: gcp, tags: ['gcp', 'cloud']}
-    - {role: idea, tags: ['idea', 'editor']}
     - {role: latex, tags: ['latex', 'markup']}
-    - {role: groovy, tags: ['groovy', 'language']}
+    - {role: vscode, tags: ['vscode', 'editor']}
     - {role: python, tags: ['python', 'language']}
-    - {role: typescript, tags: ['typescript', 'language']}
+    - {role: tscript, tags: ['tscript', 'language']}
