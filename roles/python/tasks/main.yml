@@ -16,7 +16,33 @@
   tags: admin
 
 - name: maker
-  pip: name='tox' executable='pip3' extra_args='--user'
+  package: name='make'
+  become: true
+  tags: admin
+
+- name: typer
+  package: name='mypy'
+  become: true
+  tags: admin
+
+- name: sorter
+  pip: name='isort' executable='pip3' extra_args='--user'
+  tags: user
+
+- name: linter
+  pip: name='pylint' executable='pip3' extra_args='--user'
+  tags: user
+
+- name: tester
+  pip: name='pytest' executable='pip3' extra_args='--user'
+  tags: user
+
+- name: formatter
+  pip: name='black' executable='pip3' extra_args='--user'
+  tags: user
+
+- name: packager
+  pip: name='wheel' executable='pip3' extra_args='--user'
   tags: user
 
 - name: directory
