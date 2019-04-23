@@ -13,6 +13,9 @@
     "python.dataScience.sendSelectionToInteractiveWindow": true,
     "python.linting.mypyEnabled": true,
     "python.unitTest.pyTestEnabled": true,
+    "terminal.integrated.commandsToSkipShell": [
+    "-workbench.action.quickOpen",
+    ],
     "vim.foldfix": true,
     "vim.leader": "<space>",
     "vim.sneak": true,
