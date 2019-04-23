@@ -12,8 +12,8 @@
     file: name='~/bin/' state='directory'
 
   roles:
-    - {role: gcp, tags: ['gcp', 'cloud']}
     - {role: latex, tags: ['latex', 'markup']}
+    - {role: gcloud, tags: ['gcloud', 'cloud']}
     - {role: vscode, tags: ['vscode', 'editor']}
     - {role: python, tags: ['python', 'language']}
     - {role: tscript, tags: ['tscript', 'language']}
