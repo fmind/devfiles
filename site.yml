@@ -12,7 +12,7 @@
     file: name='~/bin/' state='directory'
 
   roles:
-#   - {role: clang, tags: ['clang']}
-#   - {role: latex, tags: ['latex']}
-#   - {role: python, tags: ['python']}
-#   - {role: science, tags: ['science']}
+    - {role: clang, tags: ['clang']}
+    - {role: latex, tags: ['latex']}
+    - {role: python, tags: ['python']}
+    - {role: science, tags: ['science']}
