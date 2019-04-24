@@ -16,14 +16,12 @@
   tags: admin
 
 - name: maker
-  package: name='make'
-  become: true
-  tags: admin
+  pip: name='invoke' executable='pip3' extra_args='--user'
+  tags: user
 
 - name: typer
-  package: name='mypy'
-  become: true
-  tags: admin
+  pip: name='mypy' executable='pip3' extra_args='--user'
+  tags: user
 
 - name: sorter
   pip: name='isort' executable='pip3' extra_args='--user'
