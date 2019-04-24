@@ -1,5 +1,9 @@
 ---
 
+- name: input
+  pip: name='ipython' executable='pip3' extra_args='--user'
+  tags: user
+
 - name: maker
   pip: name='papermill' executable='pip3' extra_args='--user'
   tags: user
@@ -10,10 +14,6 @@
 
 - name: directory
   file: path='~/.ipython/profile_default/' state='directory'
-  tags: user
-
-- name: input
-  pip: name='ipython' executable='pip3' extra_args='--user'
   tags: user
 
 - name: config
