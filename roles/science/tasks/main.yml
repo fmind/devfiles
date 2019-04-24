@@ -1,10 +1,9 @@
 ---
 
-- name: maker
-  package: name='make'
-  become: true
-  tags: admin
-
 - name: editor
   pip: name='jupyterlab' executable='pip3' extra_args='--user'
+  tags: user
+
+- name: maker
+  pip: name='papermill' executable='pip3' extra_args='--user'
   tags: user

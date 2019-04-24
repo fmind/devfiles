@@ -25,5 +25,5 @@ def configure(repl):
     repl.show_signature = True
     repl.show_status_bar = False
     repl.use_code_colorscheme("monokai")
-    repl.vi_mode = False
+    repl.vi_mode = True
     repl.wrap_lines = True
