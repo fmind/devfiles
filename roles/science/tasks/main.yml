@@ -12,6 +12,10 @@
   pip: name='jupyterlab' executable='pip3' extra_args='--user'
   tags: user
 
+- name: converter
+  pip: name='jupytext' executable='pip3' extra_args='--user'
+  tags: user
+
 - name: directory
   file: path='~/.ipython/profile_default/' state='directory'
   tags: user
