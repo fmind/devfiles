@@ -23,3 +23,7 @@
   package: name='chktex'
   become: true
   tags: admin
+
+- name: config
+  file: src='{{role_path}}/files/latexmkrc' dest='~/.latexmkrc' state=link force=yes
+  tags: user
