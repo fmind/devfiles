@@ -13,6 +13,7 @@
 
   roles:
     - {role: clang, tags: ['clang']}
+    - {role: golang, tags: ['golang']}
     - {role: latex, tags: ['latex']}
     - {role: python, tags: ['python']}
     - {role: science, tags: ['science']}
