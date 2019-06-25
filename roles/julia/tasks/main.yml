@@ -1,9 +1,13 @@
 ---
 
+# - name: language
+#   snap: name='julia'
+#   become: true
+#   tags: admin
+
 - name: directory
   file: path='~/.julia/config' state='directory'
   tags: user
-  tags: admin
 
 - name: config
   file: src='{{role_path}}/files/startup.jl' dest='~/.julia/config/startup.jl' state=link force=yes

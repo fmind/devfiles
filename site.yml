@@ -12,6 +12,7 @@
     file: name='~/bin/' state='directory'
 
   roles:
+    - {role: julia, tags: ['julia']}
+    - {role: jupyter, tags: ['jupyter']}
     - {role: latex, tags: ['latex']}
     - {role: python, tags: ['python']}
-    - {role: science, tags: ['science']}
