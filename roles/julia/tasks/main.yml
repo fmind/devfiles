@@ -1,9 +1,14 @@
 ---
 
-# - name: language
-#   snap: name='julia'
-#   become: true
-#   tags: admin
+- name: download
+  unarchive: src='https://julialang-s3.julialang.org/bin/linux/x64/1.1/julia-1.1.1-linux-x86_64.tar.gz' dest='/opt/' remote_src=yes
+  become: true
+  tags: admin
+
+- name: language
+  file: src='/opt/julia-1.1.1/bin/julia' dest='/usr/local/bin/julia' state=link force=yes
+  become: true
+  tags: admin
 
 - name: directory
   file: path='~/.julia/config' state='directory'
