@@ -12,5 +12,6 @@
     file: name='~/bin/' state='directory'
 
   roles:
+    - {role: clang, tags: ['clang']}
     - {role: jupyter, tags: ['jupyter']}
     - {role: python, tags: ['python']}
