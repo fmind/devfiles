@@ -11,6 +11,8 @@
     - texlive-science
     - texlive-pictures
     - texlive-extra-utils
+    - texlive-latex-extra
+    - texlive-bibtex-extra
   become: true
   tags: admin
 
