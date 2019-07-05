@@ -14,4 +14,5 @@
   roles:
     - {role: clang, tags: ['clang']}
     - {role: jupyter, tags: ['jupyter']}
+    - {role: plantuml, tags: ['plantuml']}
     - {role: python, tags: ['python']}

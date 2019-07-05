@@ -36,6 +36,10 @@
   pip: name='pytest' executable='pip3' extra_args='--user'
   tags: user
 
+- name: coverer
+  pip: name='coverage' executable='pip3' extra_args='--user'
+  tags: user
+
 - name: packager
   pip: name='wheel' executable='pip3' extra_args='--user'
   tags: user
