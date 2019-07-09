@@ -90,5 +90,6 @@
     "vim.visualModeKeyBindings": [
         {"before": [ "<enter>" ], "after": [ ":" ]}
     ],
-    "workbench.colorTheme": "Default Light+"
+    "workbench.colorTheme": "Default Light+",
+    "files.autoSave": "off"
 }
