@@ -112,8 +112,11 @@
         {"before": ["<leader>", "."], "commands": ["workbench.action.openWorkspaceSettings"]},
         {"before": ["<leader>", ","], "commands": ["workbench.action.openSettings"]},
         {"before": ["<leader>", "/"], "commands": ["workbench.view.search"]},
+        {"before": ["<leader>", "`"], "commands": ["workbench.action.files.openFolder"]},
+        {"before": ["<leader>", "@"], "commands": ["workbench.action.tasks.reRunTask"]},
         {"before": ["<leader>", "<tab>"], "commands": ["workbench.action.openPreviousRecentlyUsedEditorInGroup"]},
-        {"before": ["<leader>", "<space>"], "commands": ["workbench.action.tasks.build"]}
+        {"before": ["<leader>", "<enter>"], "commands": ["extension.runMake"]},
+        {"before": ["<leader>", "<space>"], "commands": ["workbench.action.tasks.runTask"]}
     ],
     "vim.visualModeKeyBindings": [
         {"before": [">"], "after": [">", "g", "v"]},
@@ -125,5 +128,5 @@
     "workbench.colorTheme": "Default Light+",
     "workbench.panel.defaultLocation": "right",
     "workbench.startupEditor": "newUntitledFile",
-    "restructuredtext.confPath": "${workspaceFolder}/docs/conf.py"
+    "restructuredtext.confPath": "${workspaceFolder}/conf.py"
 }
