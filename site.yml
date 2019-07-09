@@ -18,5 +18,6 @@
     - {role: jupyter, tags: ['jupyter']}
     - {role: plantuml, tags: ['plantuml']}
     - {role: python, tags: ['python']}
+    - {role: restructured, tags: ['restructured']}
     - {role: typescript, tags: ['typescript']}
     - {role: vscode, tags: ['vscode']}
