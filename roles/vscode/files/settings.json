@@ -91,5 +91,12 @@
         {"before": [ "<enter>" ], "after": [ ":" ]}
     ],
     "workbench.colorTheme": "Default Light+",
-    "files.autoSave": "off"
+    "files.autoSave": "onFocusChange",
+    "breadcrumbs.enabled": false,
+    "editor.renderControlCharacters": false,
+    "workbench.activityBar.visible": true,
+    "files.exclude": {
+        "**/build": true,
+        "**/venv": true
+    }
 }
