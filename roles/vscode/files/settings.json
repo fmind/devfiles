@@ -1,9 +1,28 @@
 {
+    "breadcrumbs.enabled": false,
+    "cSpell.language": "en",
     "editor.acceptSuggestionOnEnter": "off",
+    "editor.copyWithSyntaxHighlighting": false,
+    "editor.cursorBlinking": "solid",
     "editor.fontFamily": "'Fira Code', monospace",
     "editor.fontLigatures": true,
     "editor.lineNumbers": "relative",
     "editor.minimap.enabled": false,
+    "editor.mouseWheelZoom": true,
+    "editor.occurrencesHighlight": false,
+    "editor.renderControlCharacters": false,
+    "editor.renderFinalNewline": false,
+    "editor.renderIndentGuides": false,
+    "editor.renderLineHighlight": "none",
+    "editor.smoothScrolling": true,
+    "files.autoSave": "onFocusChange",
+    "files.exclude": {
+        "**/.mypy_cache": true,
+        "**/.pytest_cache": true,
+        "**/build": true,
+        "**/venv": true
+    },
+    "files.simpleDialog.enable": true,
     "latex-workshop.chktex.enabled": true,
     "latex-workshop.intellisense.package.enabled": true,
     "latex-workshop.intellisense.unimathsymbols.enabled": true,
@@ -12,10 +31,11 @@
     "python.dataScience.changeDirOnImportExport": false,
     "python.dataScience.sendSelectionToInteractiveWindow": true,
     "python.linting.mypyEnabled": true,
-    "python.unitTest.pyTestEnabled": true,
+    "python.testing.pytestEnabled": true,
     "terminal.integrated.commandsToSkipShell": [
         "-workbench.action.quickOpen"
     ],
+    "terminal.integrated.shell.linux": "/bin/bash",
     "vim.foldfix": true,
     "vim.leader": "<space>",
     "vim.sneak": true,
@@ -91,12 +111,8 @@
         {"before": [ "<enter>" ], "after": [ ":" ]}
     ],
     "workbench.colorTheme": "Default Light+",
-    "files.autoSave": "onFocusChange",
-    "breadcrumbs.enabled": false,
-    "editor.renderControlCharacters": false,
-    "workbench.activityBar.visible": true,
-    "files.exclude": {
-        "**/build": true,
-        "**/venv": true
-    }
+    "workbench.panel.defaultLocation": "right",
+    "workbench.startupEditor": "newUntitledFile",
+    "window.menuBarVisibility": "toggle",
+    "window.titleBarStyle": "custom"
 }
