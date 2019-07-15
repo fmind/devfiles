@@ -1,6 +1,7 @@
 {
     "breadcrumbs.enabled": false,
     "cSpell.language": "en,fr",
+    "editor.acceptSuggestionOnEnter": "smart",
     "editor.cursorBlinking": "solid",
     "editor.fontFamily": "'Fira Code', monospace",
     "editor.fontLigatures": true,
