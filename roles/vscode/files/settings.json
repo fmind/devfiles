@@ -12,6 +12,7 @@
     "editor.renderIndentGuides": false,
     "editor.renderLineHighlight": "none",
     "editor.smoothScrolling": true,
+    "editor.wordWrap": "on",
     "explorer.confirmDelete": false,
     "files.autoSave": "onFocusChange",
     "files.exclude": {
