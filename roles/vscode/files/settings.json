@@ -34,6 +34,8 @@
     "python.testing.pytestEnabled": true,
     "restructuredtext.builtDocumentationPath": "${workspaceFolder}/build/html",
     "restructuredtext.confPath": "${workspaceFolder}",
+    "restructuredtext.preview.scrollEditorWithPreview": false,
+    "restructuredtext.preview.scrollPreviewWithEditor": false,
     "terminal.integrated.commandsToSkipShell": [
         "-workbench.action.quickOpen"
     ],
