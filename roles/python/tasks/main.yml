@@ -16,7 +16,7 @@
   tags: admin
 
 - name: maker
-  pip: name='pyinvoke' executable='pip3' extra_args='--user'
+  pip: name='invoke' executable='pip3' extra_args='--user'
   tags: user
 
 - name: typer
