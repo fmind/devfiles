@@ -17,7 +17,7 @@
   tags: user
 
 - name: parallel
-  pip: name='pyparallel' executable='pip3' extra_args='--user'
+  pip: name='ipyparallel' executable='pip3' extra_args='--user'
   tags: user
 
 - name: dashboard
