@@ -1,29 +1,13 @@
 ---
 
-- name: debug
-  pip: name='ipdb' executable='pip3' extra_args='--user'
-  tags: user
-
-- name: input
-  pip: name='ipython' executable='pip3' extra_args='--user'
-  tags: user
-
 - name: maker
   pip: name='papermill' executable='pip3' extra_args='--user'
-  tags: user
-
-- name: export
-  pip: name='jupytext' executable='pip3' extra_args='--user'
   tags: user
 
 - name: editor
   pip: name='jupyterlab' executable='pip3' extra_args='--user'
   tags: user
 
-- name: directory
-  file: path='~/.ipython/profile_default/' state='directory'
-  tags: user
-
-- name: config
-  file: src='{{role_path}}/files/ipython.py' dest='~/.ipython/profile_default/ipython_config.py' state=link force=yes
+- name: manager
+  pip: name='jupytext' executable='pip3' extra_args='--user'
   tags: user

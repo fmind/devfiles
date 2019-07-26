@@ -23,12 +23,12 @@
   pip: name='mypy' executable='pip3' extra_args='--user'
   tags: user
 
-- name: sorter
-  pip: name='isort' executable='pip3' extra_args='--user'
-  tags: user
-
 - name: linter
   pip: name='pylint' executable='pip3' extra_args='--user'
+  tags: user
+
+- name: sorter
+  pip: name='isort' executable='pip3' extra_args='--user'
   tags: user
 
 - name: tester
@@ -55,18 +55,18 @@
   pip: name='black' executable='pip3' extra_args='--user'
   tags: user
 
-- name: directory
-  file: path='~/.ptpython/' state='directory'
-  tags: user
-
 - name: input
-  pip: name='ptpython' executable='pip3' extra_args='--user'
+  pip: name='ipython' executable='pip3' extra_args='--user'
   tags: user
 
-- name: config
-  file: src='{{role_path}}/files/ptpython.py' dest='~/.ptpython/config.py' state=link force=yes
+- name: directory
+  file: path='~/.ipython/profile_default/' state='directory'
   tags: user
 
 - name: hosting
   file: src='{{role_path}}/files/pypirc' dest='~/.pypirc' state=link force=yes
+  tags: user
+
+- name: config
+  file: src='{{role_path}}/files/ipython.py' dest='~/.ipython/profile_default/ipython_config.py' state=link force=yes
   tags: user
