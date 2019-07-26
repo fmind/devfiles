@@ -11,3 +11,15 @@
 - name: manager
   pip: name='jupytext' executable='pip3' extra_args='--user'
   tags: user
+
+- name: widgets
+  pip: name='ipywidgets' executable='pip3' extra_args='--user'
+  tags: user
+
+- name: parallel
+  pip: name='pyparallel' executable='pip3' extra_args='--user'
+  tags: user
+
+- name: dashboard
+  pip: name='voila' executable='pip3' extra_args='--user'
+  tags: user
