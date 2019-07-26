@@ -1,5 +1,9 @@
 ---
 
+- name: debug
+  pip: name='ipdb' executable='pip3' extra_args='--user'
+  tags: user
+
 - name: input
   pip: name='ipython' executable='pip3' extra_args='--user'
   tags: user

@@ -16,9 +16,8 @@
   tags: admin
 
 - name: maker
-  package: name='make'
-  become: true
-  tags: admin
+  pip: name='pyinvoke' executable='pip3' extra_args='--user'
+  tags: user
 
 - name: typer
   pip: name='mypy' executable='pip3' extra_args='--user'
@@ -38,6 +37,10 @@
 
 - name: coverer
   pip: name='coverage' executable='pip3' extra_args='--user'
+  tags: user
+
+- name: debugger
+  pip: name='ipdb' executable='pip3' extra_args='--user'
   tags: user
 
 - name: packager
