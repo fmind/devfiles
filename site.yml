@@ -15,7 +15,7 @@
     - {role: clang, tags: ['clang']}
     - {role: graphviz, tags: ['graphviz']}
     - {role: jupyter, tags: ['jupyter']}
+    - {role: latex, tags: ['latex']}
     - {role: plantuml, tags: ['plantuml']}
     - {role: python, tags: ['python']}
     - {role: sphinx, tags: ['sphinx']}
-    - {role: vscode, tags: ['vscode']}

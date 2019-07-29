@@ -31,8 +31,3 @@
 - name: config
   file: src='{{role_path}}/files/jupyter_notebook_config.py' dest='~/.jupyter/jupyter_notebook_config.py' state=link force=yes
   tags: user
-
-- name: extensions
-  shell: |
-      jupyter nbextension install --py --user jupytext
-      jupyter nbextension enable --py --user jupytext
