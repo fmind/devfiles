@@ -34,5 +34,5 @@
 
 - name: extensions
   shell: |
-      jupyter nbextension install --py --user jupyter
-      jupyter nbextension enable --py --user jupyter
+      jupyter nbextension install --py --user jupytext
+      jupyter nbextension enable --py --user jupytext
