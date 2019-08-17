@@ -10,5 +10,6 @@ c.InteractiveShellApp.extensions = [
 
 c.InteractiveShellApp.exec_lines = [
     '%autoreload 2',
+    'import inspect',
     'from IPython.lib.deepreload import reload',
 ]

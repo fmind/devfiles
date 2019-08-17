@@ -6,7 +6,7 @@
   tags: admin
 
 - name: repository
-  apt_repository: repo='deb http://packages.cloud.google.com/apt cloud-sdk-bionic main' filename='google-cloud-sdk'
+  apt_repository: repo='deb http://packages.cloud.google.com/apt cloud-sdk-disco main' filename='google-cloud-sdk'
   become: true
   tags: admin
 

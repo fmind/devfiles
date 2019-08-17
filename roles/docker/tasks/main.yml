@@ -1,0 +1,15 @@
+---
+
+- name: runtime
+  package: name='docker.io'
+  become: true
+  tags: admin
+
+- name: user
+  user: name='{{lookup("env", "USER")}}' groups='docker' append=yes
+  become: true
+  tags: admin
+
+- name: library
+  pip: name='docker' executable='pip3' extra_args='--user'
+  tags: user
