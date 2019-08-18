@@ -1,5 +1,3 @@
-allow-newer: true
-
 templates:
   scm-init: git
   params:

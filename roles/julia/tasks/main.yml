@@ -1,22 +1,7 @@
 ---
 
-- name: check download
-  stat: path='/opt/julia-{{julia_version}}/'
-  register: downloaded
-
-- name: download
-  unarchive: src='https://julialang-s3.julialang.org/bin/linux/x64/{{julia_branch}}/julia-{{julia_version}}-linux-x86_64.tar.gz' dest='/opt/' remote_src=yes
-  when: downloaded.stat.exists == False
-  become: true
-  tags: admin
-
-- name: version
-  file: src='/opt/julia-{{julia_version}}' dest='/opt/julia' state=link force=yes
-  become: true
-  tags: admin
-
-- name: binary
-  file: src='/opt/julia/bin/julia' dest='/usr/local/bin/julia' state=link force=yes
+- name: language
+  package: name='julia'
   become: true
   tags: admin
 

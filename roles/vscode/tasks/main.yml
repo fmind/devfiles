@@ -4,21 +4,25 @@
   apt_key: url='https://packages.microsoft.com/keys/microsoft.asc'
   become: true
   tags: admin
+  when: false
 
 - name: repository
   apt_repository: repo='deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main' filename='vscode'
   become: true
   tags: admin
+  when: false
 
 - name: package
   package: name='code'
   become: true
   tags: admin
+  when: false
 
 - name: font
   package: name='fonts-firacode'
   become: true
   tags: admin
+  when: false
 
 - name: directory
   file: name='~/.config/Code/User' state='directory'
