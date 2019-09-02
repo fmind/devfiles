@@ -1,12 +1,12 @@
 ---
 
-- name: repository
-  apt_repository: repo='deb http://packages.cloud.google.com/apt cloud-sdk-disco main' filename='google-cloud-sdk'
+- name: keyring
+  apt_key: url='https://packages.cloud.google.com/apt/doc/apt-key.gpg'
   become: true
   tags: admin
 
-- name: keyring
-  apt_key: url='https://packages.cloud.google.com/apt/doc/apt-key.gpg'
+- name: repository
+  apt_repository: repo='deb http://packages.cloud.google.com/apt cloud-sdk-disco main' filename='google-cloud-sdk'
   become: true
   tags: admin
 
