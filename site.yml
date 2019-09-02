@@ -25,7 +25,6 @@
     - {role: idea, tags: ['idea']}
     - {role: java, tags: ['java']}
     - {role: julia, tags: ['julia']}
-    - {role: jupyter, tags: ['jupyter']}
     - {role: latex, tags: ['latex']}
     - {role: manim, tags: ['manim']}
     - {role: nim, tags: ['nim']}
