@@ -10,6 +10,12 @@ c.InteractiveShellApp.extensions = [
 
 c.InteractiveShellApp.exec_lines = [
     '%autoreload 2',
-    'import inspect',
+    'import re',
+    'from pydoc import *',
+    'from inspect import *',
+    'from functools import *',
+    'from itertools import *',
+    'from collections import *',
+    'from pathlib import Path',
     'from IPython.lib.deepreload import reload',
 ]
