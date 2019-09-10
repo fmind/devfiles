@@ -12,11 +12,14 @@
     file: name='~/bin/' state='directory'
 
   roles:
-    - {role: clang, tags: ['clang']}
-    - {role: docker, tags: ['docker']}
-    - {role: gcloud, tags: ['gcloud']}
-    - {role: groovy, tags: ['groovy']}
-    - {role: hylang, tags: ['hylang']}
-    - {role: latex, tags: ['latex']}
-    - {role: plantuml, tags: ['plantuml']}
-    - {role: python, tags: ['python']}
+    # documents
+    - {role: latex, tags: ['latex', 'docs']}
+    - {role: plantuml, tags: ['plantuml', 'docs']}
+    # languages
+    - {role: clang, tags: ['clang', 'lang']}
+    - {role: groovy, tags: ['groovy', 'lang']}
+    - {role: hylang, tags: ['hylang', 'lang']}
+    - {role: python, tags: ['python', 'lang']}
+    # services
+    - {role: docker, tags: ['docker', 'serv']}
+    - {role: gcloud, tags: ['gcloud', 'serv']}
