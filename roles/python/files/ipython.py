@@ -11,7 +11,7 @@ c.InteractiveShellApp.extensions = [
 c.InteractiveShellApp.exec_lines = [
     '%autoreload 2',
     'import re',
-    'from pydoc import *',
+    'import pydoc',
     'from inspect import *',
     'from functools import *',
     'from itertools import *',

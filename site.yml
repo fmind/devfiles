@@ -12,12 +12,13 @@
     file: name='~/bin/' state='directory'
 
   roles:
+    # editors
+    - {role: jupyter, tags: ['jupyter', 'edit']}
     # documents
     - {role: latex, tags: ['latex', 'docs']}
     - {role: plantuml, tags: ['plantuml', 'docs']}
     # languages
     - {role: clang, tags: ['clang', 'lang']}
-    - {role: groovy, tags: ['groovy', 'lang']}
     - {role: hylang, tags: ['hylang', 'lang']}
     - {role: python, tags: ['python', 'lang']}
     # services
