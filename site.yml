@@ -16,7 +16,9 @@
     - {role: jupyter, tags: ['jupyter', 'edit']}
     # documents
     - {role: latex, tags: ['latex', 'docs']}
+    - {role: graphviz, tags: ['graphviz', 'docs']}
     - {role: plantuml, tags: ['plantuml', 'docs']}
+    - {role: sphinx, tags: ['sphinx', 'docs']}
     # languages
     - {role: clang, tags: ['clang', 'lang']}
     - {role: hylang, tags: ['hylang', 'lang']}
