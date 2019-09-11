@@ -67,12 +67,19 @@
   pip: name='ipython' executable='pip3' extra_args='--user'
   tags: user
 
-- name: directory
-  file: path='~/.ipython/profile_default/' state='directory'
+- name: directories
+  file: path='{{item}}' state='directory'
+  with_items:
+    - '~/.config/mypy/'
+    - '~/.ipython/profile_default/'
   tags: user
 
 - name: hosting
   file: src='{{role_path}}/files/pypirc' dest='~/.pypirc' state=link force=yes
+  tags: user
+
+- name: typing
+  file: src='{{role_path}}/files/mypy.cfg' dest='~/.config/mypy/config' state=link force=yes
   tags: user
 
 - name: config
