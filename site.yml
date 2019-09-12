@@ -12,8 +12,6 @@
     file: name='~/bin/' state='directory'
 
   roles:
-    # editors
-    - {role: jupyter, tags: ['jupyter', 'edit']}
     # documents
     - {role: latex, tags: ['latex', 'docs']}
     - {role: graphviz, tags: ['graphviz', 'docs']}
@@ -23,6 +21,7 @@
     - {role: clang, tags: ['clang', 'lang']}
     - {role: hylang, tags: ['hylang', 'lang']}
     - {role: python, tags: ['python', 'lang']}
+    - {role: science, tags: ['science', 'lang']}
     # services
     - {role: docker, tags: ['docker', 'serv']}
     - {role: gcloud, tags: ['gcloud', 'serv']}
