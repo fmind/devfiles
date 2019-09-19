@@ -19,6 +19,8 @@
     - {role: sphinx, tags: ['sphinx', 'docs']}
     # languages
     - {role: clang, tags: ['clang', 'lang']}
+    - {role: golang, tags: ['golang', 'lang']}
+    - {role: groovy, tags: ['groovy', 'lang']}
     - {role: hylang, tags: ['hylang', 'lang']}
     - {role: python, tags: ['python', 'lang']}
     - {role: science, tags: ['science', 'lang']}
