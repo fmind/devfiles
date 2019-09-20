@@ -35,6 +35,10 @@
   pip: name='pytest' executable='pip3' extra_args='--user'
   tags: user
 
+- name: zipper
+  pip: name='shiv' executable='pip3' extra_args='--user'
+  tags: user
+
 - name: coverer
   pip: name='coverage' executable='pip3' extra_args='--user'
   tags: user
