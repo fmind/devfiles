@@ -12,18 +12,21 @@
     file: name='~/bin/' state='directory'
 
   roles:
-    # documents
+    # documents {{{
     - {role: latex, tags: ['latex', 'docs']}
     - {role: graphviz, tags: ['graphviz', 'docs']}
     - {role: plantuml, tags: ['plantuml', 'docs']}
     - {role: sphinx, tags: ['sphinx', 'docs']}
-    # languages
+    # }}}
+    # languages {{{
     - {role: clang, tags: ['clang', 'lang']}
-    - {role: golang, tags: ['golang', 'lang']}
     - {role: groovy, tags: ['groovy', 'lang']}
     - {role: hylang, tags: ['hylang', 'lang']}
+    - {role: nimlang, tags: ['nimlang', 'lang']}
     - {role: python, tags: ['python', 'lang']}
     - {role: science, tags: ['science', 'lang']}
-    # services
+    # # }}}
+    # services {{{
     - {role: docker, tags: ['docker', 'serv']}
     - {role: gcloud, tags: ['gcloud', 'serv']}
+    # }}}
