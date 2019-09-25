@@ -16,6 +16,10 @@
   pip: name='ipywidgets' executable='pip3' extra_args='--user'
   tags: user
 
+- name: explorer
+  pip: name='visidata' executable='pip3' extra_args='--user'
+  tags: user
+
 - name: parallel
   pip: name='ipyparallel' executable='pip3' extra_args='--user'
   tags: user
