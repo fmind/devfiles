@@ -1,0 +1,21 @@
+---
+
+- name: database
+  package: name='redis'
+  become: true
+  tags: admin
+
+- name: tools
+  package: name='redis-tools'
+  become: true
+  tags: admin
+
+- name: service
+  systemd: name='redis' state='started' enabled=true
+  become: true
+  tags: admin
+
+- name: binding
+  pip: name='redis' executable='pip3' extra_args='--user'
+  tags: user
+

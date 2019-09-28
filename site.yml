@@ -29,4 +29,6 @@
     # services {{{
     - {role: docker, tags: ['docker', 'serv']}
     - {role: gcloud, tags: ['gcloud', 'serv']}
+    - {role: mongodb, tags: ['mongodb', 'serv']}
+    - {role: redis, tags: ['redis', 'serv']}
     # }}}
