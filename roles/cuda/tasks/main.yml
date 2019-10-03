@@ -1,19 +1,23 @@
 ---
 
 - name: keyring
-  apt_key: url='https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub'
+  apt_key: url='https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1810/x86_64/7fa2af80.pub'
   become: true
   tags: admin
-  when: false
 
 - name: repository
-  apt_repository: repo='deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64 /' filename='cuda'
+  apt_repository: repo='deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1810/x86_64/ /' filename='cuda'
   become: true
   tags: admin
-  when: false
 
-- name: language
-  package: name='cuda'
+- name: package
+  package: name='cuda-toolkit-10-1'
   become: true
   tags: admin
-  when: false
+
+- name: libraries
+  pip: name='{{item}}' executable='pip3' extra_args='--user'
+  with_items:
+    - torch
+    - torchvision
+  tags: user
