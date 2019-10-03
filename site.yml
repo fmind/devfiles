@@ -25,7 +25,7 @@
     - {role: nimlang, tags: ['nimlang', 'lang']}
     - {role: python, tags: ['python', 'lang']}
     - {role: science, tags: ['science', 'lang']}
-    # # }}}
+    # }}}
     # services {{{
     - {role: cuda, tags: ['cuda', 'serv']}
     - {role: docker, tags: ['docker', 'serv']}
