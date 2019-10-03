@@ -19,5 +19,6 @@
   pip: name='{{item}}' executable='pip3' extra_args='--user'
   with_items:
     - torch
+    - pyro-ppl
     - torchvision
   tags: user
