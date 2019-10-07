@@ -28,6 +28,10 @@
   pip: name='voila' executable='pip3' extra_args='--user'
   tags: user
 
+- name: developer
+  pip: name='streamlit' executable='pip3' extra_args='--user'
+  tags: user
+
 - name: directory
   file: path='~/.jupyter/' state='directory'
   tags: user
