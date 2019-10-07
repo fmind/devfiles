@@ -24,6 +24,10 @@
   pip: name='ipyparallel' executable='pip3' extra_args='--user'
   tags: user
 
+- name: scheduler
+  pip: name='joblib' executable='pip3' extra_args='--user'
+  tags: user
+
 - name: dashboard
   pip: name='voila' executable='pip3' extra_args='--user'
   tags: user
