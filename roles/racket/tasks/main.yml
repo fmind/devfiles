@@ -1,7 +1,7 @@
 ---
 
 - name: repository
-  apt_repository: repo='ppa:plt/racket'
+  apt_repository: repo='ppa:plt/racket' filename='racket'
   become: true
   tags: admin
 

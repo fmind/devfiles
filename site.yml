@@ -22,12 +22,11 @@
     - {role: clang, tags: ['clang', 'lang']}
     - {role: groovy, tags: ['groovy', 'lang']}
     - {role: hylang, tags: ['hylang', 'lang']}
-    - {role: nimlang, tags: ['nimlang', 'lang']}
     - {role: python, tags: ['python', 'lang']}
     - {role: science, tags: ['science', 'lang']}
+    - {role: tensorflow, tags: ['tensorflow', 'lang']}
     # }}}
     # services {{{
-    - {role: cuda, tags: ['cuda', 'serv']}
     - {role: docker, tags: ['docker', 'serv']}
     - {role: gcloud, tags: ['gcloud', 'serv']}
     - {role: mongodb, tags: ['mongodb', 'serv']}
