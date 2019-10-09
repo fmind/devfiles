@@ -27,7 +27,7 @@
     - libcudnn7
     - libnvinfer5
     - libcudnn7-dev
-    - libnvinfer5-dev
+    - libnvinfer-dev
     - nvidia-driver-418
   become: true
   tags: admin
