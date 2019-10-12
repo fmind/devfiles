@@ -36,5 +36,7 @@
   pip: name='{{item}}' executable='pip3' extra_args='--user'
   with_items:
     - tensorflow>=2.0.0
+    - tensorflow-hub
+    - tensorflow-datasets
     - tensorflow-probability
   tags: user
