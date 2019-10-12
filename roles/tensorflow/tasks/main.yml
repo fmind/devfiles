@@ -20,21 +20,25 @@
   become: true
   tags: admin
 
+- name: drivers
+  package: name='nvidia-driver-418'
+  become: true
+  tags: admin
+
 - name: dependencies
-  package: name='{{item}}'
+  apt: name='{{item}}' install_recommends=no
   with_items:
-    - cuda
+    - cuda-10-0
     - libcudnn7
     - libnvinfer5
     - libcudnn7-dev
     - libnvinfer-dev
-    - nvidia-driver-418
   become: true
   tags: admin
 
 - name: packages
   pip: name='{{item}}' executable='pip3' extra_args='--user'
   with_items:
-    - tensorflow>=2.0.0
+    - tensorflow-gpu>=2.0.0
     - tensorflow-probability
   tags: user
