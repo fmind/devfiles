@@ -1,14 +1,21 @@
 ---
 
 - name: language
-  package: name='leiningen'
+  package:
+    name: leiningen
   become: true
   tags: admin
 
 - name: directory
-  file: path='~/.lein/' state='directory'
+  file:
+    state: directory
+    path: ~/.lein/
   tags: user
 
 - name: config
-  file: src='{{role_path}}/files/profiles.clj' dest='~/.lein/profiles.clj' state=link force=yes
+  file:
+    force: yes
+    state: link
+    dest: ~/.lein/profiles.clj
+    src: "{{ role_path }}/files/profiles.clj"
   tags: user

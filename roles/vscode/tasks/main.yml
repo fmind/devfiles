@@ -1,41 +1,60 @@
 ---
 
 - name: keyring
-  apt_key: url='https://packages.microsoft.com/keys/microsoft.asc'
+  apt_key:
+    url: https://packages.microsoft.com/keys/microsoft.asc
   become: true
-  tags: admin
   when: false
+  tags: admin
 
 - name: repository
-  apt_repository: repo='deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main' filename='vscode'
+  apt_repository:
+    filename: vscode
+    repo: "deb [arch: amd64] https://packages.microsoft.com/repos/vscode stable main"
   become: true
-  tags: admin
   when: false
+  tags: admin
 
 - name: package
-  package: name='code'
+  package:
+    name: code
   become: true
-  tags: admin
   when: false
+  tags: admin
 
 - name: font
-  package: name='fonts-firacode'
+  package:
+    name: fonts-firacode
   become: true
   tags: admin
   when: false
 
 - name: directory
-  file: name='~/.config/Code/User' state='directory'
+  file:
+    state: directory
+    name: ~/.config/Code/User
   tags: user
 
 - name: snippets
-  file: src='{{role_path}}/files/snippets' dest='~/.config/Code/User/snippets' state=link force=yes
+  file:
+    force: yes
+    state: link
+    dest: ~/.config/Code/User/snippets
+    src: "{{ role_path }}/files/snippets"
   tags: user
 
 - name: settings
-  file: src='{{role_path}}/files/settings.json' dest='~/.config/Code/User/settings.json' state=link force=yes
+  file:
+    force: yes
+    state: link
+    dest: ~/.config/Code/User/settings.json
+    src: "{{ role_path }}/files/settings.json"
   tags: user
 
 - name: keybindings
-  file: src='{{role_path}}/files/keybindings.json' dest='~/.config/Code/User/keybindings.json' state=link force=yes
+  file:
+    force: yes
+    state: link
+    dest: ~/.config/Code/User/keybindings.json
+    src: "{{ role_path }}/files/keybindings.json"
   tags: user

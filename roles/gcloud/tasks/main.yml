@@ -1,16 +1,20 @@
 ---
 
 - name: keyring
-  apt_key: url='https://packages.cloud.google.com/apt/doc/apt-key.gpg'
+  apt_key:
+    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
   become: true
   tags: admin
 
 - name: repository
-  apt_repository: repo='deb http://packages.cloud.google.com/apt cloud-sdk-bionic main' filename='google-cloud-sdk'
+  apt_repository:
+    filename: google-cloud-sdk
+    repo: "deb http://packages.cloud.google.com/apt cloud-sdk-bionic main"
   become: true
   tags: admin
 
 - name: sdk
-  package: name='google-cloud-sdk'
+  package:
+    name: google-cloud-sdk
   become: true
   tags: admin

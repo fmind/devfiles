@@ -1,6 +1,7 @@
 ---
 
 - name: language
-  package: name='nim'
+  package:
+    name: nim
   become: true
   tags: admin

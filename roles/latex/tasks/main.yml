@@ -1,31 +1,40 @@
 ---
 
 - name: language
-  package: name='texlive'
+  package:
+    name: texlive
   become: true
   tags: admin
 
 - name: libraries
-  package: name='{{item}}'
-  with_items:
-    - texlive-science
-    - texlive-pictures
-    - texlive-extra-utils
-    - texlive-latex-extra
-    - texlive-bibtex-extra
+  package:
+    name: "{{ packages }}"
+  vars:
+    packages:
+      - texlive-science
+      - texlive-pictures
+      - texlive-extra-utils
+      - texlive-latex-extra
+      - texlive-bibtex-extra
   become: true
   tags: admin
 
 - name: maker
-  package: name='latexmk'
+  package:
+    name: latexmk
   become: true
   tags: admin
 
 - name: linter
-  package: name='chktex'
+  package:
+    name: chktex
   become: true
   tags: admin
 
 - name: config
-  file: src='{{role_path}}/files/latexmkrc' dest='~/.latexmkrc' state=link force=yes
+  file:
+    force: yes
+    state: link
+    dest: ~/.latexmkrc
+    src: "{{ role_path }}/files/latexmkrc"
   tags: user

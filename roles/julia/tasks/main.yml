@@ -1,14 +1,21 @@
 ---
 
 - name: language
-  package: name='julia'
+  package:
+    name: julia
   become: true
   tags: admin
 
 - name: directory
-  file: path='~/.julia/config' state='directory'
+  file:
+    state: directory
+    path: ~/.julia/config
   tags: user
 
 - name: config
-  file: src='{{role_path}}/files/startup.jl' dest='~/.julia/config/startup.jl' state=link force=yes
+  file:
+    force: yes
+    state: link
+    dest: ~/.julia/config/startup.jl
+    src: "{{ role_path }}/files/startup.jl"
   tags: user

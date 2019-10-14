@@ -1,10 +1,14 @@
 ---
 
 - name: language
-  package: name='graphviz'
+  package:
+    name: graphviz
   become: true
   tags: admin
 
 - name: library
-  pip: name='graphviz' executable='pip3' extra_args='--user'
+  pip:
+    name: graphviz
+    executable: pip3
+    extra_args: --user
   tags: user

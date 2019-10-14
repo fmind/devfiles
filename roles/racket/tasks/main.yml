@@ -1,15 +1,22 @@
 ---
 
 - name: repository
-  apt_repository: repo='ppa:plt/racket' filename='racket'
+  apt_repository:
+    filename: racket
+    repo: ppa:plt/racket
   become: true
   tags: admin
 
 - name: language
-  package: name='racket'
+  package:
+    name: racket
   become: true
   tags: admin
 
 - name: config
-  file: src='{{role_path}}/files/racketrc' dest='~/.racketrc' state=link force=yes
+  file:
+    force: yes
+    state: link
+    dest: ~/.racketrc
+    src: "{{ role_path }}/files/racketrc"
   tags: user

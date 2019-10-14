@@ -1,6 +1,7 @@
 ---
 
 - name: language
-  package: name='plantuml'
+  package:
+    name: plantuml
   become: true
   tags: admin

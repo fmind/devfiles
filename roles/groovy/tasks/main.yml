@@ -1,6 +1,7 @@
 ---
 
 - name: language
-  package: name='groovy'
+  package:
+    name: groovy
   become: true
   tags: admin

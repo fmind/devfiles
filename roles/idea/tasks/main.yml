@@ -1,5 +1,9 @@
 ---
 
 - name: config
-  file: src='{{role_path}}/files/ideavimrc' dest='~/.ideavimrc' state=link force=yes
+  file:
+    force: yes
+    state: link
+    dest: ~/.ideavimrc
+    src: "{{ role_path }}/files/ideavimrc"
   tags: user

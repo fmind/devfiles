@@ -1,10 +1,13 @@
 ---
 
 - name: language
-  package: name='golang'
+  package:
+    name: golang
   become: true
   tags: admin
 
 - name: directory
-  file: name='~/go' state='directory'
+  file:
+    state: directory
+    name: ~/go
   tags: user

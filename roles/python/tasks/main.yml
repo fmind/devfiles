@@ -1,87 +1,144 @@
 ---
 
 - name: language
-  package: name='python3-dev'
+  package:
+    name: python3-dev
   become: true
   tags: admin
 
 - name: manager
-  package: name='python3-pip'
+  package:
+    name: python3-pip
   become: true
   tags: admin
 
 - name: sandbox
-  package: name='python3-venv'
+  package:
+    name: python3-venv
   become: true
   tags: admin
 
 - name: maker
-  pip: name='invoke' executable='pip3' extra_args='--user'
+  pip:
+    name: invoke
+    executable: pip3
+    extra_args: --user
   tags: user
 
 - name: typer
-  pip: name='mypy' executable='pip3' extra_args='--user'
+  pip:
+    name: mypy
+    executable: pip3
+    extra_args: --user
   tags: user
 
 - name: linter
-  pip: name='pylint' executable='pip3' extra_args='--user'
+  pip:
+    name: pylint
+    executable: pip3
+    extra_args: --user
   tags: user
 
 - name: sorter
-  pip: name='isort' executable='pip3' extra_args='--user'
+  pip:
+    name: isort
+    executable: pip3
+    extra_args: --user
   tags: user
 
 - name: tester
-  pip: name='pytest' executable='pip3' extra_args='--user'
+  pip:
+    name: pytest
+    executable: pip3
+    extra_args: --user
   tags: user
 
 - name: zipper
-  pip: name='shiv' executable='pip3' extra_args='--user'
+  pip:
+    name: shiv
+    executable: pip3
+    extra_args: --user
   tags: user
 
 - name: coverer
-  pip: name='coverage' executable='pip3' extra_args='--user'
+  pip:
+    name: coverage
+    executable: pip3
+    extra_args: --user
   tags: user
 
 - name: debugger
-  pip: name='ipdb' executable='pip3' extra_args='--user'
+  pip:
+    name: ipdb
+    executable: pip3
+    extra_args: --user
   tags: user
 
 - name: packager
-  pip: name='wheel' executable='pip3' extra_args='--user'
+  pip:
+    name: wheel
+    executable: pip3
+    extra_args: --user
   tags: user
 
 - name: uploader
-  pip: name='twine' executable='pip3' extra_args='--user'
+  pip:
+    name: twine
+    executable: pip3
+    extra_args: --user
   tags: user
 
 - name: formatter
-  pip: name='black' executable='pip3' extra_args='--user'
+  pip:
+    name: black
+    executable: pip3
+    extra_args: --user
   tags: user
 
 - name: profiller
-  pip: name='profiling' executable='pip3' extra_args='--user'
+  pip:
+    name: profiling
+    executable: pip3
+    extra_args: --user
   tags: user
 
 - name: input
-  pip: name='ipython' executable='pip3' extra_args='--user'
+  pip:
+    name: ipython
+    executable: pip3
+    extra_args: --user
   tags: user
 
 - name: directories
-  file: path='{{item}}' state='directory'
-  with_items:
-    - '~/.config/mypy/'
-    - '~/.ipython/profile_default/'
+  file:
+    state: directory
+    path: "{{ directories }}"
+  vars:
+    directories:
+      - ~/.config/mypy/
+      - ~/.ipython/profile_default/
   tags: user
 
 - name: hosting
-  file: src='{{role_path}}/files/pypirc' dest='~/.pypirc' state=link force=yes
+  file:
+    force: yes
+    state: link
+    dest: ~/.pypirc
+    src: "{{ role_path }}/files/pypirc"
   tags: user
 
 - name: typing
-  file: src='{{role_path}}/files/mypy.cfg' dest='~/.config/mypy/config' state=link force=yes
+  file:
+    force: yes
+    state: link
+    dest: ~/.config/mypy/config
+    src: "{{ role_path }}/files/mypy.cfg"
   tags: user
 
 - name: config
-  file: src='{{role_path}}/files/ipython.py' dest='~/.ipython/profile_default/ipython_config.py' state=link force=yes
+  file:
+    force: yes
+    state: link
+    dest: ~/.ipython/profile_default/ipython_config.py
+    src: "{{ role_path }}/files/ipython.py"
   tags: user

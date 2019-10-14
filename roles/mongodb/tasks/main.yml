@@ -1,21 +1,29 @@
 ---
 
 - name: database
-  package: name='mongodb'
+  package:
+    name: mongodb
   become: true
   tags: admin
 
 - name: tools
-  package: name='mongo-tools'
+  package:
+    name: mongo-tools
   become: true
   tags: admin
 
 - name: service
-  systemd: name='mongodb' state='started' enabled=true
+  systemd:
+    name: mongodb
+    state: started
+    enabled: true
   become: true
   tags: admin
 
 - name: binding
-  pip: name='pymongo' executable='pip3' extra_args='--user'
+  pip:
+    name: pymongo
+    executable: pip3
+    extra_args: --user
   tags: user
 

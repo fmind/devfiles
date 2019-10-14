@@ -1,18 +1,29 @@
 ---
 
 - name: language
-  package: name='haskell-stack'
+  package:
+    name: haskell-stack
   become: true
   tags: admin
 
 - name: directory
-  file: path='~/.stack/' state='directory'
+  file:
+    state: directory
+    path: ~/.stack/
   tags: user
 
 - name: config
-  file: src='{{role_path}}/files/config.yaml' dest='~/.stack/config.yaml' state=link force=yes
+  file:
+    force: yes
+    state: link
+    dest: ~/.stack/config.yaml
+    src: "{{ role_path }}/files/config.yaml"
   tags: user
 
 - name: input
-  file: src='{{role_path}}/files/haskeline' dest='~/.haskeline' state=link force=yes
+  file:
+    force: yes
+    state: link
+    dest: ~/.haskeline
+    src: "{{ role_path }}/files/haskeline"
   tags: user

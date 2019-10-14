@@ -1,24 +1,37 @@
 ---
 
 - name: runtime
-  package: name='docker.io'
+  package:
+    name: docker.io
   become: true
   tags: admin
 
 - name: user
-  user: name='{{lookup("env", "USER")}}' groups='docker' append=yes
+  user:
+    append: yes
+    groups: docker
+    name: "{{ lookup('env', 'USER') }}"
   become: true
   tags: admin
 
 - name: library
-  pip: name='docker' executable='pip3' extra_args='--user'
+  pip:
+    name: docker
+    executable: pip3
+    extra_args: --user
   tags: user
 
 - name: manager
-  pip: name='wharfee' executable='pip3' extra_args='--user'
+  pip:
+    name: wharfee
+    executable: pip3
+    extra_args: --user
   when: false
   tags: user
 
 - name: compose
-  pip: name='docker-compose' executable='pip3' extra_args='--user'
+  pip:
+    name: docker-compose
+    executable: pip3
+    extra_args: --user
   tags: user

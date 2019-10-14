@@ -1,6 +1,7 @@
 ---
 
 - name: language
-  package: name='default-jdk'
+  package:
+    name: default-jdk
   become: true
   tags: admin

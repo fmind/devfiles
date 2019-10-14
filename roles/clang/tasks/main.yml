@@ -1,11 +1,13 @@
 ---
 
 - name: language
-  package: name='build-essential'
+  package:
+    name: build-essential
   become: true
   tags: admin
 
 - name: maker
-  package: name='cmake'
+  package:
+    name: cmake
   become: true
   tags: admin

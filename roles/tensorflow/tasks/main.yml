@@ -1,46 +1,59 @@
 ---
 
 - name: keyring
-  apt_key: url='https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub'
+  apt_key:
+    url: https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
   become: true
   tags: admin
 
 - name: graphics
-  apt_repository: repo='ppa:graphics-drivers/ppa' filename='drivers'
+  apt_repository:
+    filename: drivers
+    repo: ppa:graphics-drivers/ppa
   become: true
   tags: admin
 
 - name: learning
-  apt_repository: repo='deb http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1804/x86_64/ /' filename='learning'
+  apt_repository:
+    filename: learning
+    repo: "deb http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1804/x86_64/ /"
   become: true
   tags: admin
 
-- name: cuda
-  apt_repository: repo='deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/ /' filename='cuda'
+- name: repository
+  apt_repository:
+    filename: cuda
+    repo: "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/ /"
   become: true
   tags: admin
 
 - name: drivers
-  package: name='nvidia-driver-418'
+  package:
+    name: nvidia-driver-418
   become: true
   tags: admin
 
 - name: dependencies
-  apt: name='{{item}}' install_recommends=no
-  with_items:
-    - cuda-10-0
-    - libcudnn7
-    - libnvinfer5
-    - libcudnn7-dev
-    - libnvinfer-dev
+  apt:
+    name: "{{ packages }}"
+    install_recommends: no
+  vars:
+    packages:
+      - cuda-10-0
+      - libcudnn7
+      - libnvinfer5
+      - libcudnn7-dev
+      - libnvinfer-dev
   become: true
   tags: admin
 
 - name: packages
-  pip: name='{{item}}' executable='pip3' extra_args='--user'
-  with_items:
-    - tensorflow-gpu>=2.0.0
-    - tensorflow-hub
-    - tensorflow-datasets
-    - tensorflow-probability
+  pip:
+    name:
+      - tensorflow-gpu>=2.0.0
+      - tensorflow-hub
+      - tensorflow-datasets
+      - tensorflow-probability
+    executable: pip3
+    extra_args: --user
   tags: user
