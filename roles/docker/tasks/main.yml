@@ -26,7 +26,6 @@
     name: wharfee
     executable: pip3
     extra_args: --user
-  when: false
   tags: user
 
 - name: compose
