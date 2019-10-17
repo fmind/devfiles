@@ -14,13 +14,6 @@
   become: true
   tags: admin
 
-- name: library
-  pip:
-    name: docker
-    executable: pip3
-    extra_args: --user
-  tags: user
-
 - name: manager
   pip:
     name: wharfee
