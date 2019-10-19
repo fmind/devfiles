@@ -112,11 +112,10 @@
 - name: directories
   file:
     state: directory
-    path: "{{ directories }}"
-  vars:
-    directories:
-      - ~/.config/mypy/
-      - ~/.ipython/profile_default/
+    path: "{{ item }}"
+  with_items:
+    - ~/.config/mypy/
+    - ~/.ipython/profile_default/
   tags: user
 
 - name: hosting
