@@ -63,6 +63,13 @@
     extra_args: --user
   tags: user
 
+- name: competition
+  pip:
+    name: kaggle
+    executable: pip3
+    extra_args: --user
+  tags: user
+
 - name: directory
   file:
     state: directory
