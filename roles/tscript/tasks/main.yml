@@ -6,7 +6,7 @@
   become: true
   tags: admin
 
-- name: sandbox
+- name: runtime
   package:
     name: nodejs
   become: true

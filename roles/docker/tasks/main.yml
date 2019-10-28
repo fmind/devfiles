@@ -14,13 +14,12 @@
   become: true
   tags: admin
 
-- name: manager
-  pip:
-    name: wharfee
-    executable: pip3
-    extra_args: --user
-  when: false
-  tags: user
+# - name: manager
+#   pip:
+#     name: wharfee
+#     executable: pip3
+#     extra_args: --user
+#   tags: user
 
 - name: compose
   pip:

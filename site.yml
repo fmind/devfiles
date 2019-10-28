@@ -13,22 +13,17 @@
 
   roles:
     # documents {{{
-    - {role: latex, tags: ['latex', 'docs']}
     - {role: graphviz, tags: ['graphviz', 'docs']}
     - {role: plantuml, tags: ['plantuml', 'docs']}
-    - {role: sphinx, tags: ['sphinx', 'docs']}
     # }}}
     # languages {{{
     - {role: clang, tags: ['clang', 'lang']}
-    - {role: groovy, tags: ['groovy', 'lang']}
-    - {role: hylang, tags: ['hylang', 'lang']}
     - {role: python, tags: ['python', 'lang']}
-    - {role: science, tags: ['science', 'lang']}
+    - {role: tscript, tags: ['tscript', 'lang']}
+    # }}}
+    # runtimes {{{
+    - {role: keras, tags: ['keras', 'run']}
     # }}}
     # services {{{
-    - {role: docker, tags: ['docker', 'serv']}
-    - {role: gcloud, tags: ['gcloud', 'serv']}
-    - {role: mongodb, tags: ['mongodb', 'serv']}
-    - {role: redis, tags: ['redis', 'serv']}
-    - {role: tensorflow, tags: ['tensorflow', 'serv']}
+    - {role: docker, tags: ['docker', 'srv']}
     # }}}

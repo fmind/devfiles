@@ -1,33 +1,29 @@
 ---
 
-- name: keyring
-  apt_key:
-    url: https://packages.microsoft.com/keys/microsoft.asc
-  become: true
-  when: false
-  tags: admin
+# - name: keyring
+#   apt_key:
+#     url: https://packages.microsoft.com/keys/microsoft.asc
+#   become: true
+#   tags: admin
 
-- name: repository
-  apt_repository:
-    filename: vscode
-    repo: "deb [arch: amd64] https://packages.microsoft.com/repos/vscode stable main"
-  become: true
-  when: false
-  tags: admin
+# - name: repository
+#   apt_repository:
+#     filename: vscode
+#     repo: "deb [arch: amd64] https://packages.microsoft.com/repos/vscode stable main"
+#   become: true
+#   tags: admin
 
-- name: package
-  package:
-    name: code
-  become: true
-  when: false
-  tags: admin
+# - name: package
+#   package:
+#     name: code
+#   become: true
+#   tags: admin
 
-- name: font
-  package:
-    name: fonts-firacode
-  become: true
-  tags: admin
-  when: false
+# - name: font
+#   package:
+#     name: fonts-firacode
+#   become: true
+#   tags: admin
 
 - name: directory
   file:
