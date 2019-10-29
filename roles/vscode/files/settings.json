@@ -54,6 +54,7 @@
         {"before": ["E"], "after": ["g", "$"]},
         {"before": ["Y"], "after": ["y", "$"]},
         {"before": ["g", "l"], "commands": [":nohl"]},
+        {"before": ["U"], "commands": ["editor.action.undo"]},
         {"before": ["<enter>"], "after": [":"]},
         {"before": ["<leader>", "a"], "commands": ["workbench.action.navigateBack"]},
         {"before": ["<leader>", "b"], "commands": ["workbench.action.debug.start"]},

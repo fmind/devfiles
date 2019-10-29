@@ -88,6 +88,13 @@
     extra_args: --user
   tags: user
 
+- name: profiler
+  pip:
+    name: profiling
+    executable: pip3
+    extra_args: --user
+  tags: user
+
 - name: formatter
   pip:
     name: black
@@ -95,14 +102,7 @@
     extra_args: --user
   tags: user
 
-- name: profiller
-  pip:
-    name: profiling
-    executable: pip3
-    extra_args: --user
-  tags: user
-
-- name: input
+- name: interpreter
   pip:
     name: ipython
     executable: pip3

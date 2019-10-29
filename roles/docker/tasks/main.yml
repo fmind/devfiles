@@ -1,6 +1,6 @@
 ---
 
-- name: runtime
+- name: service
   package:
     name: docker.io
   become: true
@@ -13,13 +13,6 @@
     name: "{{ lookup('env', 'USER') }}"
   become: true
   tags: admin
-
-# - name: manager
-#   pip:
-#     name: wharfee
-#     executable: pip3
-#     extra_args: --user
-#   tags: user
 
 - name: compose
   pip:

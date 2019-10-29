@@ -33,7 +33,7 @@
   become: true
   tags: admin
 
-- name: dependencies
+- name: libraries
   apt:
     name: "{{ packages }}"
     install_recommends: no
