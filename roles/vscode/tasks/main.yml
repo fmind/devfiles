@@ -54,3 +54,20 @@
     dest: ~/.config/Code/User/keybindings.json
     src: "{{ role_path }}/files/keybindings.json"
   tags: user
+
+- name: extensions
+  shell: code --install-extension {{ item|quote }}
+  with_items:
+    - alefragnani.Bookmarks
+    - James-Yu.latex-workshop
+    - VisualStudioExptTeam.vscodeintellicode
+    - dchanco.vsc-invoke
+    - jebbs.plantuml
+    - lextudio.restructuredtext
+    - ms-azuretools.vscode-docker
+    - ms-python.python
+    - ryu1kn.edit-with-shell
+    - streetsidesoftware.code-spell-checker
+    - vscodevim.vim
+    - vscoss.vscode-ansible
+  tags: user
