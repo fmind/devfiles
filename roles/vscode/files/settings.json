@@ -23,8 +23,6 @@
     },
     "files.simpleDialog.enable": true,
     "latex-workshop.chktex.enabled": true,
-    "latex-workshop.intellisense.package.enabled": true,
-    "latex-workshop.intellisense.unimathsymbols.enabled": true,
     "latex-workshop.synctex.afterBuild.enabled": true,
     "latex-workshop.view.pdf.viewer": "tab",
     "python.dataScience.autoPreviewNotebooksInInteractivePane": true,
@@ -129,8 +127,5 @@
         {"before": ["<enter>"], "after": [ ":" ]},
         {"before": ["<leader>", "r"], "commands": ["workbench.action.terminal.runSelectedText"]}
     ],
-    "window.menuBarVisibility": "toggle",
-    "window.titleBarStyle": "custom",
-    "workbench.colorTheme": "Default Light+",
-    "workbench.panel.defaultLocation": "right"
+    "workbench.colorTheme": "Default Light+"
 }
