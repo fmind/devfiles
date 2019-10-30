@@ -17,12 +17,14 @@
     - {role: neovim, tags: ['neovim', 'edit']}
     - {role: vscode, tags: ['vscode', 'edit']}
     # }}}
+    # documents {{{
+    - {role: graphviz, tags: ['graphviz', 'docs']}
+    - {role: plantuml, tags: ['plantuml', 'docs']}
+    - {role: sphinx, tags: ['sphinx', 'docs']}
+    # }}}
     # languages {{{
     - {role: clang, tags: ['clang', 'lang']}
-    - {role: graphviz, tags: ['graphviz', 'lang']}
-    - {role: plantuml, tags: ['plantuml', 'lang']}
     - {role: python, tags: ['python', 'lang']}
-    - {role: sphinx, tags: ['sphinx', 'lang']}
     - {role: tscript, tags: ['tscript', 'lang']}
     # }}}
     # services {{{
