@@ -24,8 +24,8 @@
     # }}}
     # languages {{{
     - {role: clang, tags: ['clang', 'lang']}
+    - {role: nodejs, tags: ['nodejs', 'lang']}
     - {role: python, tags: ['python', 'lang']}
-    - {role: tscript, tags: ['tscript', 'lang']}
     # }}}
     # services {{{
     - {role: docker, tags: ['docker', 'serve']}

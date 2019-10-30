@@ -1,0 +1,45 @@
+---
+
+- name: keyring (yarn)
+  apt_key:
+    url: https://dl.yarnpkg.com/debian/pubkey.gpg 
+  become: true
+  tags: admin
+
+- name: keyring (nodejs)
+  apt_key:
+    url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
+  become: true
+  tags: admin
+
+- name: repository (yarn)
+  apt_repository:
+    filename: yarn
+    repo: "deb https://dl.yarnpkg.com/debian/ stable main"
+  become: true
+  tags: admin
+
+- name: repository (nodejs)
+  apt_repository:
+    filename: nodejs
+    repo: "deb https://deb.nodesource.com/node_12.x bionic main"
+  become: true
+  tags: admin
+
+- name: manager
+  package:
+    name: yarn
+  become: true
+  tags: admin
+
+- name: runtime
+  package:
+    name: nodejs
+  become: true
+  tags: admin
+
+- name: typing
+  package:
+    name: node-typescript
+  become: true
+  tags: admin
