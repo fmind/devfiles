@@ -51,13 +51,6 @@
     extra_args: --user
   tags: user
 
-- name: scheduler
-  pip:
-    name: joblib
-    executable: pip3
-    extra_args: --user
-  tags: user
-
 - name: presenter
   pip:
     name: RISE
@@ -65,7 +58,7 @@
     extra_args: --user
   tags: user
 
-- name: developer
+- name: prototyper
   pip:
     name: streamlit
     executable: pip3

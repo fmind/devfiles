@@ -11,31 +11,3 @@
     name: npm
   become: true
   tags: admin
-
-- name: maker
-  npm:
-    global: yes
-    name: gulp-cli
-  become: true
-  tags: admin
-
-- name: typer
-  npm:
-    global: yes
-    name: typescript
-  become: true
-  tags: admin
-
-- name: linter
-  npm:
-    global: yes
-    name: tslint
-  become: true
-  tags: admin
-
-- name: interpreter
-  npm:
-    global: yes
-    name: ts-node
-  become: true
-  tags: admin
