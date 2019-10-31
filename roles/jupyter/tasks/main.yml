@@ -1,5 +1,14 @@
 ---
 
+- name: dependencies
+  package:
+    name: "{{ item }}"
+  with_items:
+    - nodejs
+    - npm
+  become: true
+  tags: admin
+
 - name: editor
   pip:
     name: jupyterlab
