@@ -5,11 +5,3 @@
     name: r-base-core
   become: true
   tags: admin
-
-- name: config
-  file:
-    force: yes
-    state: link
-    dest: ~/.Rprofile
-    src: "{{ role_path }}/files/Rprofile"
-  tags: user
