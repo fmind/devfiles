@@ -5,17 +5,3 @@
     name: julia
   become: true
   tags: admin
-
-- name: directory
-  file:
-    state: directory
-    path: ~/.julia/config
-  tags: user
-
-- name: config
-  file:
-    force: yes
-    state: link
-    dest: ~/.julia/config/startup.jl
-    src: "{{ role_path }}/files/startup.jl"
-  tags: user

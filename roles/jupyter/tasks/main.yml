@@ -55,17 +55,3 @@
     executable: pip3
     extra_args: --user
   tags: user
-
-- name: directory
-  file:
-    state: directory
-    path: ~/.jupyter/
-  tags: user
-
-- name: config
-  file:
-    force: yes
-    state: link
-    dest: ~/.jupyter/jupyter_notebook_config.py
-    src: "{{ role_path }}/files/jupyter_notebook_config.py"
-  tags: user

@@ -19,11 +19,3 @@
     dest: ~/.stack/config.yaml
     src: "{{ role_path }}/files/config.yaml"
   tags: user
-
-- name: input
-  file:
-    force: yes
-    state: link
-    dest: ~/.haskeline
-    src: "{{ role_path }}/files/haskeline"
-  tags: user
