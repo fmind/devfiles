@@ -49,9 +49,37 @@
     extra_args: --user
   tags: user
 
+- name: presenter
+  pip:
+    name: RISE
+    executable: pip3
+    extra_args: --user
+  tags: user
+
 - name: developer
   pip:
     name: streamlit
     executable: pip3
     extra_args: --user
+  tags: user
+
+- name: competition
+  pip:
+    name: kaggle
+    executable: pip3
+    extra_args: --user
+  tags: user
+
+- name: directory
+  file:
+    state: directory
+    path: ~/.jupyter/
+  tags: user
+
+- name: hosting
+  file:
+    force: yes
+    state: link
+    dest: ~/.jupyter/jupyter_notebook_config.py
+    src: "{{ role_path }}/files/jupyter_notebook_config.py"
   tags: user

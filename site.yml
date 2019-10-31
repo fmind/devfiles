@@ -15,20 +15,16 @@
     # editors {{{
     - {role: jupyter, tags: ['jupyter', 'edit']}
     - {role: neovim, tags: ['neovim', 'edit']}
-    - {role: vscode, tags: ['vscode', 'edit']}
     # }}}
     # documents {{{
     - {role: graphviz, tags: ['graphviz', 'docs']}
     - {role: plantuml, tags: ['plantuml', 'docs']}
-    - {role: sphinx, tags: ['sphinx', 'docs']}
     # }}}
     # languages {{{
     - {role: clang, tags: ['clang', 'lang']}
-    - {role: nodejs, tags: ['nodejs', 'lang']}
     - {role: python, tags: ['python', 'lang']}
     # }}}
     # services {{{
     - {role: docker, tags: ['docker', 'serve']}
-    - {role: mongodb, tags: ['mongodb', 'serve']}
     - {role: tensorflow, tags: ['tensorflow', 'serve']}
     # }}}

@@ -25,10 +25,6 @@ set lazyredraw
 set shortmess=I
 set scrolloff=10
 " }}}
-" SPELL {{{
-set spell
-set spelllang=en
-" }}}
 " NUMBER {{{
 set number
 set relativenumber
@@ -37,19 +33,24 @@ set relativenumber
 set foldmethod=syntax
 set foldlevelstart=99
 " }}}
-" EXTERNAL {{{
-set shell=/bin/bash
-set clipboard=unnamedplus
+" SPELLING {{{
+set spell
+set spelllang=en
 " }}}
 " COMPLETE {{{
 set wildmode=list:longest,full
 set completeopt=menuone,longest
+" }}}
+" EXTERNAL {{{
+set shell=/bin/bash
+set clipboard=unnamedplus
 " }}}
 " PLUGIN {{{
 let g:loaded_netrw = 1
 let g:loaded_matchparen=1
 let g:loaded_netrwPlugin = 1
 call plug#begin('~/.local/share/nvim/plugged')
+Plug 'andrewradev/splitjoin.vim'
 Plug 'benmills/vimux'
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'francoiscabrol/ranger.vim'
@@ -64,6 +65,7 @@ let g:sneak#label = 1
 let g:sneak#s_next = 1
 let g:sneak#use_ic_scs = 1
 Plug 'rbgrouleff/bclose.vim' " ranger dependency
+Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 let g:deoplete#enable_at_startup = 1
 Plug 'SirVer/ultisnips'
@@ -99,10 +101,10 @@ noremap E g$
 noremap Y y$
 noremap U <C-r>
 noremap gl :nohl<cr>
-inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
-inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 xnoremap < <gv
 xnoremap > >gv
+inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 " }}}
 " LEADER {{{
 noremap <cr> :
@@ -110,7 +112,7 @@ let mapleader=" "
 noremap <leader>a :Ag<cr>
 noremap <leader>b :Buffers<cr>
 noremap <leader>c :Colors<cr>
-noremap <leader>d :Tags<cr>
+noremap <leader>d :Ranger<cr>
 noremap <leader>e :cnext<cr>
 noremap <leader>f :Files<cr>
 noremap <leader>g :GFiles<cr>
@@ -124,7 +126,7 @@ noremap <leader>n :BCommits<cr>
 noremap <leader>o :call VimuxOpenRunner()<cr>
 noremap <leader>p :Commands<cr>
 noremap <leader>q :bdelete<cr>:bnext<cr>
-noremap <leader>r :Ranger<cr>
+noremap <leader>r :Tags<cr>
 noremap <leader>s :Google 
 noremap <leader>t :BTags<cr>
 noremap <leader>u :VimuxRunLastCommand<cr>
@@ -140,6 +142,7 @@ noremap <leader>' :VimuxPromptCommand<cr>
 noremap <leader>; :call VimuxSlime(join(getline(1, '$'), "\n"))<cr>
 noremap <leader>. :edit $MYVIMRC<cr>
 noremap <leader>, :Gw<cr>
+noremap <leader>! :GitGutterToggle<cr>
 noremap <leader>= :Tabularize 
 noremap <leader>: :History:<cr>
 noremap <leader>/ :History/<cr>

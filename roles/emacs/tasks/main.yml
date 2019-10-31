@@ -1,16 +1,8 @@
 ---
 
-- name: package (gtk)
+- name: package
   package:
     name: emacs
-  when: lookup("env","DISPLAY")
-  become: true
-  tags: admin
-
-- name: package (nox)
-  package:
-    name: emacs-nox
-  when: not lookup("env","DISPLAY")
   become: true
   tags: admin
 
