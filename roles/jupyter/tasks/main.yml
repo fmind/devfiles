@@ -4,21 +4,14 @@
   package:
     name: "{{ item }}"
   with_items:
-    - nodejs
     - npm
+    - nodejs
   become: true
   tags: admin
 
 - name: editor
   pip:
     name: jupyterlab
-    executable: pip3
-    extra_args: --user
-  tags: user
-
-- name: text
-  pip:
-    name: jupytext
     executable: pip3
     extra_args: --user
   tags: user
@@ -47,6 +40,13 @@
 - name: dashboard
   pip:
     name: voila
+    executable: pip3
+    extra_args: --user
+  tags: user
+
+- name: converter
+  pip:
+    name: jupytext
     executable: pip3
     extra_args: --user
   tags: user
