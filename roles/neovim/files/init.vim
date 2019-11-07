@@ -30,7 +30,7 @@ set number
 set relativenumber
 " }}}
 " FOLDER {{{
-set foldmethod=syntax
+set foldmethod=marker
 set foldlevelstart=99
 " }}}
 " SPELLING {{{
