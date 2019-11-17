@@ -142,6 +142,7 @@ noremap <leader>' :VimuxPromptCommand<cr>
 noremap <leader>; :call VimuxSlime(join(getline(1, '$'), "\n"))<cr>
 noremap <leader>. :edit $MYVIMRC<cr>
 noremap <leader>, :Gw<cr>
+noremap <leader>- :UltiSnipsEdit<cr>
 noremap <leader>! :GitGutterToggle<cr>
 noremap <leader>= :Tabularize 
 noremap <leader>: :History:<cr>
