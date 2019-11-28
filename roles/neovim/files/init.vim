@@ -1,9 +1,31 @@
-" vim: fdm=marker
 " BUFFER {{{
 set hidden
 set confirm
 set autoread
 set autowrite
+" }}}
+" FOLDER {{{
+set foldmethod=marker
+set foldlevelstart=99
+" }}}
+" INDENT {{{
+set tabstop=4
+set expandtab
+set shiftround
+set shiftwidth=4
+set softtabstop=4
+" }}}
+" NUMBER {{{
+set number
+set relativenumber
+" }}}
+" OTHERS {{{
+set shell=/bin/bash
+set clipboard=unnamedplus
+" }}}
+" POPUPS {{{
+set wildmode=list:longest,full
+set completeopt=menuone,longest
 " }}}
 " SEARCH {{{
 set gdefault
@@ -12,38 +34,15 @@ set incsearch
 set smartcase
 set ignorecase
 " }}}
-" INDENT {{{
-set expandtab
-set shiftround
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+" SPELLS {{{
+set spell
+set spelllang=en
 " }}}
 " WINDOW {{{
 set linebreak
 set lazyredraw
 set shortmess=I
 set scrolloff=10
-" }}}
-" NUMBER {{{
-set number
-set relativenumber
-" }}}
-" FOLDER {{{
-set foldmethod=marker
-set foldlevelstart=99
-" }}}
-" SPELLING {{{
-set spell
-set spelllang=en
-" }}}
-" COMPLETE {{{
-set wildmode=list:longest,full
-set completeopt=menuone,longest
-" }}}
-" EXTERNAL {{{
-set shell=/bin/bash
-set clipboard=unnamedplus
 " }}}
 " PLUGIN {{{
 let g:loaded_netrw = 1
@@ -57,6 +56,11 @@ let g:ranger_map_keys = 0
 Plug 'godlygeek/tabular'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
+Plug 'jiangmiao/auto-pairs'
+let g:AutoPairsShortcutToggle='<M-a>'
+Plug 'julienr/vim-cellmode'
+let g:cellmode_tmux_panenumber='1'
+let g:cellmode_default_mappings='0'
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --bin'}
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-sneak'
@@ -86,27 +90,31 @@ let b:ale_linters = {'python': ['mypy', 'pylint']}
 Plug 'wellle/tmux-complete.vim'
 call plug#end()
 " }}}
-" COLOR {{{
+" COLORS {{{
 try
     colorscheme molokai
 catch
     colorscheme zellner
 endtry
 " }}}
-" REMAP {{{
-noremap j gj
-noremap k gk
-noremap B g^
-noremap E g$
-noremap Y y$
-noremap U <C-r>
-noremap gl :nohl<cr>
+" REMAPS {{{
+nnoremap j gj
+nnoremap k gk
+nnoremap B g^
+nnoremap E g$
+nnoremap Y y$
 xnoremap < <gv
 xnoremap > >gv
+nnoremap U <C-r>
+nnoremap gl :nohl<cr>
+vnoremap <silent> <C-p> :call RunTmuxPythonChunk()<CR>
+nnoremap <silent> <C-p> :call RunTmuxPythonCell(1)<CR>
+nnoremap <silent> <M-p> :call RunTmuxPythonCell(0)<CR>
+nnoremap <silent> <C-M-p> :call RunTmuxPythonAllCellsAbove()<CR>
 inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 " }}}
-" LEADER {{{
+" LEADERS {{{
 noremap <cr> :
 let mapleader=" "
 noremap <leader>a :Ag<cr>
@@ -135,25 +143,25 @@ noremap <leader>w :Windows<cr>
 noremap <leader>x :ALEFix<cr> 
 noremap <leader>y :VimuxInspectRunner<cr>
 noremap <leader>z :Filetypes<cr>
-noremap <leader>` :Locate 
-noremap <leader>] :ALENextWrap<cr>
-noremap <leader>[ :ALEPreviousWrap<cr>
-noremap <leader>' :VimuxPromptCommand<cr>
-noremap <leader>; :call VimuxSlime(join(getline(1, '$'), "\n"))<cr>
-noremap <leader>. :edit $MYVIMRC<cr>
 noremap <leader>, :Gw<cr>
-noremap <leader>- :UltiSnipsEdit<cr>
-noremap <leader>! :GitGutterToggle<cr>
+noremap <leader>` :Locate 
+noremap <leader>? :Maps<cr>
 noremap <leader>= :Tabularize 
+noremap <leader>\ :History<cr>
 noremap <leader>: :History:<cr>
 noremap <leader>/ :History/<cr>
-noremap <leader>\ :History<cr>
-noremap <leader>? :Maps<cr>
+noremap <leader>] :ALENextWrap<cr>
+noremap <leader>. :edit $MYVIMRC<cr>
+noremap <leader>- :UltiSnipsEdit<cr>
+noremap <leader>[ :ALEPreviousWrap<cr>
+noremap <leader>! :GitGutterToggle<cr>
+noremap <leader>' :VimuxPromptCommand<cr>
+noremap <leader>; :call VimuxSlime(join(getline(1, '$'), "\n"))<cr>
 noremap <leader><cr> :make<cr>
 noremap <leader><tab> :b#<cr>
 noremap <leader><space> :make 
 " }}}
-" FUNCTION {{{
+" FUNCTIONS {{{
 function! VimuxSlime(text)
     call VimuxSendText(a:text)
     if a:text !~ '\n$'
@@ -164,7 +172,7 @@ endfunction
 " FILE-TYPES {{{
 autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2
 " }}}
-" AUTO-COMMANDs {{{
+" AUTO-GROUPS {{{
 augroup vim
     autocmd!
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
