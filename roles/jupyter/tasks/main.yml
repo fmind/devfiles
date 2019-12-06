@@ -37,6 +37,13 @@
     extra_args: --user
   tags: user
 
+- name: pipeline
+  pip:
+    name: metaflow
+    executable: pip3
+    extra_args: --user
+  tags: user
+
 - name: dashboard
   pip:
     name: voila
