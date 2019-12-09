@@ -1,0 +1,14 @@
+---
+
+- name: repository
+  apt_repository:
+    filename: amc
+    repo: ppa:alexis.bienvenue/amc
+  become: true
+  tags: admin
+
+- name: language
+  package:
+    name: auto-multiple-choice
+  become: true
+  tags: admin
