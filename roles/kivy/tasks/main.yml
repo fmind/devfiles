@@ -1,0 +1,15 @@
+---
+
+- name: library
+  pip:
+    name: kivy
+    executable: pip3
+    extra_args: --user
+  tags: user
+
+- name: maker
+  pip:
+    name: buildozer
+    executable: pip3
+    extra_args: --user
+  tags: user

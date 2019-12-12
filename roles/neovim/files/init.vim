@@ -46,7 +46,7 @@ set scrolloff=10
 " }}}
 " PLUGIN {{{
 let g:loaded_netrw = 1
-let g:loaded_matchparen=1
+" let g:loaded_matchparen=1
 let g:loaded_netrwPlugin = 1
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'benmills/vimux'
@@ -165,6 +165,7 @@ noremap <leader><space> :make
 " }}}
 " LLEADERS {{{
 let localmapleader="\\"
+noremap <localleader>b :!black %<CR>
 noremap <localleader>e :set spelllang=en<CR>
 noremap <localleader>f :set spelllang=fr<CR>
 noremap <localleader>a :set spelllang=en,fr<CR>
