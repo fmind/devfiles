@@ -117,7 +117,7 @@ inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 " }}}
 " LEADERS {{{
 noremap <cr> :
-let mapleader=" "
+let mapleader="\<space>"
 noremap <leader>a :Ag<cr>
 noremap <leader>b :Buffers<cr>
 noremap <leader>c :Colors<cr>
@@ -160,7 +160,15 @@ noremap <leader>' :VimuxPromptCommand<cr>
 noremap <leader>; :call VimuxSlime(join(getline(1, '$'), "\n"))<cr>
 noremap <leader><cr> :make<cr>
 noremap <leader><tab> :b#<cr>
-noremap <leader><space> :make 
+noremap <leader><space> :make
+" }}}
+" LLEADERS {{{
+let localmapleader="\\"
+noremap <localleader>e :set spelllang=en<CR>
+noremap <localleader>f :set spelllang=fr<CR>
+noremap <localleader>a :set spelllang=en,fr<CR>
+noremap <localleader>d :set background=dark<CR>
+noremap <localleader>t :highlight Normal guibg=NONE ctermbg=NONE<CR>
 " }}}
 " FUNCTIONS {{{
 function! VimuxSlime(text)
