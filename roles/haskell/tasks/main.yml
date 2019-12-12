@@ -2,6 +2,12 @@
 
 - name: language
   package:
+    name: haskell-platform
+  become: true
+  tags: admin
+
+- name: manager
+  package:
     name: haskell-stack
   become: true
   tags: admin

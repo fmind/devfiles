@@ -68,6 +68,7 @@ let g:sneak#label = 1
 let g:sneak#s_next = 1
 let g:sneak#use_ic_scs = 1
 Plug 'michaeljsmith/vim-indent-object'
+Plug 'neovimhaskell/haskell-vim'
 Plug 'rbgrouleff/bclose.vim' " ranger dependency
 Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}

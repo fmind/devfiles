@@ -22,6 +22,7 @@
     # }}}
     # languages {{{
     - {role: clang, tags: ['clang', 'lang']}
+    - {role: haskell, tags: ['haskell', 'lang']}
     - {role: python, tags: ['python', 'lang']}
     # }}}
     # services {{{
