@@ -68,7 +68,6 @@ let g:sneak#label = 1
 let g:sneak#s_next = 1
 let g:sneak#use_ic_scs = 1
 Plug 'michaeljsmith/vim-indent-object'
-Plug 'neovimhaskell/haskell-vim'
 Plug 'rbgrouleff/bclose.vim' " ranger dependency
 Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
@@ -165,12 +164,12 @@ noremap <leader><space> :make
 " }}}
 " LLEADERS {{{
 let localmapleader="\\"
-noremap <localleader>b :!black %<CR>
-noremap <localleader>e :set spelllang=en<CR>
-noremap <localleader>f :set spelllang=fr<CR>
-noremap <localleader>a :set spelllang=en,fr<CR>
-noremap <localleader>d :set background=dark<CR>
-noremap <localleader>t :highlight Normal guibg=NONE ctermbg=NONE<CR>
+noremap <localleader>pb :!black %<CR>
+noremap <localleader>se :set spelllang=en<CR>
+noremap <localleader>sf :set spelllang=fr<CR>
+noremap <localleader>sa :set spelllang=en,fr<CR>
+noremap <localleader>wb :set background=dark<CR>
+noremap <localleader>wt :highlight Normal guibg=NONE ctermbg=NONE<CR>
 " }}}
 " FUNCTIONS {{{
 function! VimuxSlime(text)
