@@ -102,9 +102,23 @@
     extra_args: --user
   tags: user
 
+- name: documenter
+  pip:
+    name: pdoc
+    executable: pip3
+    extra_args: --user
+  tags: user
+
 - name: interpreter
   pip:
     name: ipython
+    executable: pip3
+    extra_args: --user
+  tags: user
+
+- name: transformer
+  pip:
+    name: redbaron
     executable: pip3
     extra_args: --user
   tags: user

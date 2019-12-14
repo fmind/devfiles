@@ -46,7 +46,7 @@ set scrolloff=10
 " }}}
 " PLUGIN {{{
 let g:loaded_netrw = 1
-" let g:loaded_matchparen=1
+let g:loaded_matchparen=1
 let g:loaded_netrwPlugin = 1
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'benmills/vimux'
@@ -84,7 +84,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'w0rp/ale'
 let g:ale_set_quickfix = 1
-let g:ale_sign_column_always = 1
 let g:ale_python_pylint_options = '--error-only'
 let b:ale_fixers = {'python': ['black', 'isort']}
 let b:ale_linters = {'python': ['mypy', 'pylint']}
@@ -107,7 +106,7 @@ nnoremap Y y$
 xnoremap < <gv
 xnoremap > >gv
 nnoremap U <C-r>
-nnoremap gl :nohl<cr>
+nnoremap gl :nohl<CR>
 vnoremap <silent> <C-p> :call RunTmuxPythonChunk()<CR>
 nnoremap <silent> <C-p> :call RunTmuxPythonCell(1)<CR>
 nnoremap <silent> <M-p> :call RunTmuxPythonCell(0)<CR>
@@ -116,59 +115,77 @@ inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 " }}}
 " LEADERS {{{
-noremap <cr> :
+noremap <CR> :
 let mapleader="\<space>"
-noremap <leader>a :Ag<cr>
-noremap <leader>b :Buffers<cr>
-noremap <leader>c :Colors<cr>
-noremap <leader>d :Ranger<cr>
-noremap <leader>e :cnext<cr>
-noremap <leader>f :Files<cr>
-noremap <leader>g :GFiles<cr>
-noremap <leader>h :Helptags<cr>
-noremap <leader>i :Lines<cr>
-noremap <leader>j :bnext<cr>
-noremap <leader>k :bprevious<cr>
-noremap <leader>l :BLines<cr>
-noremap <leader>m :Marks<cr>
-noremap <leader>n :BCommits<cr>
-noremap <leader>o :call VimuxOpenRunner()<cr>
-noremap <leader>p :Commands<cr>
-noremap <leader>q :bdelete<cr>:bnext<cr>
-noremap <leader>r :Tags<cr>
+noremap <leader>a :Ag<CR>
+noremap <leader>b :Buffers<CR>
+noremap <leader>c :Colors<CR>
+noremap <leader>d :Ranger<CR>
+noremap <leader>e :cnext<CR>
+noremap <leader>f :Files<CR>
+noremap <leader>g :GFiles<CR>
+noremap <leader>h :Helptags<CR>
+noremap <leader>i :Lines<CR>
+noremap <leader>j :bnext<CR>
+noremap <leader>k :bprevious<CR>
+noremap <leader>l :BLines<CR>
+noremap <leader>m :Marks<CR>
+noremap <leader>n :BCommits<CR>
+noremap <leader>o :call VimuxOpenRunner()<CR>
+noremap <leader>p :Commands<CR>
+noremap <leader>q :bdelete<CR>:bnext<CR>
+noremap <leader>r :Tags<CR>
 noremap <leader>s :Google 
-noremap <leader>t :BTags<cr>
-noremap <leader>u :VimuxRunLastCommand<cr>
-noremap <leader>v "vy :call VimuxSlime(@v)<cr>
-noremap <leader>w :Windows<cr>
-noremap <leader>x :ALEFix<cr> 
-noremap <leader>y :VimuxInspectRunner<cr>
-noremap <leader>z :Filetypes<cr>
-noremap <leader>, :Gw<cr>
+noremap <leader>t :BTags<CR>
+noremap <leader>u :VimuxRunLastCommand<CR>
+noremap <leader>v "vy :call VimuxSlime(@v)<CR>
+noremap <leader>w :Windows<CR>
+noremap <leader>x :ALEFix<CR> 
+noremap <leader>y :VimuxInspectRunner<CR>
+noremap <leader>z :Filetypes<CR>
+noremap <leader>, :Gw<CR>
 noremap <leader>` :Locate 
-noremap <leader>? :Maps<cr>
+noremap <leader>? :Maps<CR>
 noremap <leader>= :Tabularize 
-noremap <leader>\ :History<cr>
-noremap <leader>: :History:<cr>
-noremap <leader>/ :History/<cr>
-noremap <leader>] :ALENextWrap<cr>
-noremap <leader>. :edit $MYVIMRC<cr>
-noremap <leader>- :UltiSnipsEdit<cr>
-noremap <leader>[ :ALEPreviousWrap<cr>
-noremap <leader>! :GitGutterToggle<cr>
-noremap <leader>' :VimuxPromptCommand<cr>
-noremap <leader>; :call VimuxSlime(join(getline(1, '$'), "\n"))<cr>
-noremap <leader><cr> :make<cr>
-noremap <leader><tab> :b#<cr>
+noremap <leader>\ :History<CR>
+noremap <leader>: :History:<CR>
+noremap <leader>/ :History/<CR>
+noremap <leader>] :ALENextWrap<CR>
+noremap <leader>. :edit $MYVIMRC<CR>
+noremap <leader>- :UltiSnipsEdit<CR>
+noremap <leader>[ :ALEPreviousWrap<CR>
+noremap <leader>! :GitGutterToggle<CR>
+noremap <leader>' :VimuxPromptCommand<CR>
+noremap <leader>; :call VimuxSlime(join(getline(1, '$'), "\n"))<CR>
+noremap <leader><CR> :make<CR>
+noremap <leader><tab> :b#<CR>
 noremap <leader><space> :make
 " }}}
 " LLEADERS {{{
 let localmapleader="\\"
+noremap <localleader>ec :e ~/.cookiecutterrc<CR>
+noremap <localleader>eg :e ~/.gitconfig<CR>
+noremap <localleader>ei :e ~/.ipython/profile_default/ipython_config.py<CR>
+noremap <localleader>ej :e ~/.jupyter_notebook_config.py<CR>
+noremap <localleader>en :e ~/.config/nvim/init.vim<CR>
+noremap <localleader>ex :e ~/.xonshrc<CR>
 noremap <localleader>pb :!black %<CR>
+noremap <localleader>pd :!pydoc3 
+noremap <localleader>pi :!pip3 install 
+noremap <localleader>pl :!pylint %<CR>
+noremap <localleader>pm :!mypy %<CR>
+noremap <localleader>po :!invoke 
+noremap <localleader>pp :!python3 %<CR>
+noremap <localleader>ps :!isort %<CR>
+noremap <localleader>pt :!pytest %<CR>
+noremap <localleader>pu :!pip3 install --user
+noremap <localleader>pv :!pip3 install pynvim<CR>
+noremap <localleader>py :!ipython -i %<CR>
+noremap <localleader>sa :set spelllang=en,fr<CR>
 noremap <localleader>se :set spelllang=en<CR>
 noremap <localleader>sf :set spelllang=fr<CR>
-noremap <localleader>sa :set spelllang=en,fr<CR>
-noremap <localleader>wb :set background=dark<CR>
+noremap <localleader>sn :set nospell<CR>
+noremap <localleader>wd :set background=dark<CR>
 noremap <localleader>wt :highlight Normal guibg=NONE ctermbg=NONE<CR>
 " }}}
 " FUNCTIONS {{{
@@ -181,7 +198,6 @@ endfunction
 " }}}
 " FILE-TYPES {{{
 autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2
-autocmd Filetype haskell setlocal tabstop=2 softtabstop=2 shiftwidth=2
 " }}}
 " AUTO-GROUPS {{{
 augroup vim
