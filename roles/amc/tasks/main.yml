@@ -7,7 +7,7 @@
   become: true
   tags: admin
 
-- name: language
+- name: software
   package:
     name: auto-multiple-choice
   become: true

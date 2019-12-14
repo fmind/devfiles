@@ -14,7 +14,7 @@
   become: true
   tags: admin
 
-- name: compose
+- name: composer
   pip:
     name: docker-compose
     executable: pip3

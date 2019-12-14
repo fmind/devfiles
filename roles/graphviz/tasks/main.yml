@@ -1,6 +1,6 @@
 ---
 
-- name: language
+- name: document
   package:
     name: graphviz
   become: true

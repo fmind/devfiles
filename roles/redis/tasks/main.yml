@@ -1,6 +1,6 @@
 ---
 
-- name: database
+- name: service
   package:
     name: redis
   become: true
@@ -12,7 +12,7 @@
   become: true
   tags: admin
 
-- name: service
+- name: startup
   systemd:
     name: redis
     state: started
@@ -20,7 +20,7 @@
   become: true
   tags: admin
 
-- name: binding
+- name: library
   pip:
     name: redis
     executable: pip3

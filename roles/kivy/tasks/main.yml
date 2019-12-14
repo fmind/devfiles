@@ -1,6 +1,6 @@
 ---
 
-- name: library
+- name: software
   pip:
     name: kivy
     executable: pip3

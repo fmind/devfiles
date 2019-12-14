@@ -181,6 +181,7 @@ endfunction
 " }}}
 " FILE-TYPES {{{
 autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd Filetype haskell setlocal tabstop=2 softtabstop=2 shiftwidth=2
 " }}}
 " AUTO-GROUPS {{{
 augroup vim

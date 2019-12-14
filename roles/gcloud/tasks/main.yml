@@ -13,7 +13,7 @@
   become: true
   tags: admin
 
-- name: service
+- name: cloud
   package:
     name: google-cloud-sdk
   become: true

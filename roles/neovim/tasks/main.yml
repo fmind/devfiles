@@ -7,13 +7,13 @@
   become: true
   tags: admin
 
-- name: package
+- name: editor
   package:
     name: neovim
   become: true
   tags: admin
 
-- name: alternative
+- name: alternatives
   alternatives:
     name: "{{ item }}"
     path: /usr/bin/nvim

@@ -47,7 +47,7 @@
   become: true
   tags: admin
 
-- name: packages
+- name: softwares
   pip:
     name:
       - tensorflow-gpu>=2.0.0

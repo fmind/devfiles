@@ -13,7 +13,7 @@
   become: true
   tags: admin
 
-- name: package
+- name: editor
   package:
     name: code
   become: true

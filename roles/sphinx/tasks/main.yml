@@ -1,6 +1,6 @@
 ---
 
-- name: language
+- name: document
   pip:
     name: sphinx
     executable: pip3
@@ -12,6 +12,7 @@
     name:
       - doc8
       - sphinx-autobuild
+      - sphinxcontrib-plantuml
     executable: pip3
     extra_args: --user
   tags: user
