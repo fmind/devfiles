@@ -102,6 +102,13 @@
     extra_args: --user
   tags: user
 
+- name: installer
+  pip:
+    name: pyinstaller
+    executable: pip3
+    extra_args: --user
+  tags: user
+
 - name: documenter
   pip:
     name: pdoc
@@ -119,6 +126,13 @@
 - name: transformer
   pip:
     name: redbaron
+    executable: pip3
+    extra_args: --user
+  tags: user
+
+- name: transcripter
+  pip:
+    name: transcrypt
     executable: pip3
     extra_args: --user
   tags: user
