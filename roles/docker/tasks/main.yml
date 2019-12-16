@@ -6,7 +6,7 @@
   become: true
   tags: admin
 
-- name: user
+- name: account
   user:
     append: yes
     groups: docker

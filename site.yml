@@ -55,6 +55,5 @@
     # }}}
     # software {{{
     # - {role: amc, tags: ['amc', 'soft']}
-    - {role: kivy, tags: ['kivy', 'soft']}
     - {role: tensorflow, tags: ['tensorflow', 'soft']}
     # }}}

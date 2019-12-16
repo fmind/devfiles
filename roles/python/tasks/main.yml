@@ -95,6 +95,13 @@
     extra_args: --user
   tags: user
 
+- name: compiler
+  pip:
+    name: cython
+    executable: pip3
+    extra_args: --user
+  tags: user
+
 - name: formatter
   pip:
     name: black
