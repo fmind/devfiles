@@ -47,6 +47,7 @@
     - {role: python, tags: ['python', 'lang']}
     # - {role: racket, tags: ['racket', 'lang']}
     # - {role: rlang, tags: ['rlang', 'lang']}
+    - {role: ruby, tags: ['ruby', 'lang']}
     # }}}
     # services {{{
     - {role: docker, tags: ['docker', 'serve']}

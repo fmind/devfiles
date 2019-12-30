@@ -51,6 +51,7 @@ let g:loaded_netrwPlugin = 1
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'benmills/vimux'
 Plug 'deoplete-plugins/deoplete-jedi'
+Plug 'fishbullet/deoplete-ruby'
 Plug 'francoiscabrol/ranger.vim'
 let g:ranger_map_keys = 0
 Plug 'godlygeek/tabular'
@@ -70,7 +71,7 @@ let g:sneak#use_ic_scs = 1
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'rbgrouleff/bclose.vim' " ranger dependency
 Plug 'sheerun/vim-polyglot'
-Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
+" Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 let g:deoplete#enable_at_startup = 1
 Plug 'SirVer/ultisnips'
 Plug 'szw/vim-g'
@@ -82,6 +83,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'vim-ruby/vim-ruby'
 Plug 'w0rp/ale'
 let g:ale_set_quickfix = 1
 let g:ale_python_pylint_options = '--error-only'
