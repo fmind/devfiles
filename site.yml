@@ -17,7 +17,7 @@
 
   roles:
     # clouds {{{
-    - {role: gcloud, tags: ['gcloud', 'cloud']}
+    # - {role: gcloud, tags: ['gcloud', 'cloud']}
     # }}}
     # editors {{{
     # - {role: emacs, tags: ['emacs', 'edit']}
@@ -47,7 +47,7 @@
     - {role: python, tags: ['python', 'lang']}
     # - {role: racket, tags: ['racket', 'lang']}
     # - {role: rlang, tags: ['rlang', 'lang']}
-    - {role: ruby, tags: ['ruby', 'lang']}
+    # - {role: ruby, tags: ['ruby', 'lang']}
     # }}}
     # services {{{
     - {role: docker, tags: ['docker', 'serve']}
@@ -55,6 +55,5 @@
     - {role: redis, tags: ['redis', 'serve']}
     # }}}
     # software {{{
-    # - {role: amc, tags: ['amc', 'soft']}
     - {role: tensorflow, tags: ['tensorflow', 'soft']}
     # }}}
