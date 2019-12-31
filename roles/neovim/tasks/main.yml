@@ -23,13 +23,7 @@
   become: true
   tags: admin
 
-- name: library (ruby)
-  package:
-    name: ruby-neovim
-  become: true
-  tags: admin
-
-- name: library (python)
+- name: library
   pip:
     name: pynvim
     executable: pip3
