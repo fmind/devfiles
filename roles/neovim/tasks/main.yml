@@ -18,8 +18,8 @@
     name: "{{ item }}"
     path: /usr/bin/nvim
   with_items:
-    - vi
     - vim
+    - vi
   become: true
   tags: admin
 
