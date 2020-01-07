@@ -50,11 +50,19 @@ let g:loaded_matchparen=1
 let g:loaded_netrwPlugin = 1
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'benmills/vimux'
+Plug 'davidhalter/jedi-vim'
+let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 0
+Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'francoiscabrol/ranger.vim'
 let g:ranger_map_keys = 0
 Plug 'godlygeek/tabular'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
+Plug 'janko/vim-test'
+let test#strategy = "vimux"
+let test#python#runner = 'pytest'
+let g:test#preserve_screen = 1
 Plug 'jiangmiao/auto-pairs'
 let g:AutoPairsShortcutToggle='<M-a>'
 Plug 'julienr/vim-cellmode'
@@ -69,25 +77,25 @@ let g:sneak#use_ic_scs = 1
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'rbgrouleff/bclose.vim' " ranger dependency
 Plug 'sheerun/vim-polyglot'
+Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
+let g:deoplete#enable_at_startup = 1
 Plug 'SirVer/ultisnips'
 Plug 'szw/vim-g'
 Plug 'tomasr/molokai'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'Valloric/YouCompleteMe', {'do': 'python3 install.py --clang-completer'}
-let g:ycm_min_num_of_chars_for_completion = 1
-let g:ycm_key_list_select_completion = ['<Down>']
-let g:ycm_key_list_previous_completion = ['<Up>']
 Plug 'w0rp/ale'
 let g:ale_set_quickfix = 1
 let g:ale_python_pylint_options = '--error-only'
 let b:ale_fixers = {'python': ['black', 'isort']}
 let b:ale_linters = {'python': ['mypy', 'pylint']}
+Plug 'wellle/tmux-complete.vim'
 call plug#end()
 " }}}
 " COLORS {{{
@@ -117,13 +125,13 @@ inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 " LEADERS {{{
 noremap <CR> :
 let mapleader="\<space>"
-noremap <leader>a :Ag<CR>
+noremap <leader>a :A<CR>
 noremap <leader>b :Buffers<CR>
 noremap <leader>c :Colors<CR>
-noremap <leader>d :YcmCompleter GetDoc<CR>
+noremap <leader>d :GFiles<CR>
 noremap <leader>e :cnext<CR>
 noremap <leader>f :Files<CR>
-noremap <leader>g :GFiles<CR>
+noremap <leader>g :Google 
 noremap <leader>h :Helptags<CR>
 noremap <leader>i :Lines<CR>
 noremap <leader>j :bnext<CR>
@@ -135,7 +143,7 @@ noremap <leader>o :call VimuxOpenRunner()<CR>
 noremap <leader>p :Commands<CR>
 noremap <leader>q :bdelete<CR>:bnext<CR>
 noremap <leader>r :Tags<CR>
-noremap <leader>s :YcmCompleter GoTo<CR>
+noremap <leader>s :Ag<CR>
 noremap <leader>t :BTags<CR>
 noremap <leader>u :VimuxRunLastCommand<CR>
 noremap <leader>v "vy :call VimuxSlime(@v)<CR>
@@ -146,11 +154,10 @@ noremap <leader>z :Filetypes<CR>
 noremap <leader><CR> :make<CR>
 noremap <leader><tab> :b#<CR>
 noremap <leader><space> :make
-noremap <leader>; :Google 
+noremap <leader>; :call VimuxSlime(join(getline(1, '$'), "\n"))<CR>
 noremap <leader>] :ALENextWrap<CR>
 noremap <leader>[ :ALEPreviousWrap<CR>
 noremap <leader>' :VimuxPromptCommand<CR>
-noremap <leader>" :call VimuxSlime(join(getline(1, '$'), "\n"))<CR>
 noremap <leader>` :Locate 
 noremap <leader>- :Ranger<CR>
 noremap <leader>= :Tabularize 
@@ -162,8 +169,6 @@ noremap <leader>\ :History<CR>
 noremap <leader>: :History:<CR>
 noremap <leader>/ :History/<CR>
 noremap <leader>. :edit $MYVIMRC<CR>
-noremap <leader>< :YcmCompleter GetType<CR>
-noremap <leader>> :YcmCompleter GoToReferences<CR>
 " }}}
 " LLEADERS {{{
 let localmapleader="\\"
@@ -178,6 +183,15 @@ noremap <localleader>ep :e ~/.ipython/profile_default/ipython_config.py<CR>
 noremap <localleader>et :e ~/.ctags<CR>
 noremap <localleader>ev :e ~/.config/nvim/init.vim<CR>
 noremap <localleader>ex :e ~/.xonshrc<CR>
+" }}}
+" jedi {{{
+let g:jedi#goto_command = "<localleader>jg"
+let g:jedi#goto_assignments_command = "<localleader>ja"
+let g:jedi#goto_definitions_command = "<localleader>jf"
+let g:jedi#documentation_command = "<localleader>jd"
+let g:jedi#completions_command = "<localleader>jc"
+let g:jedi#rename_command = "<localleader>jr"
+let g:jedi#usages_command = "<localleader>ju"
 " }}}
 " python {{{
 noremap <localleader>pb :!black %<CR>
@@ -201,7 +215,14 @@ noremap <localleader>se :set spelllang=en<CR>
 noremap <localleader>sf :set spelllang=fr<CR>
 noremap <localleader>sn :set nospell<CR>
 " }}}
-" window {{{
+" tests {{{
+noremap <localleader>tf :TestFile<CR>
+noremap <localleader>tl :TestLast<CR>
+noremap <localleader>ts :TestSuite<CR>
+noremap <localleader>tt :TestNearest<CR>
+noremap <localleader>tv :TestVisit<CR>
+" }}}
+" windows {{{
 noremap <localleader>wd :set background=dark<CR>
 noremap <localleader>wl :set background=light<CR>
 noremap <localleader>wn :highlight Normal guibg=NONE ctermbg=NONE<CR>
