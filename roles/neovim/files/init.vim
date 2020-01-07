@@ -79,7 +79,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'Valloric/YouCompleteMe', {'do': 'python3 install.py --ts-completer --clang-completer'}
+Plug 'Valloric/YouCompleteMe', {'do': 'python3 install.py --clang-completer'}
 let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_key_list_select_completion = ['<Down>']
 let g:ycm_key_list_previous_completion = ['<Up>']

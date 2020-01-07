@@ -28,7 +28,7 @@
     # }}}
     # documents {{{
     - {role: graphviz, tags: ['graphviz', 'docs']}
-    # - {role: latex, tags: ['latex', 'docs']}
+    - {role: latex, tags: ['latex', 'docs']}
     - {role: plantuml, tags: ['plantuml', 'docs']}
     - {role: sphinx, tags: ['sphinx', 'docs']}
     # }}}
@@ -41,12 +41,12 @@
     # - {role: haskell, tags: ['haskell', 'lang']}
     # - {role: hylang, tags: ['hylang', 'lang']}
     # - {role: java, tags: ['java', 'lang']}
-    - {role: julia, tags: ['julia', 'lang']}
+    # - {role: julia, tags: ['julia', 'lang']}
     # - {role: nimlang, tags: ['nimlang', 'lang']}
-    - {role: nodejs, tags: ['nodejs', 'lang']}
+    # - {role: nodejs, tags: ['nodejs', 'lang']}
     - {role: python, tags: ['python', 'lang']}
     # - {role: racket, tags: ['racket', 'lang']}
-    - {role: rlang, tags: ['rlang', 'lang']}
+    # - {role: rlang, tags: ['rlang', 'lang']}
     # - {role: ruby, tags: ['ruby', 'lang']}
     # }}}
     # services {{{
@@ -54,6 +54,6 @@
     - {role: mongodb, tags: ['mongodb', 'serve']}
     - {role: redis, tags: ['redis', 'serve']}
     # }}}
-    # software {{{
+    # softwares {{{
     - {role: tensorflow, tags: ['tensorflow', 'soft']}
     # }}}
