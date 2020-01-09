@@ -24,7 +24,7 @@
     # - {role: intellij, tags: ['intellij', 'edit']}
     - {role: jupyter, tags: ['jupyter', 'edit']}
     - {role: neovim, tags: ['neovim', 'edit']}
-    - {role: vscode, tags: ['vscode', 'edit']}
+    # - {role: vscode, tags: ['vscode', 'edit']}
     # }}}
     # documents {{{
     - {role: graphviz, tags: ['graphviz', 'docs']}
