@@ -24,7 +24,7 @@
     # - {role: intellij, tags: ['intellij', 'edit']}
     - {role: jupyter, tags: ['jupyter', 'edit']}
     - {role: neovim, tags: ['neovim', 'edit']}
-    # - {role: vscode, tags: ['vscode', 'edit']}
+    - {role: vscode, tags: ['vscode', 'edit']}
     # }}}
     # documents {{{
     - {role: graphviz, tags: ['graphviz', 'docs']}
@@ -43,7 +43,7 @@
     # - {role: java, tags: ['java', 'lang']}
     # - {role: julia, tags: ['julia', 'lang']}
     # - {role: nimlang, tags: ['nimlang', 'lang']}
-    # - {role: nodejs, tags: ['nodejs', 'lang']}
+    - {role: nodejs, tags: ['nodejs', 'lang']}
     - {role: python, tags: ['python', 'lang']}
     # - {role: racket, tags: ['racket', 'lang']}
     # - {role: rlang, tags: ['rlang', 'lang']}

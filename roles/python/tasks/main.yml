@@ -109,6 +109,13 @@
     extra_args: --user
   tags: user
 
+- name: completer
+  pip:
+    name: jedi
+    executable: pip3
+    extra_args: --user
+  tags: user
+
 - name: installer
   pip:
     name: pyinstaller

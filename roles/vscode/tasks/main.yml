@@ -58,18 +58,14 @@
 - name: extensions
   shell: code --install-extension {{ item|quote }}
   with_items:
-    - James-Yu.latex-workshop
-    - VisualStudioExptTeam.vscodeintellicode
-    - alefragnani.Bookmarks
-    - christian-kohler.path-intellisense
+#     - VisualStudioExptTeam.vscodeintellicode
+#     - alefragnani.Bookmarks
+#     - christian-kohler.path-intellisense
     - dchanco.vsc-invoke
     - jebbs.plantuml
     - lextudio.restructuredtext
-    - ms-azuretools.vscode-docker
     - ms-python.python
-    - redhat.vscode-yaml
-    - ryu1kn.edit-with-shell
+#     - ryu1kn.edit-with-shell
     - streetsidesoftware.code-spell-checker
     - vscodevim.vim
-    - vscoss.vscode-ansible
   tags: user

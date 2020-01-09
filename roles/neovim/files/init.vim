@@ -61,7 +61,7 @@ Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
 Plug 'janko/vim-test'
 let test#strategy = "vimux"
-let test#python#runner = 'pytest'
+let test#python#runner = "pytest"
 let g:test#preserve_screen = 1
 Plug 'jiangmiao/auto-pairs'
 let g:AutoPairsShortcutToggle='<M-a>'
@@ -92,9 +92,9 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'w0rp/ale'
 let g:ale_set_quickfix = 1
-let g:ale_python_pylint_options = '--error-only'
 let b:ale_fixers = {'python': ['black', 'isort']}
 let b:ale_linters = {'python': ['mypy', 'pylint']}
+let g:ale_python_pylint_options = '--error-only'
 Plug 'wellle/tmux-complete.vim'
 call plug#end()
 " }}}
@@ -119,6 +119,8 @@ vnoremap <silent> <C-p> :call RunTmuxPythonChunk()<CR>
 nnoremap <silent> <C-p> :call RunTmuxPythonCell(1)<CR>
 nnoremap <silent> <M-p> :call RunTmuxPythonCell(0)<CR>
 nnoremap <silent> <C-M-p> :call RunTmuxPythonAllCellsAbove()<CR>
+" }}}
+" POPUPS {{{
 inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 " }}}
@@ -145,10 +147,10 @@ noremap <leader>q :bdelete<CR>:bnext<CR>
 noremap <leader>r :Tags<CR>
 noremap <leader>s :Ag<CR>
 noremap <leader>t :BTags<CR>
-noremap <leader>u :VimuxRunLastCommand<CR>
+noremap <leader>u :UltiSnipsEdit<CR>
 noremap <leader>v "vy :call VimuxSlime(@v)<CR>
 noremap <leader>w :Windows<CR>
-noremap <leader>x :ALEFix<CR> 
+noremap <leader>x :VimuxRunLastCommand<CR>
 noremap <leader>y :VimuxInspectRunner<CR>
 noremap <leader>z :Filetypes<CR>
 noremap <leader><CR> :make<CR>
@@ -161,7 +163,6 @@ noremap <leader>' :VimuxPromptCommand<CR>
 noremap <leader>` :Locate 
 noremap <leader>- :Ranger<CR>
 noremap <leader>= :Tabularize 
-noremap <leader>@ :UltiSnipsEdit<CR>
 noremap <leader>! :GitGutterToggle<CR>
 noremap <leader>, :Gw<CR>
 noremap <leader>? :Maps<CR>
@@ -172,6 +173,12 @@ noremap <leader>. :edit $MYVIMRC<CR>
 " }}}
 " LLEADERS {{{
 let localmapleader="\\"
+" jedi {{{
+let g:jedi#goto_command = "<localleader>jj"
+let g:jedi#rename_command = "<localleader>jr"
+let g:jedi#usages_command = "<localleader>ju"
+let g:jedi#documentation_command = "<localleader>jd"
+" }}}
 " files {{{
 noremap <localleader>ea :e ~/.agignore<CR>
 noremap <localleader>eb :e ~/.bashrc<CR>
@@ -184,14 +191,18 @@ noremap <localleader>et :e ~/.ctags<CR>
 noremap <localleader>ev :e ~/.config/nvim/init.vim<CR>
 noremap <localleader>ex :e ~/.xonshrc<CR>
 " }}}
-" jedi {{{
-let g:jedi#goto_command = "<localleader>jg"
-let g:jedi#goto_assignments_command = "<localleader>ja"
-let g:jedi#goto_definitions_command = "<localleader>jf"
-let g:jedi#documentation_command = "<localleader>jd"
-let g:jedi#completions_command = "<localleader>jc"
-let g:jedi#rename_command = "<localleader>jr"
-let g:jedi#usages_command = "<localleader>ju"
+" tests {{{
+noremap <localleader>tf :TestFile<CR>
+noremap <localleader>tl :TestLast<CR>
+noremap <localleader>ts :TestSuite<CR>
+noremap <localleader>tt :TestNearest<CR>
+noremap <localleader>tv :TestVisit<CR>
+" }}}
+" spells {{{
+noremap <localleader>sa :set spelllang=en,fr<CR>
+noremap <localleader>se :set spelllang=en<CR>
+noremap <localleader>sf :set spelllang=fr<CR>
+noremap <localleader>sn :set nospell<CR>
 " }}}
 " python {{{
 noremap <localleader>pb :!black %<CR>
@@ -208,19 +219,6 @@ noremap <localleader>pt :!pytest %<CR>
 noremap <localleader>pu :!pip3 uninstall 
 noremap <localleader>pv :!python3 -m venv 
 noremap <localleader>py :!ipython -i %<CR>
-" }}}
-" spells {{{
-noremap <localleader>sa :set spelllang=en,fr<CR>
-noremap <localleader>se :set spelllang=en<CR>
-noremap <localleader>sf :set spelllang=fr<CR>
-noremap <localleader>sn :set nospell<CR>
-" }}}
-" tests {{{
-noremap <localleader>tf :TestFile<CR>
-noremap <localleader>tl :TestLast<CR>
-noremap <localleader>ts :TestSuite<CR>
-noremap <localleader>tt :TestNearest<CR>
-noremap <localleader>tv :TestVisit<CR>
 " }}}
 " windows {{{
 noremap <localleader>wd :set background=dark<CR>
