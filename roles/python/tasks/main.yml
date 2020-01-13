@@ -123,6 +123,13 @@
     extra_args: --user
   tags: user
 
+- name: graphical
+  pip:
+    name: remi
+    executable: pip3
+    extra_args: --user
+  tags: user
+
 - name: documenter
   pip:
     name: pdoc
