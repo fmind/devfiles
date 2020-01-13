@@ -28,7 +28,7 @@
     # }}}
     # documents {{{
     - {role: graphviz, tags: ['graphviz', 'docs']}
-    - {role: latex, tags: ['latex', 'docs']}
+    # - {role: latex, tags: ['latex', 'docs']}
     - {role: plantuml, tags: ['plantuml', 'docs']}
     - {role: sphinx, tags: ['sphinx', 'docs']}
     # }}}

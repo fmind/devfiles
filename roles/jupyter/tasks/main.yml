@@ -37,16 +37,16 @@
     extra_args: --user
   tags: user
 
-- name: pipeline
+- name: dashboard
   pip:
-    name: metaflow
+    name: voila
     executable: pip3
     extra_args: --user
   tags: user
 
-- name: dashboard
+- name: pipeliner
   pip:
-    name: voila
+    name: metaflow
     executable: pip3
     extra_args: --user
   tags: user
@@ -65,6 +65,13 @@
     extra_args: --user
   tags: user
 
+- name: scheduler
+  pip:
+    name: apache-airflow
+    executable: pip3
+    extra_args: --user
+  tags: user
+
 - name: prototyper
   pip:
     name: streamlit
@@ -72,9 +79,9 @@
     extra_args: --user
   tags: user
 
-- name: competition
+- name: workflower
   pip:
-    name: kaggle
+    name: mlflow
     executable: pip3
     extra_args: --user
   tags: user
