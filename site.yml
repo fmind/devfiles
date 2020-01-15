@@ -16,44 +16,26 @@
       state: directory
 
   roles:
-    # clouds {{{
+    - {role: clang, tags: ['clang', 'language']}
+    # - {role: clojure, tags: ['clojure', 'language']}
+    - {role: docker, tags: ['docker', 'service']}
+    # - {role: elixir, tags: ['elixir', 'language']}
     # - {role: gcloud, tags: ['gcloud', 'cloud']}
-    # }}}
-    # editors {{{
-    # - {role: emacs, tags: ['emacs', 'edit']}
-    # - {role: intellij, tags: ['intellij', 'edit']}
-    - {role: jupyter, tags: ['jupyter', 'edit']}
-    - {role: neovim, tags: ['neovim', 'edit']}
-    # - {role: vscode, tags: ['vscode', 'edit']}
-    # }}}
-    # documents {{{
-    - {role: graphviz, tags: ['graphviz', 'docs']}
-    # - {role: latex, tags: ['latex', 'docs']}
-    - {role: plantuml, tags: ['plantuml', 'docs']}
-    - {role: sphinx, tags: ['sphinx', 'docs']}
-    # }}}
-    # languages {{{
-    - {role: clang, tags: ['clang', 'lang']}
-    # - {role: clojure, tags: ['clojure', 'lang']}
-    # - {role: elixir, tags: ['elixir', 'lang']}
-    # - {role: golang, tags: ['golang', 'lang']}
-    # - {role: groovy, tags: ['groovy', 'lang']}
-    # - {role: haskell, tags: ['haskell', 'lang']}
-    # - {role: hylang, tags: ['hylang', 'lang']}
-    # - {role: java, tags: ['java', 'lang']}
-    # - {role: julia, tags: ['julia', 'lang']}
-    # - {role: nimlang, tags: ['nimlang', 'lang']}
-    - {role: nodejs, tags: ['nodejs', 'lang']}
-    - {role: python, tags: ['python', 'lang']}
-    # - {role: racket, tags: ['racket', 'lang']}
-    # - {role: rlang, tags: ['rlang', 'lang']}
-    # - {role: ruby, tags: ['ruby', 'lang']}
-    # }}}
-    # services {{{
-    - {role: docker, tags: ['docker', 'serve']}
-    - {role: mongodb, tags: ['mongodb', 'serve']}
-    - {role: redis, tags: ['redis', 'serve']}
-    # }}}
-    # softwares {{{
-    - {role: tensorflow, tags: ['tensorflow', 'soft']}
-    # }}}
+    # - {role: golang, tags: ['golang', 'language']}
+    - {role: graphviz, tags: ['graphviz', 'document']}
+    # - {role: groovy, tags: ['groovy', 'language']}
+    # - {role: haskell, tags: ['haskell', 'language']}
+    # - {role: hylang, tags: ['hylang', 'language']}
+    # - {role: java, tags: ['java', 'language']}
+    # - {role: julia, tags: ['julia', 'language']}
+    # - {role: latex, tags: ['latex', 'document']}
+    # - {role: mongodb, tags: ['mongodb', 'service']}
+    # - {role: nimlang, tags: ['nimlang', 'language']}
+    - {role: nodejs, tags: ['nodejs', 'language']}
+    - {role: plantuml, tags: ['plantuml', 'document']}
+    - {role: python, tags: ['python', 'language']}
+    # - {role: racket, tags: ['racket', 'language']}
+    # - {role: redis, tags: ['redis', 'service']}
+    # - {role: rlang, tags: ['rlang', 'language']}
+    # - {role: ruby, tags: ['ruby', 'language']}
+    - {role: sphinx, tags: ['sphinx', 'document']}

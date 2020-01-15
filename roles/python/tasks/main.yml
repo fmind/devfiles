@@ -67,6 +67,13 @@
     extra_args: --user
   tags: user
 
+- name: compiler
+  pip:
+    name: cython
+    executable: pip3
+    extra_args: --user
+  tags: user
+
 - name: debugger
   pip:
     name: ipdb
@@ -81,13 +88,6 @@
     extra_args: --user
   tags: user
 
-- name: uploader
-  pip:
-    name: twine
-    executable: pip3
-    extra_args: --user
-  tags: user
-
 - name: profiler
   pip:
     name: profiling
@@ -95,16 +95,9 @@
     extra_args: --user
   tags: user
 
-- name: compiler
+- name: uploader
   pip:
-    name: cython
-    executable: pip3
-    extra_args: --user
-  tags: user
-
-- name: formatter
-  pip:
-    name: black
+    name: twine
     executable: pip3
     extra_args: --user
   tags: user
@@ -116,16 +109,16 @@
     extra_args: --user
   tags: user
 
-- name: installer
+- name: formatter
   pip:
-    name: pyinstaller
+    name: black
     executable: pip3
     extra_args: --user
   tags: user
 
-- name: graphical
+- name: installer
   pip:
-    name: remi
+    name: pyinstaller
     executable: pip3
     extra_args: --user
   tags: user
@@ -137,16 +130,16 @@
     extra_args: --user
   tags: user
 
-- name: interpreter
+- name: refactorer
   pip:
-    name: ipython
+    name: bowler
     executable: pip3
     extra_args: --user
   tags: user
 
-- name: refactorer
+- name: interpreter
   pip:
-    name: bowler
+    name: ipython
     executable: pip3
     extra_args: --user
   tags: user
@@ -157,7 +150,6 @@
     path: "{{ item }}"
   with_items:
     - ~/.config/mypy/
-    - ~/.ipython/profile_default/
   tags: user
 
 - name: hosting
@@ -174,12 +166,4 @@
     state: link
     dest: ~/.config/mypy/config
     src: "{{ role_path }}/files/mypy.cfg"
-  tags: user
-
-- name: config
-  file:
-    force: yes
-    state: link
-    dest: ~/.ipython/profile_default/ipython_config.py
-    src: "{{ role_path }}/files/ipython.py"
   tags: user
