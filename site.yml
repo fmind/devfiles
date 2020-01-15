@@ -2,19 +2,6 @@
 
 - hosts: localhost
 
-  pre_tasks:
-
-  - name: pip
-    package:
-      name: python3-pip
-    become: true
-    tags: admin
-
-  - name: ~/bin/
-    file:
-      name: ~/bin
-      state: directory
-
   roles:
     - {role: clang, tags: ['clang', 'language']}
     # - {role: clojure, tags: ['clojure', 'language']}
