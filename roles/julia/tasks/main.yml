@@ -1,6 +1,6 @@
 ---
 
-- name: language
+- name: package
   snap:
     name: julia
     classic: yes

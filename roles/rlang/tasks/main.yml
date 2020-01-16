@@ -1,6 +1,6 @@
 ---
 
-- name: language
+- name: package
   package:
     name: r-base-core
   become: true

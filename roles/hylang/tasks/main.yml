@@ -1,6 +1,6 @@
 ---
 
-- name: language
+- name: package
   pip:
     name: hy
     executable: pip3

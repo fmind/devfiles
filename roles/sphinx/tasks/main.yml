@@ -1,6 +1,6 @@
 ---
 
-- name: document
+- name: package
   pip:
     name: sphinx
     executable: pip3

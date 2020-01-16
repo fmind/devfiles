@@ -7,7 +7,7 @@
   become: true
   tags: admin
 
-- name: language
+- name: package
   package:
     name: racket
   become: true

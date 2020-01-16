@@ -1,6 +1,6 @@
 ---
 
-- name: language
+- name: package
   package:
     name: haskell-platform
   become: true

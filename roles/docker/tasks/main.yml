@@ -1,6 +1,6 @@
 ---
 
-- name: service
+- name: package
   package:
     name: docker.io
   become: true

@@ -1,6 +1,6 @@
 ---
 
-- name: language
+- name: package
   package:
     name: nodejs
   become: true

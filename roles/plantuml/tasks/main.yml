@@ -1,6 +1,6 @@
 ---
 
-- name: document
+- name: package
   package:
     name: plantuml
   become: true

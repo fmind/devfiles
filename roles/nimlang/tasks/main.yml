@@ -1,6 +1,6 @@
 ---
 
-- name: language
+- name: package
   package:
     name: nim
   become: true

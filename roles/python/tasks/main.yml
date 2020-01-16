@@ -1,6 +1,6 @@
 ---
 
-- name: language
+- name: package
   package:
     name: python3-dev
   become: true
