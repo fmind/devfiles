@@ -3,7 +3,7 @@
 - hosts: localhost
 
   roles:
-    # - {role: clang, tags: ['clang', 'language']}
+    - {role: clang, tags: ['clang', 'language']}
     # - {role: clojure, tags: ['clojure', 'language']}
     - {role: docker, tags: ['docker', 'service']}
     # - {role: elixir, tags: ['elixir', 'language']}
@@ -16,13 +16,13 @@
     # - {role: java, tags: ['java', 'language']}
     # - {role: julia, tags: ['julia', 'language']}
     # - {role: latex, tags: ['latex', 'document']}
-    # - {role: mongodb, tags: ['mongodb', 'service']}
+    - {role: mongodb, tags: ['mongodb', 'service']}
     # - {role: nimlang, tags: ['nimlang', 'language']}
     # - {role: nodejs, tags: ['nodejs', 'language']}
     # - {role: plantuml, tags: ['plantuml', 'document']}
     - {role: python, tags: ['python', 'language']}
     # - {role: racket, tags: ['racket', 'language']}
-    # - {role: redis, tags: ['redis', 'service']}
+    - {role: redis, tags: ['redis', 'service']}
     # - {role: rlang, tags: ['rlang', 'language']}
     # - {role: ruby, tags: ['ruby', 'language']}
     # - {role: sphinx, tags: ['sphinx', 'document']}
