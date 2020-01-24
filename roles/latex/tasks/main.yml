@@ -19,22 +19,14 @@
   become: true
   tags: admin
 
-- name: maker
-  package:
-    name: latexmk
-  become: true
-  tags: admin
-
 - name: linter
   package:
     name: chktex
   become: true
   tags: admin
 
-- name: config
-  file:
-    force: yes
-    state: link
-    dest: ~/.latexmkrc
-    src: "{{ role_path }}/files/latexmkrc"
-  tags: user
+- name: maker
+  package:
+    name: latexmk
+  become: true
+  tags: admin

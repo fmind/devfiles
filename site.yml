@@ -5,24 +5,21 @@
   roles:
     - {role: clang, tags: ['clang', 'language']}
     # - {role: clojure, tags: ['clojure', 'language']}
-    - {role: docker, tags: ['docker', 'service']}
     # - {role: elixir, tags: ['elixir', 'language']}
     # - {role: gcloud, tags: ['gcloud', 'cloud']}
     # - {role: golang, tags: ['golang', 'language']}
-    # - {role: graphviz, tags: ['graphviz', 'document']}
+    - {role: graphviz, tags: ['graphviz', 'document']}
     # - {role: groovy, tags: ['groovy', 'language']}
     # - {role: haskell, tags: ['haskell', 'language']}
     # - {role: hylang, tags: ['hylang', 'language']}
     # - {role: java, tags: ['java', 'language']}
     # - {role: julia, tags: ['julia', 'language']}
     # - {role: latex, tags: ['latex', 'document']}
-    - {role: mongodb, tags: ['mongodb', 'service']}
-    # - {role: nimlang, tags: ['nimlang', 'language']}
+    # - {role: nim, tags: ['nim', 'language']}
     # - {role: nodejs, tags: ['nodejs', 'language']}
-    # - {role: plantuml, tags: ['plantuml', 'document']}
+    - {role: plantuml, tags: ['plantuml', 'document']}
     - {role: python, tags: ['python', 'language']}
     # - {role: racket, tags: ['racket', 'language']}
-    - {role: redis, tags: ['redis', 'service']}
     # - {role: rlang, tags: ['rlang', 'language']}
     # - {role: ruby, tags: ['ruby', 'language']}
-    # - {role: sphinx, tags: ['sphinx', 'document']}
+    - {role: sphinx, tags: ['sphinx', 'document']}

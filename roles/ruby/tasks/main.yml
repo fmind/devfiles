@@ -18,12 +18,6 @@
   become: true
   tags: admin
 
-- name: linter (rspec)
-  package:
-    name: ruby-rubocop-rspec
-  become: true
-  tags: admin
-
 - name: tester
   package:
     name: ruby-rspec
@@ -48,14 +42,14 @@
   become: true
   tags: admin
 
-- name: interpreter
-  package:
-    name: pry
-  become: true
-  tags: admin
-
 - name: documenter
   package:
     name: ruby-sdoc
+  become: true
+  tags: admin
+
+- name: interpreter
+  package:
+    name: pry
   become: true
   tags: admin

@@ -140,9 +140,7 @@
 - name: directories
   file:
     state: directory
-    path: "{{ item }}"
-  with_items:
-    - ~/.config/mypy/
+    path: ~/.ipython/profile_default/
   tags: user
 
 - name: hosting
@@ -153,10 +151,10 @@
     src: "{{ role_path }}/files/pypirc"
   tags: user
 
-- name: typing
+- name: config
   file:
     force: yes
     state: link
-    dest: ~/.config/mypy/config
-    src: "{{ role_path }}/files/mypy.cfg"
+    dest: ~/.ipython/profile_default/ipython_config.py
+    src: "{{ role_path }}/files/ipython.py"
   tags: user
