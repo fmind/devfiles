@@ -5,10 +5,3 @@
     name: graphviz
   become: true
   tags: admin
-
-- name: library
-  pip:
-    name: graphviz
-    executable: pip3
-    extra_args: --user
-  tags: user

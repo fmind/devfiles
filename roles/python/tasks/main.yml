@@ -21,57 +21,55 @@
 - name: maker
   pip:
     name: invoke
-    executable: pip3
-    extra_args: --user
+    executable: pipx
   tags: user
 
 - name: typer
   pip:
     name: mypy
-    executable: pip3
-    extra_args: --user
+    executable: pipx
   tags: user
 
-- name: linter
-  pip:
-    name: pylint
-    executable: pip3
-    extra_args: --user
-  tags: user
+ - name: linter
+   pip:
+     name: pylint
+     executable: pipx
+   tags: user
 
-- name: sorter
-  pip:
-    name: isort
-    executable: pip3
-    extra_args: --user
-  tags: user
+ - name: sorter
+   pip:
+     name: isort
+     executable: pipx
+   tags: user
 
-- name: tester
-  pip:
-    name: pytest
-    executable: pip3
-    extra_args: --user
-  tags: user
+ - name: tester
+   pip:
+     name: pytest
+     executable: pipx
+   tags: user
+
+ - name: unsued
+   pip:
+     name: vulture
+     executable: pipx
+   tags: user
 
 - name: coverer
   pip:
     name: coverage
-    executable: pip3
-    extra_args: --user
+    executable: pipx
   tags: user
 
 - name: compiler
   pip:
     name: cython
-    executable: pip3
-    extra_args: --user
+    executable: pipx
   tags: user
 
 - name: debugger
   pip:
     name: ipdb
-    executable: pip3
-    extra_args: --user
+    executable: pipx
   tags: user
 
 - name: packager
@@ -84,15 +82,19 @@
 - name: profiler
   pip:
     name: profiling
-    executable: pip3
-    extra_args: --user
+    executable: pipx
+  tags: user
+
+- name: security
+  pip:
+    name: bandit
+    executable: pipx
   tags: user
 
 - name: uploader
   pip:
     name: twine
-    executable: pip3
-    extra_args: --user
+    executable: pipx
   tags: user
 
 - name: completer
@@ -105,36 +107,31 @@
 - name: formatter
   pip:
     name: black
-    executable: pip3
-    extra_args: --user
+    executable: pipx
   tags: user
 
 - name: installer
   pip:
     name: pyinstaller
-    executable: pip3
-    extra_args: --user
+    executable: pipx
   tags: user
 
 - name: documenter
   pip:
     name: pdoc
-    executable: pip3
-    extra_args: --user
+    executable: pipx
   tags: user
 
 - name: refactorer
   pip:
     name: bowler
-    executable: pip3
-    extra_args: --user
+    executable: pipx
   tags: user
 
 - name: interpreter
   pip:
     name: ipython
-    executable: pip3
-    extra_args: --user
+    executable: pipx
   tags: user
 
 - name: directory

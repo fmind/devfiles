@@ -2,6 +2,27 @@
 
 - hosts: localhost
 
+  pre_tasks:
+
+  - name: ensure ~/bin
+    file:
+      name: ~/bin
+      state: directory
+    tags: user
+
+  - name: ensure pip3
+    package:
+      name: python3-pip
+    become: true
+    tags: admin
+
+  - name: ensure pipx
+    pip:
+      name: pipx
+      executable: pip3
+      extra_args: --user
+    tags: user
+
   roles:
     - {role: clang, tags: ['clang', 'language']}
     # - {role: clojure, tags: ['clojure', 'language']}
@@ -11,12 +32,12 @@
     - {role: graphviz, tags: ['graphviz', 'document']}
     # - {role: groovy, tags: ['groovy', 'language']}
     # - {role: haskell, tags: ['haskell', 'language']}
-    # - {role: hylang, tags: ['hylang', 'language']}
+    - {role: hylang, tags: ['hylang', 'language']}
     # - {role: java, tags: ['java', 'language']}
     # - {role: julia, tags: ['julia', 'language']}
     # - {role: latex, tags: ['latex', 'document']}
-    # - {role: nim, tags: ['nim', 'language']}
-    # - {role: nodejs, tags: ['nodejs', 'language']}
+    - {role: nim, tags: ['nim', 'language']}
+    - {role: nodejs, tags: ['nodejs', 'language']}
     - {role: plantuml, tags: ['plantuml', 'document']}
     - {role: python, tags: ['python', 'language']}
     # - {role: racket, tags: ['racket', 'language']}
