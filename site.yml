@@ -10,6 +10,12 @@
       state: directory
     tags: user
 
+  - name: ensure venv
+    package:
+      name: python3-venv
+    become: true
+    tags: admin
+
   - name: ensure pip3
     package:
       name: python3-pip
@@ -44,3 +50,6 @@
     # - {role: rlang, tags: ['rlang', 'language']}
     # - {role: ruby, tags: ['ruby', 'language']}
     - {role: sphinx, tags: ['sphinx', 'document']}
+
+  environment:
+    PATH: "$HOME/.local/bin/:{{ ansible_env.PATH }}"
