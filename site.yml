@@ -52,4 +52,5 @@
     - {role: sphinx, tags: ['sphinx', 'document']}
 
   environment:
-    PATH: "$HOME/.local/bin/:{{ ansible_env.PATH }}"
+    LANG: en_US.UTF-8
+    PATH: "{{ ansible_user_dir }}/.local/bin/:{{ ansible_env.PATH }}"
