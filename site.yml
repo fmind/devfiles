@@ -44,7 +44,7 @@
     # - {role: latex, tags: ['latex', 'document']}
     # - {role: nim, tags: ['nim', 'language']}
     # - {role: nodejs, tags: ['nodejs', 'language']}
-    # - {role: plantuml, tags: ['plantuml', 'document']}
+    - {role: plantuml, tags: ['plantuml', 'document']}
     - {role: python, tags: ['python', 'language']}
     - {role: racket, tags: ['racket', 'language']}
     # - {role: rlang, tags: ['rlang', 'language']}
