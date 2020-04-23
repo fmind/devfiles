@@ -9,7 +9,7 @@
 - name: repository
   apt_repository:
     filename: google-cloud-sdk
-    repo: "deb http://packages.cloud.google.com/apt cloud-sdk-bionic main"
+    repo: "deb http://packages.cloud.google.com/apt cloud-sdk-focal main"
   become: true
   tags: admin
 

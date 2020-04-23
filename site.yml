@@ -23,30 +23,29 @@
     tags: admin
 
   - name: ensure pipx
-    pip:
+    package:
       name: pipx
-      executable: pip3
-      extra_args: --user
-    tags: user
+    become: true
+    tags: admin
 
   roles:
     - {role: clang, tags: ['clang', 'language']}
-    - {role: clojure, tags: ['clojure', 'language']}
+    # - {role: clojure, tags: ['clojure', 'language']}
     # - {role: elixir, tags: ['elixir', 'language']}
     # - {role: gcloud, tags: ['gcloud', 'cloud']}
     # - {role: golang, tags: ['golang', 'language']}
     - {role: graphviz, tags: ['graphviz', 'document']}
     # - {role: groovy, tags: ['groovy', 'language']}
     # - {role: haskell, tags: ['haskell', 'language']}
-    - {role: hylang, tags: ['hylang', 'language']}
+    # - {role: hylang, tags: ['hylang', 'language']}
     # - {role: java, tags: ['java', 'language']}
-    - {role: julia, tags: ['julia', 'language']}
+    # - {role: julia, tags: ['julia', 'language']}
     # - {role: latex, tags: ['latex', 'document']}
     # - {role: nim, tags: ['nim', 'language']}
     # - {role: nodejs, tags: ['nodejs', 'language']}
     - {role: plantuml, tags: ['plantuml', 'document']}
     - {role: python, tags: ['python', 'language']}
-    - {role: racket, tags: ['racket', 'language']}
+    # - {role: racket, tags: ['racket', 'language']}
     # - {role: rlang, tags: ['rlang', 'language']}
     # - {role: ruby, tags: ['ruby', 'language']}
     # - {role: sphinx, tags: ['sphinx', 'document']}
