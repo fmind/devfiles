@@ -22,12 +22,6 @@
     become: true
     tags: admin
 
-  - name: ensure pipx
-    package:
-      name: pipx
-    become: true
-    tags: admin
-
   roles:
     - {role: clang, tags: ['clang', 'language']}
     # - {role: clojure, tags: ['clojure', 'language']}

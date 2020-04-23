@@ -21,55 +21,64 @@
 - name: maker
   pip:
     name: invoke
-    executable: pipx
+    executable: pip3
+    extra_args: --user
   tags: user
 
 - name: typer
   pip:
     name: mypy
-    executable: pipx
+    executable: pip3
+    extra_args: --user
   tags: user
 
 - name: linter
   pip:
     name: pylint
-    executable: pipx
+    executable: pip3
+    extra_args: --user
   tags: user
 
 - name: sorter
   pip:
     name: isort
-    executable: pipx
+    executable: pip3
+    extra_args: --user
   tags: user
 
 - name: tester
   pip:
     name: pytest
-    executable: pipx
+    executable: pip3
+    extra_args: --user
   tags: user
 
 - name: unsued
   pip:
     name: vulture
-    executable: pipx
+    executable: pip3
+    extra_args: --user
   tags: user
 
 - name: coverer
   pip:
     name: coverage
-    executable: pipx
+    executable: pip3
+    extra_args: --user
   tags: user
 
 - name: compiler
   pip:
     name: cython
-    executable: pipx
+    executable: pip3
+    extra_args: --user
   tags: user
 
 - name: debugger
   pip:
     name: ipdb
-    executable: pipx
+    executable: pip3
+    extra_args: --user
   tags: user
 
 - name: packager
@@ -82,19 +91,22 @@
 - name: profiler
   pip:
     name: profiling
-    executable: pipx
+    executable: pip3
+    extra_args: --user
   tags: user
 
 - name: security
   pip:
     name: bandit
-    executable: pipx
+    executable: pip3
+    extra_args: --user
   tags: user
 
 - name: uploader
   pip:
     name: twine
-    executable: pipx
+    executable: pip3
+    extra_args: --user
   tags: user
 
 - name: completer
@@ -107,31 +119,36 @@
 - name: formatter
   pip:
     name: black
-    executable: pipx
+    executable: pip3
+    extra_args: --user
   tags: user
 
 - name: installer
   pip:
     name: pyinstaller
-    executable: pipx
+    executable: pip3
+    extra_args: --user
   tags: user
 
 - name: documenter
   pip:
     name: pdoc
-    executable: pipx
+    executable: pip3
+    extra_args: --user
   tags: user
 
 - name: refactorer
   pip:
     name: bowler
-    executable: pipx
+    executable: pip3
+    extra_args: --user
   tags: user
 
 - name: interpreter
   pip:
     name: ipython
-    executable: pipx
+    executable: pip3
+    extra_args: --user
   tags: user
 
 - name: directory
