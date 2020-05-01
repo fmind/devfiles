@@ -1,18 +1,5 @@
 ---
 
-- name: keyring
-  apt_key:
-    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
-  become: true
-  tags: admin
-
-- name: repository
-  apt_repository:
-    filename: google-cloud-sdk
-    repo: "deb http://packages.cloud.google.com/apt cloud-sdk-focal main"
-  become: true
-  tags: admin
-
 - name: package
   package:
     name: google-cloud-sdk
