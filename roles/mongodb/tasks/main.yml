@@ -1,0 +1,28 @@
+---
+
+- name: package
+  package:
+    name: mongodb
+  become: true
+  tags: admin
+
+- name: tools
+  package:
+    name: mongo-tools
+  become: true
+  tags: admin
+
+- name: startup
+  systemd:
+    name: mongodb
+    state: started
+    enabled: true
+  become: true
+  tags: admin
+
+- name: library
+  pip:
+    name: pymongo
+    executable: pip3
+    extra_args: --user
+  tags: user

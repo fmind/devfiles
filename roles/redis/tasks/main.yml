@@ -1,0 +1,28 @@
+---
+
+- name: package
+  package:
+    name: redis
+  become: true
+  tags: admin
+
+- name: tools
+  package:
+    name: redis-tools
+  become: true
+  tags: admin
+
+- name: startup
+  systemd:
+    name: redis
+    state: started
+    enabled: true
+  become: true
+  tags: admin
+
+- name: library
+  pip:
+    name: redis
+    executable: pip3
+    extra_args: --user
+  tags: user

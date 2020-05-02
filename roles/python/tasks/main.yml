@@ -12,7 +12,7 @@
   become: true
   tags: admin
 
-- name: sandbox
+- name: isolater
   package:
     name: python3-venv
   become: true
@@ -53,7 +53,7 @@
     extra_args: --user
   tags: user
 
-- name: unsued
+- name: unuser
   pip:
     name: vulture
     executable: pip3
@@ -63,6 +63,13 @@
 - name: coverer
   pip:
     name: coverage
+    executable: pip3
+    extra_args: --user
+  tags: user
+
+- name: checker
+  pip:
+    name: bandit
     executable: pip3
     extra_args: --user
   tags: user
@@ -91,13 +98,6 @@
 - name: profiler
   pip:
     name: profiling
-    executable: pip3
-    extra_args: --user
-  tags: user
-
-- name: security
-  pip:
-    name: bandit
     executable: pip3
     extra_args: --user
   tags: user

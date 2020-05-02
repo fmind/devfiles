@@ -1,7 +1,8 @@
 ---
 
 - name: package
-  package:
+  snap:
     name: google-cloud-sdk
+    classic: yes
   become: true
   tags: admin
