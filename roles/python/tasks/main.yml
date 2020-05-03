@@ -111,7 +111,7 @@
 
 - name: completer
   pip:
-    name: jedi
+    name: pyls
     executable: pip3
     extra_args: --user
   tags: user

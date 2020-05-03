@@ -39,7 +39,7 @@
     # - {role: redis, tags: ['redis', 'database']}
     # - {role: rlang, tags: ['rlang', 'language']}
     # - {role: ruby, tags: ['ruby', 'language']}
-    - {role: sphinx, tags: ['sphinx', 'document']}
+    # - {role: sphinx, tags: ['sphinx', 'document']}
     # - {role: tensorflow, tags: ['tensorflow', 'language']}
 
   environment:
