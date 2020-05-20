@@ -4,7 +4,6 @@
   package:
     name: "{{ item }}"
   with_items:
-    - npm
     - nodejs
   become: true
   tags: admin

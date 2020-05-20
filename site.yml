@@ -32,7 +32,7 @@
     # - {role: latex, tags: ['latex', 'document']}
     # - {role: mongodb, tags: ['mongodb', 'database']}
     # - {role: nim, tags: ['nim', 'language']}
-    # - {role: nodejs, tags: ['nodejs', 'language']}
+    - {role: nodejs, tags: ['nodejs', 'language']}
     # - {role: plantuml, tags: ['plantuml', 'document']}
     - {role: python, tags: ['python', 'language']}
     # - {role: racket, tags: ['racket', 'language']}

@@ -1,13 +1,20 @@
 ---
 
-- name: package
-  package:
-    name: nodejs
+- name: keyring
+  apt_key:
+    url: "https://deb.nodesource.com/gpgkey/nodesource.gpg.key"
   become: true
   tags: admin
 
-- name: manager
+- name: learning
+  apt_repository:
+    filename: learning
+    repo: "deb https://deb.nodesource.com/node_14.x focal main"
+  become: true
+  tags: admin
+
+- name: package
   package:
-    name: npm
+    name: nodejs
   become: true
   tags: admin
