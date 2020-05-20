@@ -44,13 +44,6 @@
     extra_args: --user
   tags: user
 
-- name: pipeline
-  pip:
-    name: mlflow
-    executable: pip3
-    extra_args: --user
-  tags: user
-
 - name: converter
   pip:
     name: nbconvert
@@ -68,13 +61,6 @@
 - name: nbscraper
   pip:
     name: nteract-scrapbook
-    executable: pip3
-    extra_args: --user
-  tags: user
-
-- name: scheduler
-  pip:
-    name: apache-airflow
     executable: pip3
     extra_args: --user
   tags: user
