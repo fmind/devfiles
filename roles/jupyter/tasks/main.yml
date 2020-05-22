@@ -84,11 +84,3 @@
     executable: pip3
     extra_args: --user
   tags: user
-
-- name: config
-  git:
-    depth: 1
-    force: yes
-    dest: ~/.jupyter
-    repo: https://github.com/fmind/jupyter.d
-  tags: user
