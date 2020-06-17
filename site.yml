@@ -26,6 +26,7 @@
     # - {role: groovy, tags: ['groovy', 'language']}
     # - {role: haskell, tags: ['haskell', 'language']}
     # - {role: hylang, tags: ['hylang', 'language']}
+    - {role: kaggle, tags: ['kaggle', 'cloud']}
     # - {role: java, tags: ['java', 'language']}
     # - {role: julia, tags: ['julia', 'language']}
     - {role: jupyter, tags: ['jupyter', 'editor']}
