@@ -1,8 +1,7 @@
 ---
 
 - name: package
-  snap:
+  package:
     name: julia
-    classic: yes
   become: true
   tags: admin
