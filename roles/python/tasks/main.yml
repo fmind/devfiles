@@ -151,12 +151,6 @@
     extra_args: --user
   tags: user
 
-- name: directory
-  file:
-    state: directory
-    path: ~/.ipython/profile_default/
-  tags: user
-
 - name: hosting
   file:
     force: yes
