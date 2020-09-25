@@ -2,7 +2,7 @@
 
 - name: keyring
   apt_key:
-    url: https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
+    url: https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/7fa2af80.pub
   become: true
   tags: admin
 
@@ -16,14 +16,14 @@
 - name: learning
   apt_repository:
     filename: learning
-    repo: "deb http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1804/x86_64/ /"
+    repo: "deb http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu2004/x86_64/ /"
   become: true
   tags: admin
 
 - name: repository
   apt_repository:
     filename: cuda
-    repo: "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/ /"
+    repo: "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/ /"
   become: true
   tags: admin
 

@@ -57,13 +57,6 @@
     extra_args: --user
   tags: user
 
-- name: nbscraper
-  pip:
-    name: nteract-scrapbook
-    executable: pip3
-    extra_args: --user
-  tags: user
-
 - name: formatter
   pip:
     name: nbformat
@@ -83,4 +76,10 @@
     name: jupytext
     executable: pip3
     extra_args: --user
+  tags: user
+
+- name: config
+  git:
+    repo: https://github.com/fmind/jupyter.d
+    dest: ~/.jupyter
   tags: user

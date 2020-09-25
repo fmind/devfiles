@@ -12,7 +12,7 @@
   become: true
   tags: admin
 
-- name: isolater
+- name: environ
   package:
     name: python3-venv
   become: true
@@ -166,9 +166,8 @@
   tags: user
 
 - name: config
-  file:
-    force: yes
-    state: link
-    dest: ~/.ipython/profile_default/ipython_config.py
-    src: "{{ role_path }}/files/ipython.py"
+  git:
+    repo: https://github.com/fmind/ipython.d
+    dest: ~/.ipython
+    tags: user
   tags: user
