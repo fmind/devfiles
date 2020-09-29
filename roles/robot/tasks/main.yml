@@ -7,10 +7,3 @@
     extra_args: --user
   tags: user
 
-- name: editor
-  pip:
-    name: robotframework-ride
-    executable: pip3
-    extra_args: --user
-  ignore_errors: true
-  tags: user
