@@ -1,6 +1,6 @@
 templates:
-  scm-init: git
   params:
     github-username: fmind
     author-email: fmind@fmind.me
-    author-name: Médéric Hurier
+    author-name: Médéric Hurier (fmind)
+    copyright: 'Copyright (c) 2020 fmind
