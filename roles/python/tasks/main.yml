@@ -137,6 +137,13 @@
     extra_args: --user
   tags: user
 
+- name: projecter
+  pip:
+    name: poetry
+    executable: pip3
+    extra_args: --user
+  tags: user
+
 - name: refactorer
   pip:
     name: rope
