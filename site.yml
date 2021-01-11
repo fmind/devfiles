@@ -26,7 +26,7 @@
     # - {role: groovy, tags: ['groovy', 'language']}
     # - {role: haskell, tags: ['haskell', 'language']}
     # - {role: hylang, tags: ['hylang', 'language']}
-    - {role: kaggle, tags: ['kaggle', 'cloud']}
+    # - {role: kaggle, tags: ['kaggle', 'cloud']}
     # - {role: java, tags: ['java', 'language']}
     # - {role: julia, tags: ['julia', 'language']}
     - {role: jupyter, tags: ['jupyter', 'editor']}
@@ -34,7 +34,7 @@
     # - {role: mongodb, tags: ['mongodb', 'database']}
     # - {role: nim, tags: ['nim', 'language']}
     # - {role: nodejs, tags: ['nodejs', 'language']}
-    # - {role: plantuml, tags: ['plantuml', 'document']}
+    - {role: plantuml, tags: ['plantuml', 'document']}
     - {role: python, tags: ['python', 'language']}
     # - {role: racket, tags: ['racket', 'language']}
     # - {role: redis, tags: ['redis', 'database']}
