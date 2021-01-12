@@ -1,0 +1,15 @@
+---
+
+- name: package
+  package:
+    name: docker.io
+  become: true
+  tags: admin
+
+- name: account
+  user:
+    append: yes
+    groups: docker
+    name: "{{ lookup('env', 'USER') }}"
+  become: true
+  tags: admin
