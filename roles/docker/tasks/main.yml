@@ -13,3 +13,10 @@
     name: "{{ lookup('env', 'USER') }}"
   become: true
   tags: admin
+
+- name: package
+  pip:
+    name: docker-compose
+    executable: pip3
+    extra_args: --user
+  tags: user
