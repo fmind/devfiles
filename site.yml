@@ -36,14 +36,14 @@
     # - {role: mongodb, tags: ['mongodb', 'database']}
     # - {role: nim, tags: ['nim', 'language']}
     # - {role: nodejs, tags: ['nodejs', 'language']}
-    - {role: plantuml, tags: ['plantuml', 'document']}
+    # - {role: plantuml, tags: ['plantuml', 'document']}
     - {role: python, tags: ['python', 'language']}
     # - {role: racket, tags: ['racket', 'language']}
     # - {role: redis, tags: ['redis', 'database']}
     # - {role: rlang, tags: ['rlang', 'language']}
     # - {role: robot, tags: ['robot', 'automation']}
     # - {role: ruby, tags: ['ruby', 'language']}
-    - {role: shell, tags: ['shell', 'language']}
+    # - {role: shell, tags: ['shell', 'language']}
     # - {role: sphinx, tags: ['sphinx', 'document']}
     # - {role: tensorflow, tags: ['sphinx', 'framework']}
 
