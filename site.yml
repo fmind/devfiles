@@ -27,11 +27,12 @@
     # - {role: groovy, tags: ['groovy', 'language']}
     # - {role: haskell, tags: ['haskell', 'language']}
     # - {role: hylang, tags: ['hylang', 'language']}
-    # - {role: kaggle, tags: ['kaggle', 'cloud']}
     # - {role: java, tags: ['java', 'language']}
     # - {role: julia, tags: ['julia', 'language']}
     - {role: jupyter, tags: ['jupyter', 'editor']}
+    # - {role: kaggle, tags: ['kaggle', 'cloud']}
     # - {role: latex, tags: ['latex', 'document']}
+    - {role: markdown, tags: ['markdown', 'document']}
     # - {role: mongodb, tags: ['mongodb', 'database']}
     # - {role: nim, tags: ['nim', 'language']}
     # - {role: nodejs, tags: ['nodejs', 'language']}
@@ -42,7 +43,8 @@
     # - {role: rlang, tags: ['rlang', 'language']}
     # - {role: robot, tags: ['robot', 'automation']}
     # - {role: ruby, tags: ['ruby', 'language']}
-    - {role: sphinx, tags: ['sphinx', 'document']}
+    - {role: shell, tags: ['shell', 'language']}
+    # - {role: sphinx, tags: ['sphinx', 'document']}
     # - {role: tensorflow, tags: ['sphinx', 'framework']}
 
   environment:
