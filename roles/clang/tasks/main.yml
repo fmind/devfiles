@@ -11,3 +11,9 @@
     name: cmake
   become: true
   tags: admin
+
+- name: tools
+  package:
+    name: libtool-bin
+  become: true
+  tags: admin
