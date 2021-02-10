@@ -30,7 +30,7 @@
     # - {role: java, tags: ['java', 'language']}
     # - {role: julia, tags: ['julia', 'language']}
     - {role: jupyter, tags: ['jupyter', 'editor']}
-    # - {role: kaggle, tags: ['kaggle', 'cloud']}
+    - {role: kaggle, tags: ['kaggle', 'cloud']}
     # - {role: latex, tags: ['latex', 'document']}
     - {role: markdown, tags: ['markdown', 'document']}
     # - {role: mongodb, tags: ['mongodb', 'database']}
