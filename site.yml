@@ -20,7 +20,7 @@
     - {role: clang, tags: ['clang', 'language']}
     # - {role: clojure, tags: ['clojure', 'language']}
     # - {role: docker, tags: ['docker', 'docker']}
-    # - {role: elixir, tags: ['elixir', 'language']}
+    - {role: elixir, tags: ['elixir', 'language']}
     # - {role: gcloud, tags: ['gcloud', 'cloud']}
     # - {role: golang, tags: ['golang', 'language']}
     - {role: graphviz, tags: ['graphviz', 'document']}
