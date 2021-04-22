@@ -5,3 +5,11 @@
     name: elixir
   become: true
   tags: admin
+
+- name: config
+  file:
+    force: yes
+    state: link
+    dest: ~/.iex.exs
+    src: "{{ role_path }}/files/iex.exs"
+  tags: user
