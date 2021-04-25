@@ -22,6 +22,13 @@
     extra_args: --user
   tags: user
 
+- name: tester
+  pip:
+    name: testbook
+    executable: pip3
+    extra_args: --user
+  tags: user
+
 - name: plotter
   pip:
     name: jupyter-dash
@@ -36,9 +43,37 @@
     extra_args: --user
   tags: user
 
+- name: storage
+  pip:
+    name: feast
+    executable: pip3
+    extra_args: --user
+  tags: user
+
 - name: parallel
   pip:
     name: ipyparallel
+    executable: pip3
+    extra_args: --user
+  tags: user
+
+- name: framework
+  pip:
+    name: tfx
+    executable: pip3
+    extra_args: --user
+  tags: user
+
+- name: developer
+  pip:
+    name: nbdev
+    executable: pip3
+    extra_args: --user
+  tags: user
+
+- name: graphics
+  pip:
+    name: jupyterlab-drawio
     executable: pip3
     extra_args: --user
   tags: user
@@ -52,7 +87,14 @@
 
 - name: converter
   pip:
-    name: nbconvert
+    name: scrapbook
+    executable: pip3
+    extra_args: --user
+  tags: user
+
+- name: explorer
+  pip:
+    name: witwidget
     executable: pip3
     extra_args: --user
   tags: user
@@ -67,6 +109,20 @@
 - name: formatter
   pip:
     name: nbformat
+    executable: pip3
+    extra_args: --user
+  tags: user
+
+- name: workspace
+  pip:
+    name: elyra
+    executable: pip3
+    extra_args: --user
+  tags: user
+
+- name: monitorer
+  pip:
+    name: tensorboard
     executable: pip3
     extra_args: --user
   tags: user
