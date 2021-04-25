@@ -1,0 +1,13 @@
+[Unit]
+Description=Jupyter Lab
+
+[Service]
+User=user
+Group=user
+Type=simple
+Restart=always
+RestartSec=10
+ExecStart=jupyter lab
+
+[Install]
+WantedBy=multi-user.target
