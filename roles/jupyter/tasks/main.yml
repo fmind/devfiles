@@ -50,9 +50,16 @@
     extra_args: --user
   tags: user
 
-- name: parallel
+- name: parallels
   pip:
-    name: ipyparallel
+    name: ray
+    executable: pip3
+    extra_args: --user
+  tags: user
+
+- name: executor
+  pip:
+    name: prefetch
     executable: pip3
     extra_args: --user
   tags: user
@@ -60,13 +67,6 @@
 - name: framework
   pip:
     name: tfx
-    executable: pip3
-    extra_args: --user
-  tags: user
-
-- name: developer
-  pip:
-    name: nbdev
     executable: pip3
     extra_args: --user
   tags: user
