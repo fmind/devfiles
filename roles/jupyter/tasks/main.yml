@@ -113,13 +113,6 @@
     extra_args: --user
   tags: user
 
-- name: workspace
-  pip:
-    name: elyra
-    executable: pip3
-    extra_args: --user
-  tags: user
-
 - name: monitorer
   pip:
     name: tensorboard
