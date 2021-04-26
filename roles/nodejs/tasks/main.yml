@@ -6,7 +6,7 @@
   become: true
   tags: admin
 
-- name: learning
+- name: repository
   apt_repository:
     filename: learning
     repo: "deb https://deb.nodesource.com/node_14.x focal main"

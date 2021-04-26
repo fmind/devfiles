@@ -1,5 +1,24 @@
 ---
 
+- name: keyring
+  apt_key:
+    url: "https://deb.nodesource.com/gpgkey/nodesource.gpg.key"
+  become: true
+  tags: admin
+
+- name: repository
+  apt_repository:
+    filename: learning
+    repo: "deb https://deb.nodesource.com/node_14.x focal main"
+  become: true
+  tags: admin
+
+- name: dependencies
+  package:
+    name: nodejs
+  become: true
+  tags: admin
+
 - name: dependencies
   package:
     name: "{{ item }}"
