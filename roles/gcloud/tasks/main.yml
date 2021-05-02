@@ -4,5 +4,6 @@
   snap:
     name: google-cloud-sdk
     classic: yes
+  ignore_errors: true
   become: true
   tags: admin

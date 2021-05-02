@@ -19,14 +19,6 @@
   become: true
   tags: admin
 
-- name: dependencies
-  package:
-    name: "{{ item }}"
-  with_items:
-    - nodejs
-  become: true
-  tags: admin
-
 - name: maker
   pip:
     name: papermill
@@ -51,13 +43,6 @@
 - name: editor
   pip:
     name: jupyterlab
-    executable: pip3
-    extra_args: --user
-  tags: user
-
-- name: tester
-  pip:
-    name: testbook
     executable: pip3
     extra_args: --user
   tags: user
@@ -118,13 +103,6 @@
     extra_args: --user
   tags: user
 
-- name: converter
-  pip:
-    name: scrapbook
-    executable: pip3
-    extra_args: --user
-  tags: user
-
 - name: explorer
   pip:
     name: witwidget
@@ -156,13 +134,6 @@
 - name: monitorer
   pip:
     name: tensorboard
-    executable: pip3
-    extra_args: --user
-  tags: user
-
-- name: prototyper
-  pip:
-    name: streamlit
     executable: pip3
     extra_args: --user
   tags: user
@@ -206,27 +177,4 @@
   git:
     repo: https://github.com/fmind/jupyter.d
     dest: ~/.jupyter
-  tags: user
-
-- name: systemd
-  file:
-    path: ~/.config/systemd/user
-    state: directory
-  tags: user
-
-- name: service
-  file:
-    force: yes
-    state: link
-    dest: ~/.config/systemd/user/jupyterlab.service
-    src: "{{ role_path }}/files/jupyterlab.service"
-  tags: user
-
-- name: enabled
-  systemd:
-    name: jupyterlab
-    state: started
-    enabled: yes
-    scope: user
-  ignore_errors: true
   tags: user
