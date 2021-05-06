@@ -6,4 +6,3 @@
     executable: pip3
     extra_args: --user
   tags: user
-

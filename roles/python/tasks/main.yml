@@ -144,6 +144,13 @@
     extra_args: --user
   tags: user
 
+- name: transpiler
+  pip:
+    name: transcrypt
+    executable: pip3
+    extra_args: --user
+  tags: user
+
 - name: refactorer
   pip:
     name: rope
