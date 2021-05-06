@@ -19,7 +19,7 @@
   roles:
     - {role: clang, tags: ['clang', 'language']}
     # - {role: clojure, tags: ['clojure', 'language']}
-    - {role: docker, tags: ['docker', 'docker']}
+    # - {role: docker, tags: ['docker', 'docker']}
     # - {role: elixir, tags: ['elixir', 'language']}
     - {role: gcloud, tags: ['gcloud', 'cloud']}
     # - {role: golang, tags: ['golang', 'language']}
@@ -43,7 +43,7 @@
     # - {role: rlang, tags: ['rlang', 'language']}
     # - {role: robot, tags: ['robot', 'automation']}
     # - {role: ruby, tags: ['ruby', 'language']}
-    # - {role: shell, tags: ['shell', 'language']}
+    - {role: shell, tags: ['shell', 'language']}
     - {role: sphinx, tags: ['sphinx', 'document']}
     # - {role: tensorflow, tags: ['sphinx', 'framework']}
 
