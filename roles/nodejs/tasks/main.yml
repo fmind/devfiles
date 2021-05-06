@@ -8,7 +8,7 @@
 
 - name: repository
   apt_repository:
-    filename: learning
+    filename: nodejs
     repo: "deb https://deb.nodesource.com/node_14.x focal main"
   become: true
   tags: admin

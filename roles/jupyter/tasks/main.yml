@@ -1,24 +1,5 @@
 ---
 
-- name: keyring
-  apt_key:
-    url: "https://deb.nodesource.com/gpgkey/nodesource.gpg.key"
-  become: true
-  tags: admin
-
-- name: repository
-  apt_repository:
-    filename: learning
-    repo: "deb https://deb.nodesource.com/node_14.x focal main"
-  become: true
-  tags: admin
-
-- name: dependencies
-  package:
-    name: nodejs
-  become: true
-  tags: admin
-
 - name: maker
   pip:
     name: papermill
@@ -68,9 +49,9 @@
     extra_args: --user
   tags: user
 
-- name: parallels
+- name: monitor
   pip:
-    name: ray
+    name: tensorboard
     executable: pip3
     extra_args: --user
   tags: user
@@ -82,16 +63,16 @@
     extra_args: --user
   tags: user
 
-- name: framework
+- name: parallels
   pip:
-    name: tfx
+    name: ipyparallel
     executable: pip3
     extra_args: --user
   tags: user
 
-- name: graphics
+- name: framework
   pip:
-    name: jupyterlab-drawio
+    name: tfx
     executable: pip3
     extra_args: --user
   tags: user
@@ -110,13 +91,6 @@
     extra_args: --user
   tags: user
 
-- name: completer
-  pip:
-    name: jupyterlab-lsp
-    executable: pip3
-    extra_args: --user
-  tags: user
-
 - name: presenter
   pip:
     name: RISE
@@ -124,51 +98,9 @@
     extra_args: --user
   tags: user
 
-- name: formatter
-  pip:
-    name: jupyterlab_code_formatter
-    executable: pip3
-    extra_args: --user
-  tags: user
-
-- name: monitorer
-  pip:
-    name: tensorboard
-    executable: pip3
-    extra_args: --user
-  tags: user
-
 - name: transformer
   pip:
     name: jupytext
-    executable: pip3
-    extra_args: --user
-  tags: user
-
-- name: versioning
-  pip:
-    name: jupyterlab-git
-    executable: pip3
-    extra_args: --user
-  tags: user
-
-- name: resourcing
-  pip:
-    name: jupyter-resource-usage
-    executable: pip3
-    extra_args: --user
-  tags: user
-
-- name: spellchecker
-  pip:
-    name: jupyterlab-spellchecker
-    executable: pip3
-    extra_args: --user
-  tags: user
-
-- name: completion
-  pip:
-    name: python-lsp-server[all]
     executable: pip3
     extra_args: --user
   tags: user
