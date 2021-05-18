@@ -42,10 +42,8 @@
     # - {role: redis, tags: ['redis', 'database']}
     # - {role: rlang, tags: ['rlang', 'language']}
     # - {role: robot, tags: ['robot', 'automation']}
-    # - {role: ruby, tags: ['ruby', 'language']}
     - {role: shell, tags: ['shell', 'language']}
     - {role: sphinx, tags: ['sphinx', 'document']}
-    # - {role: tensorflow, tags: ['sphinx', 'framework']}
 
   environment:
     LANG: en_US.UTF-8

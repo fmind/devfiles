@@ -28,6 +28,20 @@
     extra_args: --user
   tags: user
 
+- name: quality
+  pip:
+    name: nbqa
+    executable: pip3
+    extra_args: --user
+  tags: user
+
+- name: testing
+  pip:
+    name: nbval
+    executable: pip3
+    extra_args: --user
+  tags: user
+
 - name: plotter
   pip:
     name: jupyter-dash
