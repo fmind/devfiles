@@ -18,7 +18,7 @@
 
   roles:
     - {role: clang, tags: ['clang', 'language']}
-    # - {role: clojure, tags: ['clojure', 'language']}
+    - {role: clojure, tags: ['clojure', 'language']}
     # - {role: docker, tags: ['docker', 'docker']}
     # - {role: elixir, tags: ['elixir', 'language']}
     - {role: gcloud, tags: ['gcloud', 'cloud']}
@@ -30,9 +30,8 @@
     # - {role: java, tags: ['java', 'language']}
     # - {role: julia, tags: ['julia', 'language']}
     - {role: jupyter, tags: ['jupyter', 'editor']}
-    - {role: kaggle, tags: ['kaggle', 'cloud']}
+    # - {role: kaggle, tags: ['kaggle', 'cloud']}
     # - {role: latex, tags: ['latex', 'document']}
-    # - {role: markdown, tags: ['markdown', 'document']}
     # - {role: mongodb, tags: ['mongodb', 'database']}
     # - {role: nim, tags: ['nim', 'language']}
     - {role: nodejs, tags: ['nodejs', 'language']}
@@ -41,7 +40,6 @@
     # - {role: racket, tags: ['racket', 'language']}
     # - {role: redis, tags: ['redis', 'database']}
     # - {role: rlang, tags: ['rlang', 'language']}
-    # - {role: robot, tags: ['robot', 'automation']}
     - {role: shell, tags: ['shell', 'language']}
     - {role: sphinx, tags: ['sphinx', 'document']}
 
