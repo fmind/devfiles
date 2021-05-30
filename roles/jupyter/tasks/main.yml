@@ -7,6 +7,13 @@
     extra_args: --user
   tags: user
 
+- name: tuner
+  pip:
+    name: autokeras
+    executable: pip3
+    extra_args: --user
+  tags: user
+
 - name: differ
   pip:
     name: nbdime
