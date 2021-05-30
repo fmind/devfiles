@@ -70,13 +70,6 @@
     extra_args: --user
   tags: user
 
-- name: executor
-  pip:
-    name: prefect
-    executable: pip3
-    extra_args: --user
-  tags: user
-
 - name: parallels
   pip:
     name: dask
