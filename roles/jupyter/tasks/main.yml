@@ -7,13 +7,6 @@
     extra_args: --user
   tags: user
 
-- name: tuner
-  pip:
-    name: autokeras
-    executable: pip3
-    extra_args: --user
-  tags: user
-
 - name: differ
   pip:
     name: nbdime
@@ -63,44 +56,9 @@
     extra_args: --user
   tags: user
 
-- name: storage
-  pip:
-    name: feast
-    executable: pip3
-    extra_args: --user
-  tags: user
-
-- name: monitor
-  pip:
-    name: tensorboard
-    executable: pip3
-    extra_args: --user
-  tags: user
-
-- name: parallels
-  pip:
-    name: dask
-    executable: pip3
-    extra_args: --user
-  tags: user
-
-- name: framework
-  pip:
-    name: tfx
-    executable: pip3
-    extra_args: --user
-  tags: user
-
 - name: dashboard
   pip:
     name: voila
-    executable: pip3
-    extra_args: --user
-  tags: user
-
-- name: explorer
-  pip:
-    name: witwidget
     executable: pip3
     extra_args: --user
   tags: user
@@ -115,13 +73,6 @@
 - name: transformer
   pip:
     name: jupytext
-    executable: pip3
-    extra_args: --user
-  tags: user
-
-- name: visualizer
-  pip:
-    name: netron
     executable: pip3
     extra_args: --user
   tags: user
