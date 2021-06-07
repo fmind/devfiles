@@ -137,13 +137,6 @@
     extra_args: --user
   tags: user
 
-- name: installer
-  pip:
-    name: pyinstaller
-    executable: pip3
-    extra_args: --user
-  tags: user
-
 - name: documenter
   pip:
     name: pdoc
