@@ -8,13 +8,13 @@
     file:
       name: ~/.local/bin/
       state: directory
-    tags: user
+    tags: [pre, user]
 
   - name: ensure pip3
     package:
       name: python3-pip
     become: true
-    tags: admin
+    tags: [pre, admin]
 
   roles:
     - {role: clang, tags: ['clang', 'language', 'lite']}
