@@ -6,10 +6,3 @@
     executable: pip3
     extra_args: --user
   tags: user
-
-- name: completer
-  pip:
-    name: jedhy
-    executable: pip3
-    extra_args: --user
-  tags: user

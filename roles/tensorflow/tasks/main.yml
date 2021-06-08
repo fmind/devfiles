@@ -42,6 +42,13 @@
     extra_args: --user
   tags: user
 
+- name: datasets
+  pip:
+    name: tensorflow-datasets
+    executable: pip3
+    extra_args: --user
+  tags: user
+
 - name: pipeline
   pip:
     name: tfx

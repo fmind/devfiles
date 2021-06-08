@@ -18,6 +18,12 @@
   become: true
   tags: admin
 
+- name: environ
+  package:
+    name: python-dev-is-python3
+  become: true
+  tags: admin
+
 - name: maker
   pip:
     name: invoke
@@ -119,13 +125,6 @@
 - name: completer
   pip:
     name: jedi
-    executable: pip3
-    extra_args: --user
-  tags: user
-
-- name: graphical
-  pip:
-    name: remi
     executable: pip3
     extra_args: --user
   tags: user

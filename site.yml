@@ -17,7 +17,7 @@
     tags: admin
 
   roles:
-    - {role: clang, tags: ['clang', 'language']}
+    - {role: clang, tags: ['clang', 'language', 'lite']}
     # - {role: clojure, tags: ['clojure', 'language']}
     # - {role: docker, tags: ['docker', 'docker']}
     # - {role: elixir, tags: ['elixir', 'language']}
@@ -29,18 +29,18 @@
     # - {role: hylang, tags: ['hylang', 'language']}
     # - {role: java, tags: ['java', 'language']}
     # - {role: julia, tags: ['julia', 'language']}
-    - {role: jupyter, tags: ['jupyter', 'editor']}
-    # - {role: kaggle, tags: ['kaggle', 'cloud']}
+    - {role: jupyter, tags: ['jupyter', 'editor', 'lite']}
+    - {role: kaggle, tags: ['kaggle', 'cloud']}
     # - {role: latex, tags: ['latex', 'document']}
     # - {role: mongodb, tags: ['mongodb', 'database']}
     # - {role: nim, tags: ['nim', 'language']}
-    - {role: nodejs, tags: ['nodejs', 'language']}
+    - {role: nodejs, tags: ['nodejs', 'language', 'lite']}
     - {role: plantuml, tags: ['plantuml', 'document']}
-    - {role: python, tags: ['python', 'language']}
+    - {role: python, tags: ['python', 'language', 'lite']}
     # - {role: racket, tags: ['racket', 'language']}
     # - {role: redis, tags: ['redis', 'database']}
     # - {role: rlang, tags: ['rlang', 'language']}
-    # - {role: shell, tags: ['shell', 'language']}
+    - {role: shell, tags: ['shell', 'language']}
     - {role: sphinx, tags: ['sphinx', 'document']}
     - {role: tensorflow, tags: ['tensorflow', 'framework']}
 
