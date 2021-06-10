@@ -1,66 +1,8 @@
 ---
 
-- name: maker
-  pip:
-    name: papermill
-    executable: pip3
-    extra_args: --user
-  tags: user
-
-- name: differ
-  pip:
-    name: nbdime
-    executable: pip3
-    extra_args: --user
-  tags: user
-
-- name: reader
-  pip:
-    name: nbformat
-    executable: pip3
-    extra_args: --user
-  tags: user
-
 - name: editor
   pip:
-    name: jupyterlab
-    executable: pip3
-    extra_args: --user
-  tags: user
-
-- name: drawer
-  pip:
-    name: jupyterlab-drawio
-    executable: pip3
-    extra_args: --user
-  tags: user
-
-- name: plotter
-  pip:
-    name: jupyter-dash
-    executable: pip3
-    extra_args: --user
-  notify: Build jupyter lab
-  tags: user
-
-- name: widgets
-  pip:
-    name: ipywidgets
-    executable: pip3
-    extra_args: --user
-  tags: user
-
-- name: dashboard
-  pip:
-    name: voila
-    executable: pip3
-    extra_args: --user
-  notify: Build jupyter lab
-  tags: user
-
-- name: formatter
-  pip:
-    name: jupyterlab_code_formatter
+    name: elyra
     executable: pip3
     extra_args: --user
   notify: Build jupyter lab
@@ -69,13 +11,6 @@
 - name: presenter
   pip:
     name: RISE
-    executable: pip3
-    extra_args: --user
-  tags: user
-
-- name: versioning
-  pip:
-    name: jupyterlab-git
     executable: pip3
     extra_args: --user
   notify: Build jupyter lab

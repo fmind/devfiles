@@ -62,10 +62,3 @@
     executable: pip3
     extra_args: --user
   tags: user
-
-- name: visualizer
-  pip:
-    name: netron
-    executable: pip3
-    extra_args: --user
-  tags: user

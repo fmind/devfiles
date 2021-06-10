@@ -115,13 +115,6 @@
     extra_args: --user
   tags: user
 
-- name: inspecter
-  pip:
-    name: snoop
-    executable: pip3
-    extra_args: --user
-  tags: user
-
 - name: completer
   pip:
     name: jedi
@@ -146,13 +139,6 @@
 - name: refactorer
   pip:
     name: rope
-    executable: pip3
-    extra_args: --user
-  tags: user
-
-- name: superviser
-  pip:
-    name: heartrate
     executable: pip3
     extra_args: --user
   tags: user
