@@ -1,0 +1,5 @@
+---
+
+- name: Build jupyter lab
+  shell: jupyter lab build
+  tags: user

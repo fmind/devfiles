@@ -28,11 +28,19 @@
     extra_args: --user
   tags: user
 
+- name: drawer
+  pip:
+    name: jupyterlab-drawio
+    executable: pip3
+    extra_args: --user
+  tags: user
+
 - name: plotter
   pip:
     name: jupyter-dash
     executable: pip3
     extra_args: --user
+  notify: Build jupyter lab
   tags: user
 
 - name: widgets
@@ -47,6 +55,15 @@
     name: voila
     executable: pip3
     extra_args: --user
+  notify: Build jupyter lab
+  tags: user
+
+- name: formatter
+  pip:
+    name: jupyterlab_code_formatter
+    executable: pip3
+    extra_args: --user
+  notify: Build jupyter lab
   tags: user
 
 - name: presenter
@@ -56,11 +73,20 @@
     extra_args: --user
   tags: user
 
+- name: versioning
+  pip:
+    name: jupyterlab-git
+    executable: pip3
+    extra_args: --user
+  notify: Build jupyter lab
+  tags: user
+
 - name: transformer
   pip:
     name: jupytext
     executable: pip3
     extra_args: --user
+  notify: Build jupyter lab
   tags: user
 
 - name: config
