@@ -1,5 +1,12 @@
 ---
 
+- name: maker
+  pip:
+    name: papermill
+    executable: pip3
+    extra_args: --user
+  tags: user
+
 - name: editor
   pip:
     name: elyra

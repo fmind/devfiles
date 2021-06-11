@@ -129,6 +129,13 @@
     extra_args: --user
   tags: user
 
+- name: docstyler
+  pip:
+    name: pydocstyle
+    executable: pip3
+    extra_args: --user
+  tags: user
+
 - name: documenter
   pip:
     name: pdoc
@@ -139,6 +146,13 @@
 - name: refactorer
   pip:
     name: rope
+    executable: pip3
+    extra_args: --user
+  tags: user
+
+- name: prototyper
+  pip:
+    name: streamlit
     executable: pip3
     extra_args: --user
   tags: user
