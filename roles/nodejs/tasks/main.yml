@@ -18,3 +18,11 @@
     name: nodejs
   become: true
   tags: admin
+
+- name: config
+  file:
+    force: yes
+    state: link
+    dest: ~/.npmrc
+    src: "{{ role_path }}/files/npmrc"
+  tags: user
