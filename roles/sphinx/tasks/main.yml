@@ -6,3 +6,24 @@
     executable: pip3
     extra_args: --user
   tags: user
+
+- name: markdown
+  pip:
+    name: myst-parser
+    executable: pip3
+    extra_args: --user
+  tags: user
+
+- name: plantuml
+  pip:
+    name: sphinxcontrib-plantuml
+    executable: pip3
+    extra_args: --user
+  tags: user
+
+- name: autobuild
+  pip:
+    name: sphinx-autobuild
+    executable: pip3
+    extra_args: --user
+  tags: user

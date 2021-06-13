@@ -66,6 +66,13 @@
     extra_args: --user
   tags: user
 
+- name: project
+  pip:
+    name: poetry
+    executable: pip3
+    extra_args: --user
+  tags: user
+
 - name: coverer
   pip:
     name: coverage
