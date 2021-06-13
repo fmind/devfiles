@@ -40,8 +40,8 @@
     # - {role: racket, tags: ['racket', 'language']}
     # - {role: redis, tags: ['redis', 'database']}
     # - {role: rlang, tags: ['rlang', 'language']}
-    # - {role: shell, tags: ['shell', 'language']}
-    # - {role: sphinx, tags: ['sphinx', 'document']}
+    - {role: shell, tags: ['shell', 'language']}
+    - {role: sphinx, tags: ['sphinx', 'document', 'lite']}
     - {role: tensorflow, tags: ['tensorflow', 'framework']}
 
   environment:
