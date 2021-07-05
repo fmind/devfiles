@@ -30,7 +30,7 @@
     # - {role: java, tags: ['java', 'language']}
     # - {role: julia, tags: ['julia', 'language']}
     - {role: jupyter, tags: ['jupyter', 'editor', 'lite']}
-    - {role: kaggle, tags: ['kaggle', 'cloud']}
+    # - {role: kaggle, tags: ['kaggle', 'cloud']}
     # - {role: latex, tags: ['latex', 'document']}
     # - {role: mongodb, tags: ['mongodb', 'database']}
     # - {role: nim, tags: ['nim', 'language']}
@@ -40,8 +40,9 @@
     # - {role: racket, tags: ['racket', 'language']}
     # - {role: redis, tags: ['redis', 'database']}
     # - {role: rlang, tags: ['rlang', 'language']}
-    - {role: shell, tags: ['shell', 'language']}
+    # - {role: shell, tags: ['shell', 'language']}
     - {role: sphinx, tags: ['sphinx', 'document', 'lite']}
+    # - {role: sql, tags: ['sql', 'language']}
     - {role: tensorflow, tags: ['tensorflow', 'framework']}
 
   environment:
