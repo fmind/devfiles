@@ -21,7 +21,7 @@
     # - {role: clojure, tags: ['clojure', 'language']}
     # - {role: docker, tags: ['docker', 'docker']}
     # - {role: elixir, tags: ['elixir', 'language']}
-    # - {role: gcloud, tags: ['gcloud', 'cloud']}
+    - {role: gcloud, tags: ['gcloud', 'cloud']}
     # - {role: golang, tags: ['golang', 'language']}
     - {role: graphviz, tags: ['graphviz', 'document']}
     # - {role: groovy, tags: ['groovy', 'language']}
@@ -30,7 +30,7 @@
     # - {role: java, tags: ['java', 'language']}
     # - {role: julia, tags: ['julia', 'language']}
     - {role: jupyter, tags: ['jupyter', 'editor', 'lite']}
-    # - {role: kaggle, tags: ['kaggle', 'cloud']}
+    - {role: kaggle, tags: ['kaggle', 'cloud']}
     # - {role: latex, tags: ['latex', 'document']}
     # - {role: mongodb, tags: ['mongodb', 'database']}
     # - {role: nim, tags: ['nim', 'language']}

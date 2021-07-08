@@ -1,18 +1,18 @@
 ---
 
-- name: maker
-  pip:
-    name: papermill
-    executable: pip3
-    extra_args: --user
-  tags: user
-
 - name: editor
   pip:
     name: elyra
     executable: pip3
     extra_args: --user
   notify: Build jupyter lab
+  tags: user
+
+- name: maker
+  pip:
+    name: papermill
+    executable: pip3
+    extra_args: --user
   tags: user
 
 - name: transformer

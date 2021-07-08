@@ -12,14 +12,6 @@
   become: true
   tags: admin
 
-- name: startup
-  systemd:
-    name: mongodb
-    state: started
-    enabled: true
-  become: true
-  tags: admin
-
 - name: library
   pip:
     name: pymongo
