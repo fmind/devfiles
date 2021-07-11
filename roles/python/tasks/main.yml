@@ -21,6 +21,7 @@
 - name: environ
   package:
     name: python-dev-is-python3
+  ignore_errors: true
   become: true
   tags: admin
 
@@ -162,6 +163,7 @@
     name: streamlit
     executable: pip3
     extra_args: --user
+  ignore_errors: true
   tags: user
 
 - name: interpreter
