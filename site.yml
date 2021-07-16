@@ -40,10 +40,10 @@
     # - {role: racket, tags: ['racket', 'language']}
     # - {role: redis, tags: ['redis', 'database']}
     # - {role: rlang, tags: ['rlang', 'language']}
-    # - {role: shell, tags: ['shell', 'language']}
+    - {role: shell, tags: ['shell', 'language', 'lite']}
     # - {role: sphinx, tags: ['sphinx', 'document']}
     # - {role: sql, tags: ['sql', 'language']}
-    # - {role: tensorflow, tags: ['tensorflow', 'framework']}
+    - {role: tensorflow, tags: ['tensorflow', 'framework']}
 
   environment:
     LANG: en_US.UTF-8
