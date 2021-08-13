@@ -38,9 +38,9 @@
     - {role: python, tags: ['python', 'language', 'lite']}
     # - {role: racket, tags: ['racket', 'language']}
     # - {role: rlang, tags: ['rlang', 'language']}
-    - {role: shell, tags: ['shell', 'language']}
+    # - {role: shell, tags: ['shell', 'language']}
     - {role: sphinx, tags: ['sphinx', 'document']}
-    - {role: sql, tags: ['sql', 'language']}
+    # - {role: sql, tags: ['sql', 'language']}
     - {role: tensorflow, tags: ['tensorflow', 'framework']}
 
   environment:
