@@ -1,9 +1,27 @@
 ---
 
+- name: keyring
+  apt_key:
+    url: "https://packages.cloud.google.com/apt/doc/apt-key.gpg"
+    keyring: "/etc/apt/trusted.gpg.d/cloud.google.gpg"
+  become: true
+  tags: admin
+
+- name: repository
+  apt_repository:
+    filename: google-cloud-sdk
+    repo: "deb [signed-by=/etc/apt/trusted.gpg.d/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main"
+  become: true
+  tags: admin
+
 - name: package
-  snap:
+  package:
     name: google-cloud-sdk
-    classic: yes
-  ignore_errors: true
+  become: true
+  tags: admin
+
+- name: appengine
+  package:
+    name: google-cloud-sdk-app-engine-python
   become: true
   tags: admin

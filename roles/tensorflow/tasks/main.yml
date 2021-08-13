@@ -23,7 +23,7 @@
 
 - name: tuner
   pip:
-    name: autokeras
+    name: optuna
     executable: pip3
     extra_args: --user
   tags: user
@@ -52,13 +52,6 @@
 - name: pipeline
   pip:
     name: tfx
-    executable: pip3
-    extra_args: --user
-  tags: user
-
-- name: explorer
-  pip:
-    name: witwidget
     executable: pip3
     extra_args: --user
   tags: user

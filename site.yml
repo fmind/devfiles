@@ -32,17 +32,15 @@
     - {role: jupyter, tags: ['jupyter', 'editor', 'lite']}
     # - {role: kaggle, tags: ['kaggle', 'cloud']}
     # - {role: latex, tags: ['latex', 'document']}
-    # - {role: mongodb, tags: ['mongodb', 'database']}
     # - {role: nim, tags: ['nim', 'language']}
     - {role: nodejs, tags: ['nodejs', 'language', 'lite']}
     - {role: plantuml, tags: ['plantuml', 'document']}
     - {role: python, tags: ['python', 'language', 'lite']}
     # - {role: racket, tags: ['racket', 'language']}
-    # - {role: redis, tags: ['redis', 'database']}
     # - {role: rlang, tags: ['rlang', 'language']}
-    # - {role: shell, tags: ['shell', 'language', 'lite']}
+    - {role: shell, tags: ['shell', 'language']}
     - {role: sphinx, tags: ['sphinx', 'document']}
-    # - {role: sql, tags: ['sql', 'language']}
+    - {role: sql, tags: ['sql', 'language']}
     - {role: tensorflow, tags: ['tensorflow', 'framework']}
 
   environment:

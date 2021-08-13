@@ -14,16 +14,16 @@
     extra_args: --user
   tags: user
 
-- name: plantuml
+- name: autobuild
   pip:
-    name: sphinxcontrib-plantuml
+    name: sphinx-autobuild
     executable: pip3
     extra_args: --user
   tags: user
 
-- name: autobuild
+- name: plantuml
   pip:
-    name: sphinx-autobuild
+    name: sphinxcontrib-plantuml
     executable: pip3
     extra_args: --user
   tags: user
