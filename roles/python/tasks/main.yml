@@ -18,7 +18,7 @@
   become: true
   tags: admin
 
-- name: environ
+- name: default
   package:
     name: python-dev-is-python3
   ignore_errors: true
