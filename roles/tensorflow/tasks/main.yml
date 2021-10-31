@@ -21,23 +21,9 @@
     extra_args: --user
   tags: user
 
-- name: tuner
-  pip:
-    name: optuna
-    executable: pip3
-    extra_args: --user
-  tags: user
-
 - name: monitor
   pip:
     name: tensorboard
-    executable: pip3
-    extra_args: --user
-  tags: user
-
-- name: storage
-  pip:
-    name: feast
     executable: pip3
     extra_args: --user
   tags: user

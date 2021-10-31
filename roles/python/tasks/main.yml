@@ -109,13 +109,6 @@
     extra_args: --user
   tags: user
 
-- name: uploader
-  pip:
-    name: twine
-    executable: pip3
-    extra_args: --user
-  tags: user
-
 - name: completer
   pip:
     name: jedi
@@ -126,13 +119,6 @@
 - name: formatter
   pip:
     name: black
-    executable: pip3
-    extra_args: --user
-  tags: user
-
-- name: docstyler
-  pip:
-    name: pydocstyle
     executable: pip3
     extra_args: --user
   tags: user

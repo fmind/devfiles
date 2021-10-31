@@ -11,17 +11,3 @@
     name: haskell-stack
   become: true
   tags: admin
-
-- name: directory
-  file:
-    state: directory
-    path: ~/.stack/
-  tags: user
-
-- name: config
-  file:
-    force: yes
-    state: link
-    dest: ~/.stack/config.yaml
-    src: "{{ role_path }}/files/config.yaml"
-  tags: user
