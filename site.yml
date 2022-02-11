@@ -19,9 +19,9 @@
   roles:
     - {role: clang, tags: ['clang', 'language', 'lite']}
     # - {role: clojure, tags: ['clojure', 'language']}
-    # - {role: docker, tags: ['docker', 'docker']}
+    - {role: docker, tags: ['docker', 'server']}
     # - {role: elixir, tags: ['elixir', 'language']}
-    # - {role: gcloud, tags: ['gcloud', 'cloud']}
+    - {role: gcloud, tags: ['gcloud', 'cloud']}
     # - {role: golang, tags: ['golang', 'language']}
     - {role: graphviz, tags: ['graphviz', 'document']}
     # - {role: groovy, tags: ['groovy', 'language']}
@@ -30,7 +30,7 @@
     # - {role: java, tags: ['java', 'language']}
     # - {role: julia, tags: ['julia', 'language']}
     - {role: jupyter, tags: ['jupyter', 'editor', 'lite']}
-    # - {role: kaggle, tags: ['kaggle', 'cloud']}
+    - {role: kaggle, tags: ['kaggle', 'cloud']}
     # - {role: latex, tags: ['latex', 'document']}
     # - {role: nim, tags: ['nim', 'language']}
     - {role: nodejs, tags: ['nodejs', 'language', 'lite']}
@@ -38,7 +38,7 @@
     - {role: python, tags: ['python', 'language', 'lite']}
     # - {role: racket, tags: ['racket', 'language']}
     # - {role: rlang, tags: ['rlang', 'language']}
-    # - {role: shell, tags: ['shell', 'language']}
+    - {role: shell, tags: ['shell', 'language']}
     # - {role: sphinx, tags: ['sphinx', 'document']}
     # - {role: sql, tags: ['sql', 'language']}
     # - {role: tensorflow, tags: ['tensorflow', 'framework']}

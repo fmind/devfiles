@@ -19,9 +19,3 @@
     name: google-cloud-sdk
   become: true
   tags: admin
-
-- name: appengine
-  package:
-    name: google-cloud-sdk-app-engine-python
-  become: true
-  tags: admin

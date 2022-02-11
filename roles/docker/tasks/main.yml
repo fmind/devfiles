@@ -1,8 +1,22 @@
 ---
 
+- name: keyring
+  apt_key:
+    url: "https://download.docker.com/linux/ubuntu/gpg "
+    keyring: "/etc/apt/trusted.gpg.d/docker.gpg"
+  become: true
+  tags: admin
+
+- name: repository
+  apt_repository:
+    filename: google-cloud-sdk
+    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
+  become: true
+  tags: admin
+
 - name: package
   package:
-    name: docker.io
+    name: docker-ce
   become: true
   tags: admin
 
