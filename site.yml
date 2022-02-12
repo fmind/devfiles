@@ -16,6 +16,12 @@
     become: true
     tags: [pre, admin, lite]
 
+  - name: ensure pipx
+    package:
+      name: pipx
+    become: true
+    tags: [pre, admin, lite]
+
   roles:
     - {role: clang, tags: ['clang', 'language', 'lite']}
     # - {role: clojure, tags: ['clojure', 'language']}
