@@ -8,8 +8,8 @@
 
 - name: repository
   apt_repository:
-    filename: nodejs
     repo: "deb https://deb.nodesource.com/node_17.x {{ ansible_distribution_release }} main"
+    filename: nodejs
   become: true
   tags: admin
 
@@ -21,8 +21,8 @@
 
 - name: config
   file:
-    force: yes
-    state: link
-    dest: ~/.npmrc
     src: "{{ role_path }}/files/npmrc"
+    dest: ~/.npmrc
+    state: link
+    force: yes
   tags: user

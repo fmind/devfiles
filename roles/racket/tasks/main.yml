@@ -2,8 +2,8 @@
 
 - name: repository
   apt_repository:
-    filename: racket
     repo: ppa:plt/racket
+    filename: racket
   become: true
   tags: admin
 
@@ -15,8 +15,8 @@
 
 - name: config
   file:
-    force: yes
-    state: link
-    dest: ~/.racketrc
     src: "{{ role_path }}/files/racketrc"
+    dest: ~/.racketrc
+    state: link
+    force: yes
   tags: user

@@ -34,10 +34,10 @@
 
 - name: hosting
   file:
-    force: yes
-    state: link
-    dest: ~/.pypirc
     src: "{{ role_path }}/files/pypirc"
+    dest: ~/.pypirc
+    state: link
+    force: yes
   tags: user
 
 - name: config
