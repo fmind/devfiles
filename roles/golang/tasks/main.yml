@@ -10,4 +10,5 @@
   file:
     state: directory
     name: ~/go
+    mode: 0750
   tags: user

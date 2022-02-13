@@ -10,6 +10,7 @@
   file:
     state: directory
     path: ~/.lein/
+    mode: 0750
   tags: user
 
 - name: config

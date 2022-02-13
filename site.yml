@@ -8,6 +8,7 @@
     file:
       name: ~/.local/bin/
       state: directory
+      mode: 0750
     tags: [pre, user, lite]
 
   - name: ensure pip3
