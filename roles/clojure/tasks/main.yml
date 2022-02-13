@@ -8,8 +8,8 @@
 
 - name: directory
   file:
-    state: directory
     path: ~/.lein/
+    state: directory
     mode: 0750
   tags: user
 
