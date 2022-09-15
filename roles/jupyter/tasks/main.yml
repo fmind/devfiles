@@ -2,7 +2,7 @@
 
 - name: editor
   pip:
-    name: elyra
+    name: jupyter
     executable: pip3
     extra_args: --user
   notify: Build jupyter lab
