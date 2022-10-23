@@ -1,13 +1,13 @@
 ---
 
 - name: package
-  package:
+  ansible.builtin.package:
     name: haskell-platform
   become: true
   tags: admin
 
 - name: manager
-  package:
+  ansible.builtin.package:
     name: haskell-stack
   become: true
   tags: admin

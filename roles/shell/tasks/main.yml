@@ -1,14 +1,12 @@
 ---
 
 - name: checker
-  package:
+  ansible.builtin.package:
     name: shellcheck
   become: true
   tags: admin
 
 - name: linter
-  pip:
+  community.general.pipx:
     name: bashate
-    executable: pip3
-    extra_args: --user
   tags: user

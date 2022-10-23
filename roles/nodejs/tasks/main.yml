@@ -1,26 +1,26 @@
 ---
 
 - name: keyring
-  apt_key:
+  ansible.builtin.apt_key:
     url: "https://deb.nodesource.com/gpgkey/nodesource.gpg.key"
   become: true
   tags: admin
 
 - name: repository
-  apt_repository:
-    repo: "deb https://deb.nodesource.com/node_18.x {{ ansible_distribution_release }} main"
+  ansible.builtin.apt_repository:
+    repo: "deb https://deb.nodesource.com/node_19.x {{ ansible_distribution_release }} main"
     filename: nodejs
   become: true
   tags: admin
 
 - name: package
-  package:
+  ansible.builtin.package:
     name: nodejs
   become: true
   tags: admin
 
 - name: config
-  file:
+  ansible.builtin.file:
     src: "{{ role_path }}/files/npmrc"
     dest: ~/.npmrc
     state: link

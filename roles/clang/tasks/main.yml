@@ -1,13 +1,13 @@
 ---
 
 - name: language
-  package:
+  ansible.builtin.package:
     name: build-essential
   become: true
   tags: admin
 
 - name: maker
-  package:
+  ansible.builtin.package:
     name: cmake
   become: true
   tags: admin

@@ -1,48 +1,43 @@
 ---
-
-- hosts: localhost
-
+- hosts: 127.0.0.1
+  connection: local
   pre_tasks:
-
   - name: ensure ~/.local/bin/
     file:
       name: ~/.local/bin/
       state: directory
       mode: 0750
-    tags: [pre, user, lite]
-
-  - name: ensure pip3
+    tags: [pre]
+  - name: ensure pipx
     package:
-      name: python3-pip
+      name: pipx
     become: true
-    tags: [pre, admin, lite]
-
+    tags: [pre]
   roles:
-    - {role: clang, tags: ['clang', 'language', 'lite']}
-    # - {role: clojure, tags: ['clojure', 'language']}
-    # - {role: docker, tags: ['docker', 'server']}
-    # - {role: elixir, tags: ['elixir', 'language']}
-    # - {role: gcloud, tags: ['gcloud', 'cloud']}
-    # - {role: golang, tags: ['golang', 'language']}
-    - {role: graphviz, tags: ['graphviz', 'document']}
-    # - {role: groovy, tags: ['groovy', 'language']}
-    # - {role: haskell, tags: ['haskell', 'language']}
-    # - {role: hylang, tags: ['hylang', 'language']}
-    # - {role: java, tags: ['java', 'language']}
-    # - {role: julia, tags: ['julia', 'language']}
-    - {role: jupyter, tags: ['jupyter', 'editor', 'lite']}
-    # - {role: kaggle, tags: ['kaggle', 'cloud']}
-    # - {role: latex, tags: ['latex', 'document']}
-    # - {role: nim, tags: ['nim', 'language']}
-    - {role: nodejs, tags: ['nodejs', 'language', 'lite']}
-    - {role: plantuml, tags: ['plantuml', 'document']}
-    - {role: python, tags: ['python', 'language', 'lite']}
-    # - {role: racket, tags: ['racket', 'language']}
-    # - {role: rlang, tags: ['rlang', 'language']}
-    # - {role: shell, tags: ['shell', 'language']}
-    # - {role: sphinx, tags: ['sphinx', 'document']}
-    # - {role: sql, tags: ['sql', 'language']}
-
+    - {role: clang, tags: ['clang']}
+    # - {role: clojure, tags: ['clojure']}
+    # - {role: docker, tags: ['docker']}
+    # - {role: elixir, tags: ['elixir']}
+    # - {role: gcloud, tags: ['gcloud']}
+    # - {role: golang, tags: ['golang']}
+    - {role: graphviz, tags: ['graphviz']}
+    # - {role: groovy, tags: ['groovy']}
+    # - {role: haskell, tags: ['haskell']}
+    # - {role: hylang, tags: ['hylang']}
+    # - {role: java, tags: ['java']}
+    # - {role: julia, tags: ['julia']}
+    - {role: jupyter, tags: ['jupyter']}
+    # - {role: kaggle, tags: ['kaggle']}
+    # - {role: latex, tags: ['latex']}
+    # - {role: nim, tags: ['nim']}
+    - {role: nodejs, tags: ['nodejs']}
+    - {role: plantuml, tags: ['plantuml']}
+    - {role: python, tags: ['python']}
+    # - {role: racket, tags: ['racket']}
+    # - {role: rlang, tags: ['rlang']}
+    # - {role: shell, tags: ['shell']}
+    # - {role: sphinx, tags: ['sphinx']}
+    # - {role: sql, tags: ['sql']}
   environment:
     LANG: en_US.UTF-8
     PATH: "{{ ansible_env.HOME }}/.local/bin/:{{ ansible_env.PATH }}"

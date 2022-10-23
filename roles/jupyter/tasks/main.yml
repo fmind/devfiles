@@ -1,25 +1,19 @@
 ---
 
 - name: editor
-  pip:
+  community.general.pipx:
     name: jupyterlab
-    executable: pip3
-    extra_args: --user
   notify: Build jupyter lab
   tags: user
 
-- name: maker
-  pip:
+- name: scripter
+  community.general.pipx:
     name: papermill
-    executable: pip3
-    extra_args: --user
   tags: user
 
-- name: transformer
-  pip:
+- name: converter
+  community.general.pipx:
     name: jupytext
-    executable: pip3
-    extra_args: --user
   notify: Build jupyter lab
   tags: user
 
@@ -27,4 +21,5 @@
   git:
     repo: https://github.com/fmind/jupyter.d
     dest: ~/.jupyter
+    depth: 1
   tags: user

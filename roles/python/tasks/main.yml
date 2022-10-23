@@ -1,39 +1,40 @@
 ---
 
 - name: package
-  package:
+  ansible.builtin.package:
     name: python3-dev
   become: true
   tags: admin
 
 - name: manager
-  package:
+  ansible.builtin.package:
     name: python3-pip
   become: true
   tags: admin
 
 - name: environ
-  package:
+  ansible.builtin.package:
     name: python3-venv
   become: true
   tags: admin
 
 - name: project
-  pip:
+  community.general.pipx:
     name: poetry
-    executable: pip3
-    extra_args: --user
+  tags: user
+
+- name: maker
+  community.general.pipx:
+    name: invoke
   tags: user
 
 - name: interpreter
-  pip:
+  community.general.pipx:
     name: ipython
-    executable: pip3
-    extra_args: --user
   tags: user
 
 - name: hosting
-  file:
+  ansible.builtin.file:
     src: "{{ role_path }}/files/pypirc"
     dest: ~/.pypirc
     state: link
@@ -44,4 +45,5 @@
   git:
     repo: https://github.com/fmind/ipython.d
     dest: ~/.ipython
+    depth: 1
   tags: user

@@ -1,14 +1,7 @@
 ---
 
 - name: package
-  package:
+  ansible.builtin.package:
     name: graphviz
   become: true
   tags: admin
-
-- name: diagrams
-  pip:
-    name: diagrams
-    executable: pip3
-    extra_args: --user
-  tags: user

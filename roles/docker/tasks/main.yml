@@ -1,27 +1,33 @@
 ---
 
 - name: keyring
-  apt_key:
+  ansible.builtin.apt_key:
     url: "https://download.docker.com/linux/ubuntu/gpg "
     keyring: "/etc/apt/trusted.gpg.d/docker.gpg"
   become: true
   tags: admin
 
 - name: repository
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
     filename: docker
   become: true
   tags: admin
 
 - name: package
-  package:
+  ansible.builtin.package:
     name: docker-ce
   become: true
   tags: admin
 
+- name: interface
+  ansible.builtin.package:
+    name: docker-ce-cli
+  become: true
+  tags: admin
+
 - name: account
-  user:
+  ansible.builtin.user:
     name: "{{ lookup('env', 'USER') }}"
     groups: docker
     append: yes

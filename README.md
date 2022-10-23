@@ -1,5 +1,9 @@
 # devfiles
 
+Configuration of my favorite programming languages, documents, and services.
+
+# Installation
+
 ```bash
-ansible-playbook --ask-become site.yml
+ansible-playbook playbook.yml
 ```

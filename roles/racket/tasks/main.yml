@@ -1,20 +1,20 @@
 ---
 
 - name: repository
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: ppa:plt/racket
     filename: racket
   become: true
   tags: admin
 
 - name: package
-  package:
+  ansible.builtin.package:
     name: racket
   become: true
   tags: admin
 
 - name: config
-  file:
+  ansible.builtin.file:
     src: "{{ role_path }}/files/racketrc"
     dest: ~/.racketrc
     state: link
