@@ -7,12 +7,12 @@
       name: ~/.local/bin/
       state: directory
       mode: 0750
-    tags: [pre]
+    tags: [pre, user]
   - name: ensure pipx
     package:
       name: pipx
     become: true
-    tags: [pre]
+    tags: [pre, admin]
   roles:
     - {role: clang, tags: ['clang']}
     # - {role: clojure, tags: ['clojure']}
